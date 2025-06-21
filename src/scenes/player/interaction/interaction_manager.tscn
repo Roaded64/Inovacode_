@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfk6mmn2jprgj"]
+
+[ext_resource type="Script" uid="uid://d3n7hnw8gce0o" path="res://src/scripts/player/interaction/interaction_manager.gd" id="1_o33ia"]
+[ext_resource type="Texture2D" uid="uid://c51cixft88jkd" path="res://assets/images/interact_thing_0001.png" id="2_yp02j"]
+[ext_resource type="Texture2D" uid="uid://hnxn0he4yawx" path="res://assets/images/interact_thing_0002.png" id="3_hgr5m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yo4ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yp02j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hgr5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="InteractionManager" type="Node2D"]
+script = ExtResource("1_o33ia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_yo4ee")
+autoplay = "default"
+frame_progress = 0.0380475
