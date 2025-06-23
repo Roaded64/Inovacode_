@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c51cixft88jkd"
-path="res://.godot/imported/interact_thing_0001.png-e1bbe764f7c41e834042a3fb26f2fc96.ctex"
+uid="uid://cy1dw1r0ctjpd"
+path="res://.godot/imported/sheet_depre.png-0846436fcdaf1ff60e2fc0623d3b3328.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/interact_thing_0001.png"
-dest_files=["res://.godot/imported/interact_thing_0001.png-e1bbe764f7c41e834042a3fb26f2fc96.ctex"]
+source_file="res://assets/images/player/emotions/sheet_depre.png"
+dest_files=["res://.godot/imported/sheet_depre.png-0846436fcdaf1ff60e2fc0623d3b3328.ctex"]
 
 [params]
 

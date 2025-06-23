@@ -29,7 +29,7 @@ PrincipalHud="*res://src/scenes/principal_HUD.tscn"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"teste": "res://timelines/teste.dtl"
+"timelines/teste": "res://assets/timelines/teste.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true

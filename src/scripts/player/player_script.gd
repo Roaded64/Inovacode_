@@ -13,13 +13,22 @@ var playerMove = true
 @export var sideMove = false
 
 @onready var playerSprite = $player_sprite
+@onready var playerAnim = $AnimationPlayer
 @onready var dustSprite = $dust_sprite
 
 func _ready() -> void:
-	state = "normal"
+	pass
 	
 func _process(delta: float) -> void:
-	pass
+	match Main.emotion:
+		1:
+			playerSprite.texture = load("res://assets/images/player/emotions/sheet_depre.png")
+		2:
+			playerSprite.texture = load("res://assets/images/player/emotions/sheet_sad.png")
+		3:
+			playerSprite.texture = load("res://assets/images/player/emotions/sheet_mid.png")
+		4:
+			playerSprite.texture = load("res://assets/images/player/emotions/sheet_normal.png")
 	
 func _physics_process(_delta):
 	# Fazer o vagabundo se mover
@@ -34,28 +43,26 @@ func _physics_process(_delta):
 		var player_direction = 1
 		
 		if Input.is_action_pressed(Main.key_left):
-			playerSprite.scale.x = -1
-			canUse = false
+			playerSprite.flip_h = true
 		elif Input.is_action_pressed(Main.key_right):
-			playerSprite.scale.x = 1
-			canUse = true
+			playerSprite.flip_h = false
 		
 		var current_scene = get_tree().current_scene.name #Feito por Gustavo
 		if current_scene == "menu_scene": #Feito por Gustavo
 			velocity.y = 0 #Feito por Gustavo
 			
 			if direction.x != 0: #Feito por Gustavo
-				playerSprite.play("run_" + state) #Feito por Gustavo
+				playerAnim.play("run")
 			else: #Feito por Gustavo
-				playerSprite.play("idle_" + state) #Feito por Gustavo
+				playerAnim.play("idle")
 		
 		elif !sideMove: #Feito por Gustavo
 			velocity.y = move_toward(velocity.y, playerSpeed * direction.y, playerSpeed) #Feito por Gustavo
 		
 			if direction:
 				# dustSprite.play("default")
-				playerSprite.play("run_" + state)
+				playerAnim.play("run")
 			else:
-				playerSprite.play("idle_" + state)
+				playerAnim.play("idle")
 
 		move_and_slide()

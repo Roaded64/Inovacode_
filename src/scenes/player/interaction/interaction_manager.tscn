@@ -1,17 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfk6mmn2jprgj"]
+[gd_scene load_steps=6 format=3 uid="uid://bfk6mmn2jprgj"]
 
 [ext_resource type="Script" uid="uid://d3n7hnw8gce0o" path="res://src/scripts/player/interaction/interaction_manager.gd" id="1_o33ia"]
-[ext_resource type="Texture2D" uid="uid://c51cixft88jkd" path="res://assets/images/interact_thing_0001.png" id="2_yp02j"]
-[ext_resource type="Texture2D" uid="uid://hnxn0he4yawx" path="res://assets/images/interact_thing_0002.png" id="3_hgr5m"]
+[ext_resource type="Texture2D" uid="uid://gvdgfpi8ebe2" path="res://assets/images/misc/interact_thing.png" id="2_hsq8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o33ia"]
+atlas = ExtResource("2_hsq8i")
+region = Rect2(0, 0, 7, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp02j"]
+atlas = ExtResource("2_hsq8i")
+region = Rect2(7, 0, 7, 5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo4ee"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yp02j")
+"texture": SubResource("AtlasTexture_o33ia")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hgr5m")
+"texture": SubResource("AtlasTexture_yp02j")
 }],
 "loop": true,
 "name": &"default",
@@ -26,4 +33,5 @@ z_index = 2
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_yo4ee")
 autoplay = "default"
-frame_progress = 0.0380475
+frame = 1
+frame_progress = 0.495812

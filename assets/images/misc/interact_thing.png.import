@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hnxn0he4yawx"
-path="res://.godot/imported/interact_thing_0002.png-b9e7c4013fadebecb1877acf8725d87a.ctex"
+uid="uid://gvdgfpi8ebe2"
+path="res://.godot/imported/interact_thing.png-25958cffa57b047a83936641b36982a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/interact_thing_0002.png"
-dest_files=["res://.godot/imported/interact_thing_0002.png-b9e7c4013fadebecb1877acf8725d87a.ctex"]
+source_file="res://assets/images/misc/interact_thing.png"
+dest_files=["res://.godot/imported/interact_thing.png-25958cffa57b047a83936641b36982a4.ctex"]
 
 [params]
 
