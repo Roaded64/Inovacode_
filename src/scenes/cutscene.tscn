@@ -1,32 +1,113 @@
-[gd_scene load_steps=5 format=3 uid="uid://com6tnd38bwq3"]
+[gd_scene load_steps=12 format=3 uid="uid://com6tnd38bwq3"]
 
+[ext_resource type="Script" uid="uid://dv5ba3mgimest" path="res://src/scripts/misc/cutscene_script.gd" id="1_6d3p0"]
 [ext_resource type="Texture2D" uid="uid://c07uyjitqjhqg" path="res://assets/images/cutscene/casa_sprite.png" id="1_fmnw8"]
 [ext_resource type="Texture2D" uid="uid://u14xmqly751u" path="res://assets/images/cutscene/player_sheet.png" id="2_i23ar"]
 [ext_resource type="Texture2D" uid="uid://jqcty5le6g0n" path="res://assets/images/player/shadow.png" id="2_lj3ey"]
-[ext_resource type="Script" path="res://addons/folder/folder.gd" id="4_8kv7y"]
+[ext_resource type="Script" uid="uid://duk3kh3m2v3iu" path="res://addons/folder/folder.gd" id="4_8kv7y"]
+[ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="6_l8qc4"]
+[ext_resource type="PackedScene" uid="uid://cmrx0is8p500d" path="res://src/scenes/principal_HUD.tscn" id="7_l8qc4"]
+[ext_resource type="Texture2D" uid="uid://dlomjbv1ajiou" path="res://assets/images/logo.png" id="8_tp4d3"]
 
-[node name="Cutscene" type="Node2D"]
+[sub_resource type="Animation" id="Animation_tp4d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera_anim/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, -360)]
+}
 
-[node name="Camera_Anim" type="Node" parent="."]
+[sub_resource type="Animation" id="Animation_l8qc4"]
+resource_name = "cutscene"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera_anim/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 17.0333, 18.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(640, -360), Vector2(640, -360), Vector2(640, 350), Vector2(640, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tp4d3"]
+_data = {
+&"RESET": SubResource("Animation_tp4d3"),
+&"cutscene": SubResource("Animation_l8qc4")
+}
+
+[node name="cutscene" type="Node2D"]
+script = ExtResource("1_6d3p0")
+
+[node name="camera_anim" type="Node" parent="."]
 script = ExtResource("4_8kv7y")
 
-[node name="Camera2D" type="Camera2D" parent="Camera_Anim"]
-position = Vector2(640, 360)
+[node name="Camera2D" type="Camera2D" parent="camera_anim"]
+position = Vector2(640, -360)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera_Anim"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="camera_anim"]
 root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_tp4d3")
+}
 
-[node name="casa_sprite" type="Sprite2D" parent="."]
+[node name="sprites" type="Node" parent="."]
+script = ExtResource("4_8kv7y")
+metadata/_custom_type_script = "uid://duk3kh3m2v3iu"
+
+[node name="casa_sprite" type="Sprite2D" parent="sprites"]
 position = Vector2(640, 467)
 scale = Vector2(4, 4)
 texture = ExtResource("1_fmnw8")
 
-[node name="Shadow" type="Sprite2D" parent="."]
+[node name="player_shadow" type="Sprite2D" parent="sprites"]
 position = Vector2(640, 595)
 scale = Vector2(4, 4)
 texture = ExtResource("2_lj3ey")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(640, 567)
-scale = Vector2(4, 4)
+[node name="player_sprite" type="Sprite2D" parent="sprites/player_shadow"]
+position = Vector2(0, -7)
 texture = ExtResource("2_i23ar")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 328.0
+offset_top = -176.0
+offset_right = 952.0
+offset_bottom = -153.0
+theme_override_fonts/font = ExtResource("6_l8qc4")
+theme_override_font_sizes/font_size = 24
+text = "Pressione qualquer tecla para continuar"
+horizontal_alignment = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(640, 360)
+emitting = false
+lifetime = 3.6
+randomness = 0.34
+spread = 0.0
+gravity = Vector2(0, -980)
+scale_amount_max = 58.0
+
+[node name="HUD" parent="." instance=ExtResource("7_l8qc4")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 440.0
+offset_top = 176.0
+offset_right = 792.0
+offset_bottom = 216.0
+bbcode_enabled = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 4
+position = Vector2(640, -384)
+texture = ExtResource("8_tp4d3")

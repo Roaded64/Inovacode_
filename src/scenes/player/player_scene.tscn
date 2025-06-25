@@ -93,14 +93,16 @@ _data = {
 }
 
 [node name="player_scene" type="Node2D"]
+y_sort_enabled = true
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
-z_index = 1
+y_sort_enabled = true
 scale = Vector2(3.8, 3.8)
 collision_layer = 2
 script = ExtResource("1_iq70v")
 
 [node name="player_shadow" type="Sprite2D" parent="player"]
+z_index = -1
 position = Vector2(0, 7)
 texture = ExtResource("2_bq8jg")
 

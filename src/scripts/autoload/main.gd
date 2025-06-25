@@ -41,3 +41,14 @@ func _process(_delta):
 		emotion = 3
 	elif Input.is_key_pressed(KEY_4):
 		emotion = 4
+
+func fade_in(node, fade_duration):
+	var fade_tween
+	fade_tween = get_tree().create_tween()
+	fade_tween.tween_property(node, "modulate", Color.WHITE, fade_duration)
+
+func fade_out(node, fade_duration, color):
+	if color == null: color = Color.BLACK
+	var fade_tween
+	fade_tween = get_tree().create_tween()
+	fade_tween.tween_property(node, "modulate", color, fade_duration)

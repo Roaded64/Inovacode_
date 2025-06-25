@@ -1,0 +1,4 @@
+Pra fazer o personagem aparecer em camadas, ou seja, na frente e atrás do sprite criando uma profundida, é feito com esses passos
+
+1. O node geral da cena, ative no Ordering o Y SORT Enabled
+2. Repete esses processos para os sprites que deseja o mesmo

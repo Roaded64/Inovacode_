@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmrx0is8p500d"]
+[gd_scene load_steps=5 format=3 uid="uid://cmrx0is8p500d"]
 
 [sub_resource type="Animation" id="Animation_jk27o"]
 length = 0.001
@@ -29,7 +29,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_epnob"]
 resource_name = "appear_anim"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -37,7 +37,7 @@ tracks/0/path = NodePath("TopBar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4667, 1.96667),
+"times": PackedFloat32Array(0, 1.93333, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, -64), Vector2(0, -10), Vector2(0, 0)]
@@ -49,16 +49,44 @@ tracks/1/path = NodePath("DownBar:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 1.96667),
+"times": PackedFloat32Array(0, 1.9333, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 720), Vector2(0, 674), Vector2(0, 664)]
 }
 
+[sub_resource type="Animation" id="Animation_0bptn"]
+resource_name = "dis"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DownBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 736)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -88)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0bptn"]
 _data = {
 &"RESET": SubResource("Animation_jk27o"),
-&"appear_anim": SubResource("Animation_epnob")
+&"appear_anim": SubResource("Animation_epnob"),
+&"dis": SubResource("Animation_0bptn")
 }
 
 [node name="HUD" type="CanvasLayer"]

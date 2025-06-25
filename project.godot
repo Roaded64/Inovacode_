@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Inovacode"
-run/main_scene="uid://ca0nfj10pk6dd"
+run/main_scene="uid://com6tnd38bwq3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -29,7 +29,7 @@ PrincipalHud="*res://src/scenes/principal_HUD.tscn"
 
 directories/dch_directory={}
 directories/dtl_directory={
-"timelines/teste": "res://assets/timelines/teste.dtl"
+"teste": "res://assets/timelines/teste.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
