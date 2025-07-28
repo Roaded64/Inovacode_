@@ -16,8 +16,16 @@ var phrases = [
 
 @onready var label = $Cutscene_HUD/RichTextLabel
 
+var base_y: float
+
 func _ready() -> void:
 	$HUD.visible = false
+	base_y = $logo.position.y
+
+func _process(delta: float) -> void:
+	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 10  # ajustável
+	
+	$logo.position.y = base_y + float_offset
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and !is_playing:

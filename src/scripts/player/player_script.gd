@@ -15,6 +15,7 @@ var playerMove = true
 @onready var playerSprite = $player_sprite
 @onready var playerAnim = $AnimationPlayer
 @onready var dustSprite = $dust_sprite
+@onready var playerCamera = $player_camera #Feito por Gustavo 2
 
 func _ready() -> void:
 	pass
@@ -48,7 +49,11 @@ func _physics_process(_delta):
 			playerSprite.flip_h = false
 		
 		var current_scene = get_tree().current_scene.name #Feito por Gustavo
+		if current_scene != "menu_scene": #Feito por Gustavo 2
+			playerCamera.make_current() #Feito por Gustavo 2
+		
 		if current_scene == "menu_scene": #Feito por Gustavo
+			playerCamera.enabled = false #Feito por Gustavo 2
 			velocity.y = 0 #Feito por Gustavo
 			
 			if direction.x != 0: #Feito por Gustavo

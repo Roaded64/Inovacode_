@@ -125,3 +125,7 @@ shape = SubResource("RectangleShape2D_vv84e")
 libraries = {
 &"": SubResource("AnimationLibrary_gsb0w")
 }
+
+[node name="player_camera" type="Camera2D" parent="player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
