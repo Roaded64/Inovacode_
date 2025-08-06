@@ -11,8 +11,11 @@ size = Vector2(16, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j35xj"]
 size = Vector2(32, 32)
 
-[node name="test_scene" type="Node2D"]
+[node name="ExampleScene" type="Node2D"]
 y_sort_enabled = true
+
+[node name="player_scene" parent="." instance=ExtResource("1_saihh")]
+position = Vector2(640, 304)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
@@ -32,6 +35,3 @@ shape = SubResource("RectangleShape2D_q6hep")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
 position = Vector2(-3.05176e-05, 0)
 shape = SubResource("RectangleShape2D_j35xj")
-
-[node name="player_scene" parent="." instance=ExtResource("1_saihh")]
-position = Vector2(399, 316)

@@ -17,6 +17,13 @@ var playerMove = true
 @onready var dustSprite = $dust_sprite
 @onready var playerCamera = $player_camera #Feito por Gustavo 2
 
+# mouse
+var click_position = Vector2()
+var target_position = Vector2()
+var hasClicked = false
+
+@onready var mouse_location = $"../mouse_location"
+
 func _ready() -> void:
 	pass
 	
@@ -32,42 +39,61 @@ func _process(delta: float) -> void:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_normal.png")
 	
 func _physics_process(_delta):
-	# Fazer o vagabundo se mover
-	if playerMove && !isUsing:
-		var direction: Vector2 = Input.get_vector(Main.key_left, Main.key_right, Main.key_up, Main.key_down)
-		
-		velocity.x = move_toward(velocity.x, playerSpeed * direction.x, playerSpeed)
-		
-		if !sideMove:
-				velocity.y = move_toward(velocity.y, playerSpeed * direction.y, playerSpeed)
+	if playerMove and not isUsing:
+		var moved = false
 
-		var player_direction = 1
-		
-		if Input.is_action_pressed(Main.key_left):
-			playerSprite.flip_h = true
-		elif Input.is_action_pressed(Main.key_right):
-			playerSprite.flip_h = false
-		
-		var current_scene = get_tree().current_scene.name #Feito por Gustavo
-		if current_scene != "menu_scene": #Feito por Gustavo 2
-			playerCamera.make_current() #Feito por Gustavo 2
-		
-		if current_scene == "menu_scene": #Feito por Gustavo
-			playerCamera.enabled = false #Feito por Gustavo 2
-			velocity.y = 0 #Feito por Gustavo
+		# Movimento por clique do mouse
+		if Input.is_action_just_pressed("left_mouse"):
+			if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
+				click_position = get_global_mouse_position()
+				hasClicked = true
+
+		if hasClicked and global_position.distance_to(click_position) > 3:
+			var direction = (click_position - global_position).normalized()
+			velocity = direction * playerSpeed
+			moved = true
 			
-			if direction.x != 0: #Feito por Gustavo
-				playerAnim.play("run")
-			else: #Feito por Gustavo
-				playerAnim.play("idle")
-		
-		elif !sideMove: #Feito por Gustavo
-			velocity.y = move_toward(velocity.y, playerSpeed * direction.y, playerSpeed) #Feito por Gustavo
-		
-			if direction:
-				# dustSprite.play("default")
-				playerAnim.play("run")
-			else:
-				playerAnim.play("idle")
+			if !mouse_location.visible:
+				mouse_location.visible = true
+			
+			mouse_location.position = mouse_location.get_parent().to_local(click_position)
+
+			# Flip do personagem baseado na direção
+			playerSprite.flip_h = direction.x < 0
+		else:
+			mouse_location.visible = false
+			
+			if not Input.is_anything_pressed():
+				velocity = Vector2.ZERO
+
+		# Movimento por teclado (opcional junto com o mouse)
+		var input_dir = Input.get_vector(Main.key_left, Main.key_right, Main.key_up, Main.key_down)
+		if input_dir != Vector2.ZERO:
+			velocity.x = move_toward(velocity.x, playerSpeed * input_dir.x, playerSpeed)
+			if not sideMove:
+				velocity.y = move_toward(velocity.y, playerSpeed * input_dir.y, playerSpeed)
+			moved = true
+
+			if input_dir.x != 0:
+				playerSprite.flip_h = input_dir.x < 0
+		else:
+			if not moved:
+				velocity.x = move_toward(velocity.x, 0, playerSpeed)
+				if not sideMove:
+					velocity.y = move_toward(velocity.y, 0, playerSpeed)
+
+		# Câmera
+		var current_scene = get_tree().current_scene.name
+		if current_scene != "menu_scene":
+			playerCamera.make_current()
+		else:
+			playerCamera.enabled = false
+			velocity.y = 0
+
+		# Animação
+		if moved:
+			playerAnim.play("run")
+		else:
+			playerAnim.play("idle")
 
 		move_and_slide()
