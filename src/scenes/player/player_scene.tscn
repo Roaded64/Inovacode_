@@ -119,6 +119,7 @@ _data = {
 y_sort_enabled = true
 
 [node name="mouse_location" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -8)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_k4jkp")
@@ -126,13 +127,11 @@ autoplay = "default"
 frame_progress = 0.00207504
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
-y_sort_enabled = true
 scale = Vector2(3, 3)
 collision_layer = 2
 script = ExtResource("1_iq70v")
 
 [node name="player_shadow" type="Sprite2D" parent="player"]
-z_index = -1
 position = Vector2(0, 7)
 texture = ExtResource("2_bq8jg")
 

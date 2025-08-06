@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=4 uid="uid://bbiiq0283jj7k"]
+
+[ext_resource type="Texture2D" uid="uid://by38f6mkk84em" path="res://assets/images/cidade/calçada_tileset.png" id="1_645yb"]
+[ext_resource type="PackedScene" uid="uid://bifndl8cdqn4c" path="res://src/scenes/player/player_scene.tscn" id="2_ddj74"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esxqw"]
+texture = ExtResource("1_645yb")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6ciap"]
+sources/0 = SubResource("TileSetAtlasSource_esxqw")
+
+[node name="cidade_scene" type="Node2D"]
+
+[node name="calçada_tileset" type="TileMapLayer" parent="."]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAADAAEAAAABAAAAAAAEAAEAAAABAAAAAAACAAIAAAAAAAEAAAACAAMAAAAAAAEAAAACAAQAAAAAAAEAAAACAAUAAAAAAAIAAAADAAUAAAABAAIAAAAEAAUAAAABAAIAAAAFAAUAAAABAAIAAAAGAAUAAAABAAIAAAAHAAUAAAADAAAAAAAIAAUAAAACAAIAAAAIAAQAAAACAAEAAAAIAAMAAAACAAEAAAAIAAIAAAACAAEAAAAIAAEAAAACAAAAAAAHAAEAAAABAAAAAAAGAAEAAAABAAAAAAAFAAEAAAABAAAAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAFAAQAAAABAAEAAAAFAAMAAAABAAEAAAAFAAIAAAABAAEAAAAGAAQAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAEAAAAHAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_6ciap")
+
+[node name="player_scene" parent="." instance=ExtResource("2_ddj74")]
+position = Vector2(261, 171)
