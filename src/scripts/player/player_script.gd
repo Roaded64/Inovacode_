@@ -17,6 +17,9 @@ var playerMove = true
 @onready var dustSprite = $dust_sprite
 @onready var playerCamera = $player_camera #Feito por Gustavo 2
 
+# Correr
+@onready var progress = $"../hud/TextureProgressBar"
+
 # mouse
 var click_position = Vector2()
 var target_position = Vector2()
@@ -38,62 +41,70 @@ func _process(delta: float) -> void:
 		4:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_normal.png")
 	
-func _physics_process(_delta):
-	if playerMove and not isUsing:
-		var moved = false
+	# correr
+	if playerMove:
+		if Input.is_action_pressed("key_sprint"):
+			if progress.value > 40:
+				isRunning = true
+		else:
+			isRunning = false
 
-		# Movimento por clique do mouse
+	if progress.value == 0:
+		isRunning = false
+
+	if isRunning:
+		progress.value -= 0.4
+		Main.fade(progress, 0.7, Color.WHITE)
+		playerSpeed = 500
+		playerAnim.speed_scale = 1.2
+	else:
+		Main.fade(progress, 0.7, Color.TRANSPARENT)
+		playerSpeed = 275
+		playerAnim.speed_scale = 1
+	
+func _physics_process(delta):
+	if not playerMove or isUsing:
+		return
+
+	var moved = false
+	var target_vel = Vector2.ZERO
+
+	if Main.is_mouse:
+		# Movimento por clique
 		if Input.is_action_just_pressed("left_mouse"):
 			if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
 				click_position = get_global_mouse_position()
 				hasClicked = true
 
-		if hasClicked and global_position.distance_to(click_position) > 3:
-			var direction = (click_position - global_position).normalized()
-			velocity = direction * playerSpeed
-			moved = true
-			
-			if !mouse_location.visible:
+		if hasClicked:
+			if global_position.distance_to(click_position) > 3:
+				var dir = (click_position - global_position).normalized()
+				target_vel = dir * playerSpeed
+				moved = true
 				mouse_location.visible = true
-			
-			mouse_location.position = mouse_location.get_parent().to_local(click_position)
-
-			# Flip do personagem baseado na direção
-			playerSprite.flip_h = direction.x < 0
-		else:
-			mouse_location.visible = false
-			
-			if not Input.is_anything_pressed():
-				velocity = Vector2.ZERO
-
-		# Movimento por teclado (opcional junto com o mouse)
-		var input_dir = Input.get_vector(Main.key_left, Main.key_right, Main.key_up, Main.key_down)
+				mouse_location.position = mouse_location.get_parent().to_local(click_position)
+				playerSprite.flip_h = dir.x < 0
+			else:
+				hasClicked = false
+				mouse_location.visible = false
+	else:
+		# Movimento por teclado (sobrescreve o clique se pressionado)
+		var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
 		if input_dir != Vector2.ZERO:
-			velocity.x = move_toward(velocity.x, playerSpeed * input_dir.x, playerSpeed)
+			target_vel.x = playerSpeed * input_dir.x
 			if not sideMove:
-				velocity.y = move_toward(velocity.y, playerSpeed * input_dir.y, playerSpeed)
+				target_vel.y = playerSpeed * input_dir.y
 			moved = true
+			playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
 
-			if input_dir.x != 0:
-				playerSprite.flip_h = input_dir.x < 0
-		else:
-			if not moved:
-				velocity.x = move_toward(velocity.x, 0, playerSpeed)
-				if not sideMove:
-					velocity.y = move_toward(velocity.y, 0, playerSpeed)
+	# Aceleração suave
+	velocity = velocity.move_toward(target_vel, playerSpeed * delta * 6)
 
-		# Câmera
-		var current_scene = get_tree().current_scene.name
-		if current_scene != "menu_scene":
-			playerCamera.make_current()
-		else:
-			playerCamera.enabled = false
-			velocity.y = 0
+	# Animação
+	playerAnim.play("run" if moved else "idle")
 
-		# Animação
-		if moved:
-			playerAnim.play("run")
-		else:
-			playerAnim.play("idle")
+	move_and_slide()
 
-		move_and_slide()
+func _on_timer_timeout() -> void:
+	if !isRunning:
+		progress.value += 0.4

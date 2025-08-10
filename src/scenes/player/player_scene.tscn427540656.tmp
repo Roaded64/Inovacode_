@@ -121,7 +121,6 @@ _data = {
 y_sort_enabled = true
 
 [node name="mouse_location" type="AnimatedSprite2D" parent="."]
-physics_interpolation_mode = 1
 visible = false
 position = Vector2(0, -8)
 scale = Vector2(3, 3)
@@ -133,6 +132,7 @@ frame_progress = 0.00207504
 scale = Vector2(3, 3)
 collision_layer = 2
 script = ExtResource("1_iq70v")
+sideMove = null
 
 [node name="player_shadow" type="Sprite2D" parent="player"]
 position = Vector2(0, 7)
@@ -166,20 +166,17 @@ position_smoothing_speed = 20.0
 [node name="hud" type="CanvasLayer" parent="."]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="hud"]
-modulate = Color(1, 1, 1, 0)
-offset_left = 544.0
-offset_top = 631.0
-offset_right = 610.0
-offset_bottom = 642.0
+offset_left = 608.0
+offset_top = 544.0
+offset_right = 672.0
+offset_bottom = 555.0
 scale = Vector2(3, 3)
 max_value = 60.0
 step = 0.4
-value = 45.2
+value = 44.8
 texture_under = ExtResource("6_3evf8")
 texture_progress = ExtResource("7_gsb0w")
 
 [node name="Timer" type="Timer" parent="hud"]
 wait_time = 0.025
 autostart = true
-
-[connection signal="timeout" from="hud/Timer" to="player" method="_on_timer_timeout"]

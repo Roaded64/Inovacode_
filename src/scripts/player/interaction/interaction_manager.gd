@@ -33,7 +33,7 @@ func _sort_by_distance(area1, area2):
 	return area1_player < area2_player
 
 func _input(event):
-	if event.is_action_pressed(Main.key_interact):
+	if event.is_action_pressed("key_interact"):
 		if active_areas.size() > 0:
 			can_interact = false
 			thing.hide()

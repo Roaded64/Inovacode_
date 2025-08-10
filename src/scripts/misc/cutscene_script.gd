@@ -39,10 +39,10 @@ func show_phrases() -> void:
 	call_deferred("_show_phrases_coroutine")
 
 func _frases() -> void:
-	Main.fade_out($logo, 15, Color.TRANSPARENT)
+	Main.fade($logo, 15, Color.TRANSPARENT)
 	
 	$Cutscene_HUD/RichTextLabel.visible = true
-	Main.fade_in($Cutscene_HUD/RichTextLabel, 3)
+	Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.WHITE)
 	
 	await get_tree().create_timer(4)
 	
@@ -50,4 +50,4 @@ func _frases() -> void:
 		label.bbcode_text = phrase
 		await get_tree().create_timer(4).timeout
 		
-	await Main.fade_out($Cutscene_HUD/RichTextLabel, 3, Color.TRANSPARENT)
+	await Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.TRANSPARENT)

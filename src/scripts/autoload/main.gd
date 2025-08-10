@@ -2,11 +2,8 @@ extends Node
 
 var fullscreen:bool
 
-var key_left = "key_left"
-var key_right = "key_right"
-var key_up = "key_up"
-var key_down = "key_down"
-var key_interact = "key_interact"
+# controles
+var is_mouse = false
 
 var emotion = 1
 
@@ -21,17 +18,9 @@ func _process(_delta):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	
 	if Input.is_key_pressed(KEY_F1):
-		key_left = "key_left"
-		key_right = "key_right"
-		key_up = "key_up"
-		key_down = "key_down"
-		key_interact = "key_interact"
+		is_mouse = false
 	elif Input.is_key_pressed(KEY_F2):
-		key_left = "key_left2"
-		key_right = "key_right2"
-		key_up = "key_up2"
-		key_down = "key_down2"
-		key_interact = "key_interact2"
+		is_mouse = true
 
 	if Input.is_key_pressed(KEY_1):
 		emotion = 1
@@ -42,12 +31,7 @@ func _process(_delta):
 	elif Input.is_key_pressed(KEY_4):
 		emotion = 4
 
-func fade_in(node, fade_duration):
-	var fade_tween
-	fade_tween = get_tree().create_tween()
-	fade_tween.tween_property(node, "modulate", Color.WHITE, fade_duration)
-
-func fade_out(node, fade_duration, color):
+func fade(node, fade_duration, color):
 	if color == null: color = Color.BLACK
 	var fade_tween
 	fade_tween = get_tree().create_tween()
