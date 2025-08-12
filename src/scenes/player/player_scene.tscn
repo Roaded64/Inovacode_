@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bifndl8cdqn4c"]
+[gd_scene load_steps=25 format=3 uid="uid://bifndl8cdqn4c"]
 
 [ext_resource type="Texture2D" uid="uid://3sfoksvem755" path="res://assets/images/player/mouse_location.png" id="1_b36rf"]
 [ext_resource type="Script" uid="uid://m3ydx5aiyesq" path="res://src/scripts/player/player_script.gd" id="1_iq70v"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://emq3xvhyfy4y" path="res://assets/images/player/dust_particle.png" id="4_bq8jg"]
 [ext_resource type="Texture2D" uid="uid://bjkupog4r2wdk" path="res://assets/images/player/stamina_under.png" id="6_3evf8"]
 [ext_resource type="Texture2D" uid="uid://22owapxtp6qx" path="res://assets/images/player/stamina_progress.png" id="7_gsb0w"]
+[ext_resource type="Texture2D" uid="uid://bhxvxflu02g3" path="res://assets/images/player/hud/mission_menu.png" id="8_gsb0w"]
+[ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="9_srqn0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsb0w"]
 atlas = ExtResource("1_b36rf")
@@ -117,6 +119,43 @@ _data = {
 &"run": SubResource("Animation_3evf8")
 }
 
+[sub_resource type="Animation" id="Animation_gsb0w"]
+resource_name = "popup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(6, 6), Vector2(6.1, 6.1), Vector2(6, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_srqn0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4jkp"]
+_data = {
+&"RESET": SubResource("Animation_srqn0"),
+&"popup": SubResource("Animation_gsb0w")
+}
+
 [node name="player_scene" type="Node2D"]
 y_sort_enabled = true
 
@@ -181,5 +220,26 @@ texture_progress = ExtResource("7_gsb0w")
 [node name="Timer" type="Timer" parent="hud"]
 wait_time = 0.025
 autostart = true
+
+[node name="mission_menu" type="Sprite2D" parent="hud"]
+position = Vector2(641, 340)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("8_gsb0w")
+
+[node name="clique" type="Label" parent="hud/mission_menu"]
+offset_left = -26.3334
+offset_top = 47.3333
+offset_right = 282.667
+offset_bottom = 63.3333
+scale = Vector2(0.17, 0.17)
+theme_override_fonts/font = ExtResource("9_srqn0")
+text = "Clique \"ESC\" novamente para abrir essa tela"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hud/mission_menu"]
+libraries = {
+&"": SubResource("AnimationLibrary_k4jkp")
+}
 
 [connection signal="timeout" from="hud/Timer" to="player" method="_on_timer_timeout"]

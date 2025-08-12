@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 var playerSpeed = 275
@@ -26,6 +25,10 @@ var target_position = Vector2()
 var hasClicked = false
 
 @onready var mouse_location = $"../mouse_location"
+
+# mission menu
+@onready var mm = $"../hud/mission_menu/AnimationPlayer"
+var is_mission = false
 
 func _ready() -> void:
 	pass
@@ -62,6 +65,16 @@ func _process(delta: float) -> void:
 		playerSpeed = 275
 		playerAnim.speed_scale = 1
 	
+	# mission menu
+	if Input.is_action_just_pressed("key_mission"):
+		if !mm.is_playing():
+			is_mission = !is_mission
+			
+			if is_mission:
+				mm.play("popup")
+			else:
+				mm.play_backwards("popup")
+	
 func _physics_process(delta):
 	if not playerMove or isUsing:
 		return
@@ -97,7 +110,7 @@ func _physics_process(delta):
 			moved = true
 			playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
 
-	# Aceleração suave
+	# Aceleração/desaceleração rápida (sem deslizamento)
 	velocity = velocity.move_toward(target_vel, playerSpeed * delta * 6)
 
 	# Animação
