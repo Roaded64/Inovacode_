@@ -43,6 +43,9 @@ func _process(delta: float) -> void:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_mid.png")
 		4:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_normal.png")
+		5: # chefe
+			playerSprite.texture = load("res://assets/images/player/chefe/chefe_sheet.png")
+			playerSprite.offset.y = -5
 	
 	# correr
 	if playerMove:
@@ -67,13 +70,7 @@ func _process(delta: float) -> void:
 	
 	# mission menu
 	if Input.is_action_just_pressed("key_mission"):
-		if !mm.is_playing():
-			is_mission = !is_mission
-			
-			if is_mission:
-				mm.play("popup")
-			else:
-				mm.play_backwards("popup")
+		_popup()
 	
 func _physics_process(delta):
 	if not playerMove or isUsing:
@@ -121,3 +118,12 @@ func _physics_process(delta):
 func _on_timer_timeout() -> void:
 	if !isRunning:
 		progress.value += 0.4
+
+func _popup():
+	if !mm.is_playing():
+		is_mission = !is_mission
+		
+		if is_mission:
+			mm.play("popup")
+		else:
+			mm.play_backwards("popup")

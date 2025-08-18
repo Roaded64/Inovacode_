@@ -24,6 +24,7 @@ Main="*res://src/scripts/autoload/main.gd"
 InteractionManager="*res://src/scenes/player/interaction/interaction_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PrincipalHud="*res://src/scenes/principal_HUD.tscn"
+Transition="*res://src/scenes/autoload/transition.tscn"
 
 [dialogic]
 

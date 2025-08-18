@@ -119,6 +119,21 @@ _data = {
 &"run": SubResource("Animation_3evf8")
 }
 
+[sub_resource type="Animation" id="Animation_srqn0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_gsb0w"]
 resource_name = "popup"
 length = 0.5
@@ -133,21 +148,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1e-05, 1e-05), Vector2(6, 6), Vector2(6.1, 6.1), Vector2(6, 6)]
-}
-
-[sub_resource type="Animation" id="Animation_srqn0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k4jkp"]
@@ -226,13 +226,17 @@ position = Vector2(641, 340)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("8_gsb0w")
 
-[node name="clique" type="Label" parent="hud/mission_menu"]
-offset_left = -26.3334
-offset_top = 47.3333
-offset_right = 282.667
-offset_bottom = 63.3333
-scale = Vector2(0.17, 0.17)
+[node name="Node2D" type="Node2D" parent="hud/mission_menu"]
+scale = Vector2(0.2, 0.2)
+
+[node name="clique" type="Label" parent="hud/mission_menu/Node2D"]
+offset_left = -154.167
+offset_top = 190.0
+offset_right = 154.834
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
 theme_override_fonts/font = ExtResource("9_srqn0")
+theme_override_font_sizes/font_size = 16
 text = "Clique \"ESC\" novamente para abrir essa tela"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

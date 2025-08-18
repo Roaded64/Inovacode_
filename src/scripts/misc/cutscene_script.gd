@@ -11,7 +11,7 @@ var phrases = [
 	"Você encontrou dificuldades pelas ruas...",
 	"Foram noites que você passou acordado...",
 	"E só houve uma saída...",
-	"Você pediu uma inovação para a DES Corp, ela irá te ajudar."
+	"Você pediu uma inovação para a DES Corp, ela irá te ajudar..."
 ]
 
 @onready var label = $Cutscene_HUD/RichTextLabel
@@ -44,10 +44,17 @@ func _frases() -> void:
 	$Cutscene_HUD/RichTextLabel.visible = true
 	Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.WHITE)
 	
-	await get_tree().create_timer(4)
-	
 	for phrase in phrases:
 		label.bbcode_text = phrase
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(2.5).timeout
 		
 	await Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.TRANSPARENT)
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	match anim_name:
+		"cutscene":
+			$camera_anim/AnimationPlayer.play("player")
+		"player":
+			Transition.scene("res://src/scenes/switch_keys.tscn")
+		

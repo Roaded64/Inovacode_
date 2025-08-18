@@ -5,7 +5,7 @@ var fullscreen:bool
 # controles
 var is_mouse = false
 
-var emotion = 1
+var emotion = 5
 
 func _process(_delta):
 	# pra deixar tela cheia XD

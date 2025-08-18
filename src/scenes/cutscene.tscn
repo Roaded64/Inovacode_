@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://com6tnd38bwq3"]
+[gd_scene load_steps=46 format=3 uid="uid://com6tnd38bwq3"]
 
 [ext_resource type="Script" uid="uid://dv5ba3mgimest" path="res://src/scripts/misc/cutscene_script.gd" id="1_6d3p0"]
 [ext_resource type="Texture2D" uid="uid://c07uyjitqjhqg" path="res://assets/images/cutscene/casa_sprite.png" id="1_fmnw8"]
@@ -12,7 +12,6 @@
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="6_l8qc4"]
 [ext_resource type="PackedScene" uid="uid://cmrx0is8p500d" path="res://src/scenes/principal_HUD.tscn" id="7_l8qc4"]
 [ext_resource type="Texture2D" uid="uid://dlomjbv1ajiou" path="res://assets/images/logo.png" id="8_tp4d3"]
-[ext_resource type="Texture2D" uid="uid://calf0nlf3g2nn" path="res://assets/images/cutscene/cloud.png" id="12_q84q5"]
 
 [sub_resource type="Animation" id="Animation_tp4d3"]
 length = 0.001
@@ -40,10 +39,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cutscene_sprites/player_sprite:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cutscene_sprites/player_sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 567)]
+}
 
 [sub_resource type="Animation" id="Animation_l8qc4"]
 resource_name = "cutscene"
-length = 35.0
+length = 26.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +74,7 @@ tracks/0/path = NodePath("camera_anim/Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 34, 35),
+"times": PackedFloat32Array(0, 2.5, 25.5, 26.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(640, -360), Vector2(640, -360), Vector2(640, 350), Vector2(640, 360)]
@@ -63,16 +86,45 @@ tracks/1/path = NodePath("CanvasModulate:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 2.5, 25.5, 26.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.513233, 0.513233, 0.513233, 1), Color(0.513233, 0.513233, 0.513233, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q84q5"]
+resource_name = "player"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_sprites/player_sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle_front", &"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cutscene_sprites/player_sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.513233, 0.513233, 0.513233, 1)]
+"values": [Vector2(640, 567), Vector2(640, 737)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tp4d3"]
 _data = {
 &"RESET": SubResource("Animation_tp4d3"),
-&"cutscene": SubResource("Animation_l8qc4")
+&"cutscene": SubResource("Animation_l8qc4"),
+&"player": SubResource("Animation_q84q5")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q84q5"]
@@ -216,26 +268,78 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_roflg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_skjp4"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84on4"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jisqn"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gdxp"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ftt"]
 atlas = ExtResource("2_i23ar")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_skjp4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_27nk1"]
 atlas = ExtResource("2_i23ar")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acd5v"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a4ra"]
+atlas = ExtResource("2_i23ar")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_84on4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_roflg")
+"texture": SubResource("AtlasTexture_skjp4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_skjp4")
+"texture": SubResource("AtlasTexture_84on4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jisqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gdxp")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ftt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27nk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acd5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a4ra")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
 }]
 
 [node name="cutscene" type="Node2D"]
@@ -263,12 +367,12 @@ metadata/_custom_type_script = "uid://duk3kh3m2v3iu"
 
 [node name="bg_city" type="Sprite2D" parent="cutscene_sprites"]
 modulate = Color(0.492237, 0.492237, 0.492237, 1)
-position = Vector2(639, 495)
+position = Vector2(639, 508)
 scale = Vector2(4, 4)
 texture = ExtResource("3_2xyr5")
 
 [node name="fg_city" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(640, 506)
+position = Vector2(640, 517)
 scale = Vector2(4, 4)
 texture = ExtResource("3_p14sh")
 
@@ -280,20 +384,22 @@ autoplay = "default"
 frame_progress = 0.642638
 
 [node name="casa_sprite" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(640, 467)
+position = Vector2(640, 472)
 scale = Vector2(4, 4)
 texture = ExtResource("1_fmnw8")
 
-[node name="player_shadow" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(640, 595)
+[node name="player_sprite" type="AnimatedSprite2D" parent="cutscene_sprites"]
+z_index = 1
+z_as_relative = false
+position = Vector2(640, 567)
 scale = Vector2(4, 4)
-texture = ExtResource("2_lj3ey")
-
-[node name="player_sprite" type="AnimatedSprite2D" parent="cutscene_sprites/player_shadow"]
-position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_84on4")
 autoplay = "default"
-frame_progress = 0.239001
+
+[node name="player_shadow" type="Sprite2D" parent="cutscene_sprites/player_sprite"]
+z_as_relative = false
+position = Vector2(0, 7)
+texture = ExtResource("2_lj3ey")
 
 [node name="logo" type="Sprite2D" parent="."]
 texture_filter = 4
@@ -338,7 +444,4 @@ offset_right = 1280.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 0.713726)
 
-[node name="Cloud" type="Sprite2D" parent="."]
-position = Vector2(112, 192)
-scale = Vector2(4, 4)
-texture = ExtResource("12_q84q5")
+[connection signal="animation_finished" from="camera_anim/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
