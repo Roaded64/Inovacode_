@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://com6tnd38bwq3"]
+[gd_scene load_steps=47 format=3 uid="uid://com6tnd38bwq3"]
 
 [ext_resource type="Script" uid="uid://dv5ba3mgimest" path="res://src/scripts/misc/cutscene_script.gd" id="1_6d3p0"]
 [ext_resource type="Texture2D" uid="uid://c07uyjitqjhqg" path="res://assets/images/cutscene/casa_sprite.png" id="1_fmnw8"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="6_l8qc4"]
 [ext_resource type="PackedScene" uid="uid://cmrx0is8p500d" path="res://src/scenes/principal_HUD.tscn" id="7_l8qc4"]
 [ext_resource type="Texture2D" uid="uid://dlomjbv1ajiou" path="res://assets/images/logo.png" id="8_tp4d3"]
+[ext_resource type="AudioStream" uid="uid://cllnybwunew2c" path="res://assets/music/cutscene_song.wav" id="13_cg4d1"]
 
 [sub_resource type="Animation" id="Animation_tp4d3"]
 length = 0.001
@@ -443,5 +444,8 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 40.0
 color = Color(0, 0, 0, 0.713726)
+
+[node name="song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_cg4d1")
 
 [connection signal="animation_finished" from="camera_anim/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

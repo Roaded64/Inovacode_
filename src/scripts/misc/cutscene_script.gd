@@ -33,6 +33,7 @@ func _input(event: InputEvent) -> void:
 		$HUD.visible = true
 		$HUD/AnimationPlayer.play("appear_anim")
 		$camera_anim/AnimationPlayer.play("cutscene")
+		$song.play()
 		_frases()
 
 func show_phrases() -> void:
@@ -46,7 +47,7 @@ func _frases() -> void:
 	
 	for phrase in phrases:
 		label.bbcode_text = phrase
-		await get_tree().create_timer(2.5).timeout
+		await get_tree().create_timer(2.82).timeout
 		
 	await Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.TRANSPARENT)
 
