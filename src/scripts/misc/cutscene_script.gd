@@ -19,8 +19,11 @@ var phrases = [
 var base_y: float
 
 func _ready() -> void:
-	$HUD.visible = false
+	Main.fade($Cutscene_HUD/ColorRect, 4, Color.TRANSPARENT)
 	base_y = $logo.position.y
+	
+	PrincipalHud.visible = false
+	$Cutscene_HUD/AnimationPlayer.play("dis")
 
 func _process(delta: float) -> void:
 	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 10  # ajustável
@@ -29,12 +32,12 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and !is_playing:
-		is_playing = true
-		$HUD.visible = true
-		$HUD/AnimationPlayer.play("appear_anim")
-		$camera_anim/AnimationPlayer.play("cutscene")
-		$song.play()
-		_frases()
+		if not Input.is_action_pressed("key_fullscreen"):
+			is_playing = true
+			$Cutscene_HUD/AnimationPlayer.play("appear_anim")
+			$camera_anim/AnimationPlayer.play("cutscene")
+			$song.play()
+			_frases()
 
 func show_phrases() -> void:
 	call_deferred("_show_phrases_coroutine")
@@ -47,9 +50,9 @@ func _frases() -> void:
 	
 	for phrase in phrases:
 		label.bbcode_text = phrase
-		await get_tree().create_timer(2.82).timeout
+		await get_tree().create_timer(3).timeout
 		
-	await Main.fade($Cutscene_HUD/RichTextLabel, 3, Color.TRANSPARENT)
+	await Main.fade($Cutscene_HUD/RichTextLabel, 2, Color.TRANSPARENT)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -58,4 +61,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			$camera_anim/AnimationPlayer.play("player")
 		"player":
 			Transition.scene("res://src/scenes/switch_keys.tscn")
-		
+			PrincipalHud.visible = true

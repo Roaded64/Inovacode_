@@ -24,7 +24,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 664)]
+"values": [Vector2(0, 671)]
 }
 
 [sub_resource type="Animation" id="Animation_epnob"]
@@ -52,41 +52,41 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1.9333, 2.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 720), Vector2(0, 674), Vector2(0, 664)]
+"values": [Vector2(0, 720), Vector2(0, 674), Vector2(0, 671)]
 }
 
-[sub_resource type="Animation" id="Animation_0bptn"]
+[sub_resource type="Animation" id="Animation_cg4d1"]
 resource_name = "dis"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("DownBar:position")
+tracks/0/path = NodePath("TopBar:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 736)]
+"values": [Vector2(0, -49)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TopBar:position")
+tracks/1/path = NodePath("DownBar:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -88)]
+"values": [Vector2(0, 720)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0bptn"]
 _data = {
 &"RESET": SubResource("Animation_jk27o"),
 &"appear_anim": SubResource("Animation_epnob"),
-&"dis": SubResource("Animation_0bptn")
+&"dis": SubResource("Animation_cg4d1")
 }
 
 [node name="HUD" type="CanvasLayer"]
@@ -95,12 +95,14 @@ _data = {
 offset_right = 1280.0
 offset_bottom = 49.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="DownBar" type="ColorRect" parent="."]
 offset_top = 671.0
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

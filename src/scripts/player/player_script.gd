@@ -72,6 +72,12 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("key_mission"):
 		_popup()
 	
+	# camera
+	#if .is_cutscene:
+		#layerCamera.enabled = false
+	#else:
+		#playerCamera.enabled = true
+	
 func _physics_process(delta):
 	if not playerMove or isUsing:
 		return

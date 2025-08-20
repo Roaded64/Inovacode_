@@ -1,8 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwhqu0gjve8e8"]
+[gd_scene load_steps=6 format=3 uid="uid://bwhqu0gjve8e8"]
 
+[ext_resource type="Script" uid="uid://3y68shyv0qyy" path="res://src/scripts/misc/switch_keys.gd" id="1_44f3m"]
 [ext_resource type="PackedScene" uid="uid://bifndl8cdqn4c" path="res://src/scenes/player/player_scene.tscn" id="1_pwrv0"]
 
+[sub_resource type="Animation" id="Animation_t0nhd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, 552)]
+}
+
+[sub_resource type="Animation" id="Animation_44f3m"]
+resource_name = "run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, 552), Vector2(120, 552)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3aeem"]
+_data = {
+&"RESET": SubResource("Animation_t0nhd"),
+&"run": SubResource("Animation_44f3m")
+}
+
 [node name="switch_keys" type="Node2D"]
+script = ExtResource("1_44f3m")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
 
 [node name="player_scene" parent="." instance=ExtResource("1_pwrv0")]
-position = Vector2(625, 375)
+position = Vector2(-32, 552)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player_scene"]
+libraries = {
+&"": SubResource("AnimationLibrary_3aeem")
+}
+autoplay = "run"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)

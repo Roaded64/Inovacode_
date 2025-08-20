@@ -28,14 +28,78 @@ Transition="*res://src/scenes/autoload/transition.tscn"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Cadeirante": "res://assets/dialogic/characters/Cadeirante.dch",
+"Cego": "res://assets/dialogic/characters/Cego.dch",
+"Chefe": "res://assets/dialogic/characters/Chefe.dch",
+"Desconhecido": "res://assets/dialogic/characters/Desconhecido.dch",
+"Dono Loja": "res://assets/dialogic/characters/Dono Loja.dch",
+"Jornalista": "res://assets/dialogic/characters/Jornalista.dch",
+"Maluco": "res://assets/dialogic/characters/Maluco.dch",
+"Misterioso": "res://assets/dialogic/characters/Misterioso.dch",
+"Mudo": "res://assets/dialogic/characters/Mudo.dch",
+"Mãe": "res://assets/dialogic/characters/Mãe.dch",
+"Negacionista": "res://assets/dialogic/characters/Negacionista.dch",
+"pessoa01": "res://assets/dialogic/characters/pessoa01.dch",
+"pessoa02": "res://assets/dialogic/characters/pessoa02.dch",
+"pessoa03": "res://assets/dialogic/characters/pessoa03.dch",
+"pessoa04": "res://assets/dialogic/characters/pessoa04.dch"
+}
 directories/dtl_directory={
-"teste": "res://assets/timelines/teste.dtl"
+"cidade_cadeirante": "res://assets/dialogic/timelines/cidade/cidade_cadeirante.dtl",
+"cidade_cego": "res://assets/dialogic/timelines/cidade/cidade_cego.dtl",
+"cidade_donoloja": "res://assets/dialogic/timelines/cidade/cidade_donoloja.dtl",
+"cidade_jornalista": "res://assets/dialogic/timelines/cidade/cidade_jornalista.dtl",
+"cidade_lixeira": "res://assets/dialogic/timelines/cidade/cidade_lixeira.dtl",
+"cidade_mae": "res://assets/dialogic/timelines/cidade/cidade_mae.dtl",
+"cidade_maluco": "res://assets/dialogic/timelines/cidade/cidade_maluco.dtl",
+"cidade_mudo": "res://assets/dialogic/timelines/cidade/cidade_mudo.dtl",
+"cidade_negacionista": "res://assets/dialogic/timelines/cidade/cidade_negacionista.dtl",
+"cidade_pessoa01": "res://assets/dialogic/timelines/cidade/cidade_pessoa01.dtl",
+"cidade_pessoa02": "res://assets/dialogic/timelines/cidade/cidade_pessoa02.dtl",
+"cidade_pessoa03": "res://assets/dialogic/timelines/cidade/cidade_pessoa03.dtl",
+"cidade_pessoa04": "res://assets/dialogic/timelines/cidade/cidade_pessoa04.dtl",
+"cidade_saida_boa": "res://assets/dialogic/timelines/cidade/cidade_saida_boa.dtl",
+"cidade_saida_ruim": "res://assets/dialogic/timelines/cidade/cidade_saida_ruim.dtl"
 }
 layout/style_directory={}
 glossary/default_case_sensitive=true
 layout/style_list=[]
-layout/default_style="Default"
+layout/default_style=""
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.07
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+audio/channel_defaults={
+"": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": false,
+"volume": 0.0
+},
+"music": {
+"audio_bus": "",
+"fade_length": 0.0,
+"loop": true,
+"volume": 0.0
+}
+}
+variables={}
 
 [display]
 
