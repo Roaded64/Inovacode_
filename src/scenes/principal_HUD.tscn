@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmrx0is8p500d"]
+[gd_scene load_steps=9 format=3 uid="uid://cmrx0is8p500d"]
 
+[ext_resource type="Script" uid="uid://cocr5o1pcmbby" path="res://src/scripts/principal_hud.gd" id="1_35h6e"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="1_jk27o"]
 [ext_resource type="Texture2D" uid="uid://b08u7d4iy06rj" path="res://assets/images/player/hud/time_under.png" id="2_rosue"]
 [ext_resource type="Texture2D" uid="uid://7dbbe5ns7h6g" path="res://assets/images/player/hud/time_progress.png" id="3_35h6e"]
@@ -94,6 +95,7 @@ _data = {
 }
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_35h6e")
 
 [node name="TopBar" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -113,7 +115,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_0bptn")
 }
 
-[node name="pressionetecla2" type="Label" parent="."]
+[node name="timebar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tempo_restante" type="Label" parent="timebar"]
 offset_left = 576.0
 offset_top = 7.0
 offset_right = 704.0
@@ -123,7 +131,7 @@ theme_override_font_sizes/font_size = 16
 text = "TEMPO RESTANTE:"
 horizontal_alignment = 1
 
-[node name="pressionetecla3" type="Label" parent="."]
+[node name="final" type="Label" parent="timebar"]
 offset_left = 790.0
 offset_top = 24.0
 offset_right = 830.0
@@ -133,7 +141,7 @@ theme_override_font_sizes/font_size = 16
 text = "01:30"
 horizontal_alignment = 1
 
-[node name="pressionetecla4" type="Label" parent="."]
+[node name="inicial" type="Label" parent="timebar"]
 offset_left = 450.0
 offset_top = 24.0
 offset_right = 490.0
@@ -143,12 +151,17 @@ theme_override_font_sizes/font_size = 16
 text = "00:00"
 horizontal_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="timebar"]
 offset_left = 496.0
 offset_top = 24.0
 offset_right = 664.0
 offset_bottom = 32.0
 scale = Vector2(1.715, 1.715)
-value = 100.0
+max_value = 130.0
+value = 130.0
 texture_under = ExtResource("2_rosue")
 texture_progress = ExtResource("3_35h6e")
+
+[node name="Timer" type="Timer" parent="timebar/TextureProgressBar"]
+
+[connection signal="timeout" from="timebar/TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

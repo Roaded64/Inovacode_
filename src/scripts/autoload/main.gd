@@ -1,6 +1,8 @@
 extends Node
 
 var fullscreen:bool
+var cur_scene
+var is_cutscene = false
 
 # controles
 var is_mouse = false

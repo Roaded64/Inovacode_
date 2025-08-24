@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yqr8x5tt23w"
-path="res://.godot/imported/cicle.jpg-dff2ba38f80213dcfaebd3bfdf05f5da.ctex"
+uid="uid://budlpm88wxp1l"
+path="res://.godot/imported/unknown_npcs.png-6ca7842d476c1c6a911eac4a69753423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/cicle.jpg"
-dest_files=["res://.godot/imported/cicle.jpg-dff2ba38f80213dcfaebd3bfdf05f5da.ctex"]
+source_file="res://assets/images/cidade/npcs/unknown_npcs.png"
+dest_files=["res://.godot/imported/unknown_npcs.png-6ca7842d476c1c6a911eac4a69753423.ctex"]
 
 [params]
 
