@@ -25,10 +25,14 @@ var is_mission = false
 
 var is_blocked = false
 
+
+
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	_use_camera()
+	
 	match Main.emotion:
 		1:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_depre.png")
@@ -64,7 +68,7 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("key_mission"):
 		_popup()
-
+	
 func _physics_process(delta: float) -> void:
 	if not playerMove or isUsing:
 		return
@@ -119,3 +123,19 @@ func _popup():
 			mm.play("popup")
 		else:
 			mm.play_backwards("popup")
+
+func _use_camera():
+	match Main.cur_scene:
+		"cidade_scene":
+			playerCamera.limit_left = 0
+			playerCamera.limit_right = 1681
+			playerCamera.limit_top = -40
+			playerCamera.limit_bottom = 1430
+			#playerCamera.enabled = false
+		"switch_keys":
+			playerCamera.limit_left = 0
+			playerCamera.limit_right = 1280
+			playerCamera.limit_top = 0
+			playerCamera.limit_bottom = 720
+			#playerCamera.enabled = false
+	

@@ -1,6 +1,5 @@
 extends Node2D
 
-var is_cutscene
-
 func _ready() -> void:
-	is_cutscene = true
+	Main._cur_scene()
+	PrincipalHud.define_timer(10.0, '0:10', 0)

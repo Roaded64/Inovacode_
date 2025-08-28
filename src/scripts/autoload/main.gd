@@ -38,3 +38,6 @@ func fade(node, fade_duration, color):
 	var fade_tween
 	fade_tween = get_tree().create_tween()
 	fade_tween.tween_property(node, "modulate", color, fade_duration)
+
+func _cur_scene():
+	cur_scene = get_tree().current_scene.name
