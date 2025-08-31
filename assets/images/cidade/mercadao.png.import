@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cph5qch80o5vx"
-path="res://.godot/imported/loja.png-ec32c053bbfcd8ac766a6e4f298cb327.ctex"
+uid="uid://cr43iuwg64xb4"
+path="res://.godot/imported/mercadao.png-94c60dd503676484cbfcf57def54384b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cidade/loja.png"
-dest_files=["res://.godot/imported/loja.png-ec32c053bbfcd8ac766a6e4f298cb327.ctex"]
+source_file="res://assets/images/cidade/mercadao.png"
+dest_files=["res://.godot/imported/mercadao.png-94c60dd503676484cbfcf57def54384b.ctex"]
 
 [params]
 

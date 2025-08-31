@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ws86ybqb6tmk"]
+
+[ext_resource type="PackedScene" uid="uid://bifndl8cdqn4c" path="res://src/scenes/player/player_scene.tscn" id="1_tk8ga"]
+[ext_resource type="Texture2D" uid="uid://btdso13p2su0d" path="res://assets/images/misc/placeholder_interact.png" id="2_4rnsk"]
+[ext_resource type="Script" uid="uid://c3v3xlrytq7x2" path="res://src/scripts/player/interaction/interactions/example_interaction.gd" id="3_d2l6i"]
+[ext_resource type="PackedScene" uid="uid://dsxuylwhbi7ks" path="res://src/scenes/player/interaction/interaction_area.tscn" id="4_nlg4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2a7o"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le064"]
+size = Vector2(32, 32)
+
+[node name="menu_scene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="player_scene" parent="." instance=ExtResource("1_tk8ga")]
+position = Vector2(640, 624)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(880, 631)
+scale = Vector2(3, 3)
+texture = ExtResource("2_4rnsk")
+script = ExtResource("3_d2l6i")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-3.05176e-05, 0)
+shape = SubResource("RectangleShape2D_r2a7o")
+
+[node name="InteractionArea" parent="Sprite2D" instance=ExtResource("4_nlg4d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(-3.05176e-05, 0.333336)
+shape = SubResource("RectangleShape2D_le064")

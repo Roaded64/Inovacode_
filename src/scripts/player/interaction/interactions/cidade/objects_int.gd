@@ -20,7 +20,8 @@ func _ready() -> void:
 func _interact():
 	match obj_id:
 		1:
-			Dialogic.start("cidade_lixeira")
+			if !Dialogic.is_playing:
+				Dialogic.start("cidade_lixeira")
 		2:
 			cidade_map.position.x = 1800
 			cidade_map.position.y = 1600

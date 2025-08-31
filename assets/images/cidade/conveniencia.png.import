@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0f0tjskma6rn"
-path="res://.godot/imported/lojinha.png-a905c4334038b237c36051b13e56ad0a.ctex"
+uid="uid://3sxr6gtf3hdh"
+path="res://.godot/imported/conveniencia.png-1f0e15b54b148925a0e8b8bfad8cc2ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cidade/lojinha.png"
-dest_files=["res://.godot/imported/lojinha.png-a905c4334038b237c36051b13e56ad0a.ctex"]
+source_file="res://assets/images/cidade/conveniencia.png"
+dest_files=["res://.godot/imported/conveniencia.png-1f0e15b54b148925a0e8b8bfad8cc2ca.ctex"]
 
 [params]
 

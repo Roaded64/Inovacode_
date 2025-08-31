@@ -8,10 +8,11 @@ func _process(delta: float) -> void:
 		timer.stop()
 			
 		match Main.cur_scene:
-			"cidade_scene":
-				Transition.scene("res://src/scenes/cutscene.tscn")
 			"switch_keys":
 				Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")
+				progress.value = 1
+			"cidade_scene":
+				Transition.scene("res://src/scenes/cutscene.tscn")
 
 func define_timer(value: float, label, step):
 	timer.start()

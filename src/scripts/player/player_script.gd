@@ -24,11 +24,8 @@ var hasClicked = false
 var is_mission = false
 
 var is_blocked = false
+var stuck_time = 0.0 # tempo preso para parar o movimento automático
 
-
-
-func _ready() -> void:
-	pass
 
 func _process(delta: float) -> void:
 	_use_camera()
@@ -36,14 +33,21 @@ func _process(delta: float) -> void:
 	match Main.emotion:
 		1:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_depre.png")
+			playerSprite.offset.y = -5
 		2:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_sad.png")
+			playerSprite.offset.y = -5
 		3:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_mid.png")
+			playerSprite.offset.y = -5
 		4:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_normal.png")
+			playerSprite.offset.y = 0
 		5:
 			playerSprite.texture = load("res://assets/images/player/chefe/chefe_sheet.png")
+			playerSprite.offset.y = -5
+		6:
+			playerSprite.texture = load("res://assets/images/switch_keys/chefe_sprite.png")
 			playerSprite.offset.y = -5
 
 	if playerMove:
@@ -69,6 +73,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("key_mission"):
 		_popup()
 	
+
 func _physics_process(delta: float) -> void:
 	if not playerMove or isUsing:
 		return
@@ -77,10 +82,12 @@ func _physics_process(delta: float) -> void:
 	var target_vel = Vector2.ZERO
 
 	if Main.is_mouse:
+		# clique do mouse
 		if Input.is_action_just_pressed("left_mouse") and !Dialogic.is_playing:
 			if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
 				click_position = get_global_mouse_position()
 				hasClicked = true
+				stuck_time = 0.0
 
 		if hasClicked:
 			if global_position.distance_to(click_position) > 3:
@@ -94,6 +101,8 @@ func _physics_process(delta: float) -> void:
 				hasClicked = false
 				mouse_location.visible = false
 	else:
+		mouse_location.visible = false
+		# movimento por teclado
 		var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
 		if input_dir != Vector2.ZERO and !Dialogic.is_playing:
 			target_vel.x = playerSpeed * input_dir.x
@@ -101,11 +110,26 @@ func _physics_process(delta: float) -> void:
 				target_vel.y = playerSpeed * input_dir.y
 			moved = true
 			playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
+		# se mexeu no teclado, some o mouse location
+		if moved:
+			hasClicked = false
+			mouse_location.visible = false
 
+	# movimentação
 	velocity = velocity.move_toward(target_vel, playerSpeed * delta * 6)
 	move_and_slide()
 
 	is_blocked = moved and velocity.length() < playerSpeed * 0.1
+
+	# se está preso usando mouse, conta o tempo
+	if Main.is_mouse and hasClicked:
+		if is_blocked:
+			stuck_time += delta
+			if stuck_time > 1.0: # ficou 1 segundo preso
+				hasClicked = false
+				mouse_location.visible = false
+		else:
+			stuck_time = 0.0
 
 	if is_blocked:
 		playerAnim.play("idle")
@@ -131,11 +155,8 @@ func _use_camera():
 			playerCamera.limit_right = 1681
 			playerCamera.limit_top = -40
 			playerCamera.limit_bottom = 1430
-			#playerCamera.enabled = false
 		"switch_keys":
 			playerCamera.limit_left = 0
-			playerCamera.limit_right = 1280
+			playerCamera.limit_right = 1067
 			playerCamera.limit_top = 0
-			playerCamera.limit_bottom = 720
-			#playerCamera.enabled = false
-	
+			playerCamera.limit_bottom = 600
