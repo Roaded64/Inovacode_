@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://bbiiq0283jj7k"]
+[gd_scene load_steps=58 format=4 uid="uid://bbiiq0283jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://by38f6mkk84em" path="res://assets/images/cidade/calçada_tileset.png" id="1_645yb"]
 [ext_resource type="Script" uid="uid://cgcxu1ducvgsd" path="res://src/scripts/gameplay/cidade_scene.gd" id="1_eroxr"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://cu53q8aq2dob0" path="res://assets/images/misc/loading_icons.png" id="23_4socy"]
 [ext_resource type="Texture2D" uid="uid://cr43iuwg64xb4" path="res://assets/images/cidade/mercadao.png" id="23_g4qie"]
 [ext_resource type="Texture2D" uid="uid://dcp0qm67pyhp2" path="res://assets/images/cidade/banca_venda.png" id="26_g4qie"]
+[ext_resource type="Texture2D" uid="uid://bcwja04fbovab" path="res://assets/images/cidade/banner.png" id="27_vsmpn"]
+[ext_resource type="Texture2D" uid="uid://dk6kxwjuxfpka" path="res://assets/images/cidade/banco.png" id="28_u75d6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n3o1"]
 texture = ExtResource("4_aydav")
@@ -130,6 +132,9 @@ size = Vector2(22, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hk50e"]
 size = Vector2(44, 51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsmpn"]
+size = Vector2(64.6666, 61.6667)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eroxr"]
 texture = ExtResource("5_5n3o1")
 0:1/animation_columns = 2
@@ -155,6 +160,16 @@ texture = ExtResource("5_5n3o1")
 [sub_resource type="TileSet" id="TileSet_d28hq"]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_eroxr")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4qie"]
+radius = 14.3333
+height = 34.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4qie"]
+size = Vector2(120.333, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heuos"]
+size = Vector2(23, 8.33333)
 
 [node name="cidade_scene" type="Node2D"]
 y_sort_enabled = true
@@ -722,6 +737,12 @@ position = Vector2(1536, 145)
 scale = Vector2(3, 3)
 texture = ExtResource("20_d28hq")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Parquinho"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Parquinho/StaticBody2D"]
+position = Vector2(-0.333313, 0.5)
+shape = SubResource("RectangleShape2D_vsmpn")
+
 [node name="npcs_tileset" type="TileMapLayer" parent="cidade_map"]
 y_sort_enabled = true
 scale = Vector2(3, 3)
@@ -773,12 +794,41 @@ position = Vector2(840, 506)
 scale = Vector2(3, 3)
 texture = ExtResource("21_vk3gu")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="MáquinaInovação"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MáquinaInovação/StaticBody2D"]
+position = Vector2(0.333333, 1.66667)
+shape = SubResource("CapsuleShape2D_g4qie")
+
 [node name="Mercadao" type="Sprite2D" parent="."]
 position = Vector2(288, 144)
 scale = Vector2(3, 3)
 texture = ExtResource("23_g4qie")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Mercadao"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mercadao/StaticBody2D"]
+position = Vector2(1.00001, 2)
+shape = SubResource("RectangleShape2D_g4qie")
+
 [node name="BancaVenda" type="Sprite2D" parent="."]
 position = Vector2(448, 624)
 scale = Vector2(3, 3)
 texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BancaVenda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BancaVenda/StaticBody2D"]
+position = Vector2(0.833313, 10.6667)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="."]
+position = Vector2(504, 640)
+scale = Vector2(3, 3)
+texture = ExtResource("27_vsmpn")
+hframes = 2
+
+[node name="Banco" type="Sprite2D" parent="."]
+position = Vector2(570, 1323)
+scale = Vector2(3, 3)
+texture = ExtResource("28_u75d6")
