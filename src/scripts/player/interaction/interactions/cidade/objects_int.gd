@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Sprite2D	
 
 @export var obj_id: int
 
@@ -10,7 +10,9 @@ extends Sprite2D
 #
 
 # cidade
+@onready var player = $"../../player_scene"
 @onready var cidade_map = $".."
+@onready var conveniencia_map = $"../../conveniencia_map"
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 
@@ -22,7 +24,16 @@ func _interact():
 		1:
 			if !Dialogic.is_playing:
 				Dialogic.start("cidade_lixeira")
-		2:
+				$"../lixeira/InteractionArea".queue_free()
+		2:		
+			Transition.play()
+			
+			await get_tree().create_timer(1.5).timeout
+			conveniencia_map.position.x = 700
+			conveniencia_map.position.y = 500
+			
+			player._position(700, 500)
+			
 			cidade_map.position.x = 1800
 			cidade_map.position.y = 1600
 		#2:

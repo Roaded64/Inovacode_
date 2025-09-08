@@ -3,22 +3,22 @@
 [ext_resource type="Script" uid="uid://d3n7hnw8gce0o" path="res://src/scripts/player/interaction/interaction_manager.gd" id="1_o33ia"]
 [ext_resource type="Texture2D" uid="uid://gvdgfpi8ebe2" path="res://assets/images/misc/interact_thing.png" id="2_hsq8i"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o33ia"]
-atlas = ExtResource("2_hsq8i")
-region = Rect2(0, 0, 7, 5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yp02j"]
 atlas = ExtResource("2_hsq8i")
-region = Rect2(7, 0, 7, 5)
+region = Rect2(0, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgr5m"]
+atlas = ExtResource("2_hsq8i")
+region = Rect2(7, 0, 7, 6)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo4ee"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o33ia")
+"texture": SubResource("AtlasTexture_yp02j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yp02j")
+"texture": SubResource("AtlasTexture_hgr5m")
 }],
 "loop": true,
 "name": &"default",
@@ -29,9 +29,8 @@ animations = [{
 script = ExtResource("1_o33ia")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = 2
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_yo4ee")
 autoplay = "default"
-frame = 1
-frame_progress = 0.495812

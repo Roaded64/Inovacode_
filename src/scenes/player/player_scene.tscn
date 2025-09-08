@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bifndl8cdqn4c"]
+[gd_scene load_steps=26 format=3 uid="uid://bifndl8cdqn4c"]
 
 [ext_resource type="Texture2D" uid="uid://3sfoksvem755" path="res://assets/images/player/mouse_location.png" id="1_b36rf"]
 [ext_resource type="Script" uid="uid://m3ydx5aiyesq" path="res://src/scripts/player/player_script.gd" id="1_iq70v"]
+[ext_resource type="Script" uid="uid://dnofewqa0ljju" path="res://src/scripts/player/player_inside.gd" id="1_k4jkp"]
 [ext_resource type="Texture2D" uid="uid://jqcty5le6g0n" path="res://assets/images/player/shadow.png" id="2_bq8jg"]
 [ext_resource type="Texture2D" uid="uid://dtqbse0y1ttfj" path="res://assets/images/player/emotions/sheet_normal.png" id="3_bq8jg"]
 [ext_resource type="Texture2D" uid="uid://emq3xvhyfy4y" path="res://assets/images/player/dust_particle.png" id="4_bq8jg"]
@@ -158,6 +159,7 @@ _data = {
 
 [node name="player_scene" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_k4jkp")
 
 [node name="mouse_location" type="AnimatedSprite2D" parent="."]
 physics_interpolation_mode = 1
@@ -200,7 +202,7 @@ libraries = {
 [node name="player_camera" type="Camera2D" parent="player"]
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position_smoothing_speed = 15.0
 
 [node name="hud" type="CanvasLayer" parent="."]
 layer = 2
@@ -208,9 +210,9 @@ layer = 2
 [node name="TextureProgressBar" type="TextureProgressBar" parent="hud"]
 modulate = Color(1, 1, 1, 0)
 offset_left = 541.0
-offset_top = 679.0
+offset_top = 639.0
 offset_right = 607.0
-offset_bottom = 690.0
+offset_bottom = 650.0
 scale = Vector2(3, 3)
 max_value = 60.0
 step = 0.4

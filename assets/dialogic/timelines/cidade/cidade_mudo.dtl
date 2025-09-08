@@ -1,4 +1,7 @@
 Chefe: Olá! Com licença. Está tendo algum problema?
-Mudo: (Faz sinais de libras falando que não precisa se preocupar, pois uma pessoa com o braço queimado já pediu uma inovação por ele )
+Mudo: (Faz sinais de libras falando que não precisa se preocupar, que já conseguiu ajuda.)
+Chefe: Perdão a pergunta, mas poderia me descrever quem te ajudou?
+Mudo: (Faz sinais de libras falando que era alguém com braço queimado, ele pediu uma inovação.)
 Chefe: Ele estava carregando um código consigo? Caso sim, consegue me instruir o número?
-Mudo: (Faz sinais de libras falando que não lembra o número todo, mas que o primeiro número era... )
+Mudo: (Faz sinais de libras falando que não lembra o número todo, mas que o primeiro número era {codigo_1}.)
+[signal arg="mudo"]

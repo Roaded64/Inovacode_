@@ -9,6 +9,9 @@ var is_mouse = false
 
 var emotion = 5
 
+var numbers = [2810, 2904, 1052, 0903, 0603, 1504, 1658]
+var cod
+
 func _process(_delta):
 	# pra deixar tela cheia XD
 	if Input.is_action_just_pressed("key_fullscreen"):
@@ -41,3 +44,13 @@ func fade(node, fade_duration, color):
 
 func _cur_scene():
 	cur_scene = get_tree().current_scene.name
+
+func _rand_vetor() -> Array:
+	var drawn_number = numbers[randi() % numbers.size()]
+	var vetor = []
+	var number_str = "%04d" % drawn_number
+	for i in range(4):
+		vetor.append(int(number_str[i]))
+
+	print(vetor)
+	return vetor

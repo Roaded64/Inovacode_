@@ -1,30 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwhqu0gjve8e8"]
+[gd_scene load_steps=4 format=3 uid="uid://bwhqu0gjve8e8"]
 
 [ext_resource type="Script" uid="uid://3y68shyv0qyy" path="res://src/scripts/misc/switch_keys.gd" id="1_44f3m"]
-[ext_resource type="PackedScene" uid="uid://bifndl8cdqn4c" path="res://src/scenes/player/player_scene.tscn" id="1_pwrv0"]
+[ext_resource type="Texture2D" uid="uid://btbqkuts5rwb1" path="res://assets/images/switch_keys/bg.png" id="3_3aeem"]
 [ext_resource type="Texture2D" uid="uid://fhclx4o01jt6" path="res://assets/images/switch_keys/movement_keyboard.png" id="3_t0nhd"]
-[ext_resource type="Texture2D" uid="uid://bt4tb8fyp1n0x" path="res://assets/images/switch_keys/idk.png" id="4_3aeem"]
 
 [node name="switch_keys" type="Node2D"]
 script = ExtResource("1_44f3m")
 
-[node name="bg" type="ColorRect" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(640, 360)
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(640, 399)
+texture = ExtResource("3_3aeem")
 
 [node name="MovementKeyboard" type="Sprite2D" parent="."]
 position = Vector2(432, 192)
 scale = Vector2(3, 3)
 texture = ExtResource("3_t0nhd")
 
-[node name="Idk" type="Sprite2D" parent="."]
-position = Vector2(640, 468)
-scale = Vector2(3, 3)
-texture = ExtResource("4_3aeem")
-
-[node name="player_scene" parent="." instance=ExtResource("1_pwrv0")]
-position = Vector2(640, 516)
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)

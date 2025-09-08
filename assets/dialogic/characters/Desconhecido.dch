@@ -19,7 +19,7 @@
 &"portraits": {
 "normal": {
 "export_overrides": {
-"image": "\"res://assets/images/dialog/who_portrait.png\""
+"image": "\"res://assets/images/dialog/pc_portrait.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

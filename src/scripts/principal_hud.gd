@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var progress = $timebar/TextureProgressBar
 
 func _process(delta: float) -> void:
-	if progress.value == 0:
+	if progress.value == 2:
 		timer.stop()
 			
 		match Main.cur_scene:
@@ -14,12 +14,19 @@ func _process(delta: float) -> void:
 			"cidade_scene":
 				Transition.scene("res://src/scenes/cutscene.tscn")
 
-func define_timer(value: float, label, step):
+func define_timer(value: float, label):
+	_appear()
 	timer.start()
 	progress.max_value = value
 	progress.value = value
-	progress.step = step
 	$timebar/final.text = label
 
 func _on_timer_timeout() -> void:
-	progress.value -= 1
+	progress.value -= 0.5
+
+func _appear() -> void:
+	$timebar/AnimationPlayer.play("appear")
+
+func _mission(mission: String) -> void:
+	$timebar/AnimationPlayer.play("appear_mission")
+	$missao.text = "MISSÃO ATUAL:\n" + mission

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmrx0is8p500d"]
+[gd_scene load_steps=13 format=3 uid="uid://cmrx0is8p500d"]
 
 [ext_resource type="Script" uid="uid://cocr5o1pcmbby" path="res://src/scripts/principal_hud.gd" id="1_35h6e"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="1_jk27o"]
@@ -94,6 +94,166 @@ _data = {
 &"dis": SubResource("Animation_cg4d1")
 }
 
+[sub_resource type="Animation" id="Animation_22il8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../missao:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../missao:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 680)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../missao:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_35h6e"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 9), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0v6on"]
+resource_name = "appear_mission"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../missao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../missao:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 686), Vector2(0, 680)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../missao:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0v6on"]
+_data = {
+&"RESET": SubResource("Animation_22il8"),
+&"appear": SubResource("Animation_35h6e"),
+&"appear_mission": SubResource("Animation_0v6on")
+}
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_35h6e")
 
@@ -115,11 +275,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_0bptn")
 }
 
+[node name="missao" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_top = 680.0
+offset_right = 2560.0
+offset_bottom = 782.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("1_jk27o")
+theme_override_font_sizes/font_size = 32
+text = "MISSÃO ATUAL:
+"
+horizontal_alignment = 1
+
 [node name="timebar" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
+offset_top = 9.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 49.0
 
 [node name="tempo_restante" type="Label" parent="timebar"]
 layout_mode = 0
@@ -132,18 +306,6 @@ theme_override_fonts/font = ExtResource("1_jk27o")
 theme_override_font_sizes/font_size = 32
 text = "TEMPO RESTANTE:"
 horizontal_alignment = 1
-
-[node name="tempo_restante2" type="Label" parent="timebar"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 680.0
-offset_right = 136.0
-offset_bottom = 715.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("1_jk27o")
-theme_override_font_sizes/font_size = 32
-text = "MISSÃO ATUAL:
-Se mata antonella"
 
 [node name="final" type="Label" parent="timebar"]
 layout_mode = 0
@@ -176,11 +338,18 @@ offset_top = 24.0
 offset_right = 664.0
 offset_bottom = 32.0
 scale = Vector2(1.715, 1.715)
-max_value = 130.0
-value = 130.0
+max_value = 90.0
+step = 0.3
+value = 90.0
 texture_under = ExtResource("2_rosue")
 texture_progress = ExtResource("3_35h6e")
 
 [node name="Timer" type="Timer" parent="timebar/TextureProgressBar"]
+wait_time = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="timebar"]
+libraries = {
+&"": SubResource("AnimationLibrary_0v6on")
+}
 
 [connection signal="timeout" from="timebar/TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

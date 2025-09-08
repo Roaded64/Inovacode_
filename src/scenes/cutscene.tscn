@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ce6qo5l605h0" path="res://assets/images/cutscene/Smoke-Sheet.png" id="5_roflg"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="6_l8qc4"]
 [ext_resource type="Texture2D" uid="uid://dlomjbv1ajiou" path="res://assets/images/logo.png" id="8_tp4d3"]
-[ext_resource type="AudioStream" uid="uid://cllnybwunew2c" path="res://assets/music/cutscene_song.wav" id="13_cg4d1"]
+[ext_resource type="AudioStream" uid="uid://da1s7e3amcctj" path="res://assets/music/cutscene_song.wav" id="13_cg4d1"]
 
 [sub_resource type="Animation" id="Animation_tp4d3"]
 length = 0.001

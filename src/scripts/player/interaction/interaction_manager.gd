@@ -16,15 +16,20 @@ func _unregister_area(area: InteractionArea):
 		active_areas.remove_at(index)
 
 func _process(delta: float) -> void:
-	if active_areas.size() > 0 && can_interact:
+	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance)
-		
-		thing.global_position = active_areas[0].global_position
+
+		var area: InteractionArea = active_areas[0]
+		thing.global_position = area.global_position
+
 		thing.global_position.y -= 36
-		#thing.global_position.x -= thing.size.x / 2
-		thing.show()
+		thing.play("default", true) 
+		
+		await get_tree().create_timer(0.03).timeout
+		thing.visible = true
 	else:
-		thing.hide()
+		thing.visible = false
+
 
 func _sort_by_distance(area1, area2):
 	var area1_player = player.global_position.distance_to(area1.global_position)
@@ -36,7 +41,7 @@ func _input(event):
 	if event.is_action_pressed("key_interact"):
 		if active_areas.size() > 0:
 			can_interact = false
-			thing.hide()
+			thing.visible = false
 			
 			await active_areas[0].interact.call()
 			

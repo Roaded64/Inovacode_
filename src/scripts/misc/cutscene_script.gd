@@ -4,14 +4,14 @@ var is_playing = false
 
 var phrases = [
 	"Há 1 ano e 6 meses atrás...",
-	"Sua IA, feita pela DES Corp falhou...",
+	"Sua IA, feita pela DES Corp. falhou...",
 	"Ocasionando um incêndio na sua casa...",
-	"Você queimou seu braço e perdeu tudo...",
-	"Seu braço já não tinha mais movimento...",
-	"Você encontrou dificuldades pelas ruas...",
-	"Foram noites que você passou acordado...",
-	"E só houve uma saída...",
-	"Você pediu uma inovação para a DES Corp, ela irá te ajudar..."
+	"Você perdeu tudo, queimou seu braço...",
+	"Ele já não tinha mais movimento...",
+	"Dores físicas e noites sem sono...",
+	"A DES Corp. começou a fazer inovações...",
+	"O que lhe restava era pedir uma...",
+	"Será que a DES Corp. vai ajudar?"
 ]
 
 @onready var label = $Cutscene_HUD/RichTextLabel

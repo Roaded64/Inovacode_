@@ -211,6 +211,8 @@ func start(timeline:Variant, label_or_idx:Variant="") -> Node:
 ## @timeline can be either a loaded timeline resource or a path to a timeline file.
 ## @label_or_idx can be a label (string) or index (int) to skip to immediatly.
 func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
+	is_playing = true
+	
 	# load the resource if only the path is given
 	if typeof(timeline) == TYPE_STRING:
 		#check the lookup table if it's not a full file name
@@ -242,7 +244,6 @@ func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
 	if not current_timeline == dialog_ending_timeline:
 		timeline_started.emit()
 
-	is_playing = true
 	handle_next_event()
 
 
@@ -268,6 +269,8 @@ func preload_timeline(timeline_resource:Variant) -> Variant:
 ## Clears and stops the current timeline.
 ## If [param skip_ending] is `true`, the dialog_ending_timeline is not getting played
 func end_timeline(skip_ending := false) -> void:
+	is_playing = false
+		
 	if not skip_ending and dialog_ending_timeline and current_timeline != dialog_ending_timeline:
 		start(dialog_ending_timeline)
 		return
@@ -282,7 +285,6 @@ func end_timeline(skip_ending := false) -> void:
 			1:
 				Styles.get_layout_node().hide()
 
-	is_playing = false
 	timeline_ended.emit()
 
 ## Handles the next event.
