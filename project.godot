@@ -25,6 +25,7 @@ InteractionManager="*res://src/scenes/player/interaction/interaction_manager.tsc
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PrincipalHud="*res://src/scenes/principal_HUD.tscn"
 Transition="*res://src/scenes/autoload/transition.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogic]
 
@@ -114,7 +115,7 @@ text/autocolor_names=true
 
 [dialogue_manager]
 
-runtime/balloon_path="res://assets/dialogue/styles/balloon.tscn"
+runtime/balloon_path="res://assets/dialogue_manager/styles/balloon.tscn"
 
 [display]
 
@@ -125,7 +126,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/folder/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/folder/plugin.cfg")
 
 [input]
 
@@ -184,6 +185,10 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://assets/dialogue_manager/dialogs/cidade/negacionista.dialogue")
 
 [physics]
 

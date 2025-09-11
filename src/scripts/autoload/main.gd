@@ -9,8 +9,10 @@ var is_mouse = false
 
 var emotion = 5
 
+# cidade
 var numbers = [2810, 2904, 1052, 0903, 0603, 1504, 1658]
 var cod
+var is_city = true
 
 func _process(_delta):
 	# pra deixar tela cheia XD

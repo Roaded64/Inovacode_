@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxjqqc86rmn4d"
-path="res://.godot/imported/who_portrait.png-1e82dbcd61e9c0dfb49db12dfdbc0f2b.ctex"
+uid="uid://e4vcmy3xi1s3"
+path="res://.godot/imported/camisa_costas.svg-7b88c6561d3af7046767c412f5f0f82f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/dialog/who_portrait.png"
-dest_files=["res://.godot/imported/who_portrait.png-1e82dbcd61e9c0dfb49db12dfdbc0f2b.ctex"]
+source_file="res://files/camisa/camisa_costas.svg"
+dest_files=["res://.godot/imported/camisa_costas.svg-7b88c6561d3af7046767c412f5f0f82f.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

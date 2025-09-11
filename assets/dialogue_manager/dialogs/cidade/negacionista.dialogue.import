@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://byaa1ib5appos"
+path="res://.godot/imported/negacionista.dialogue-21f967be13cca40d3248727788af8677.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/negacionista.dialogue"
+dest_files=["res://.godot/imported/negacionista.dialogue-21f967be13cca40d3248727788af8677.tres"]
+
+[params]
+
+defaults=true

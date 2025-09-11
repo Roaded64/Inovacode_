@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var progress = $timebar/TextureProgressBar
 
 func _process(delta: float) -> void:
-	if progress.value == 2:
+	if progress.value == 0:
 		timer.stop()
 			
 		match Main.cur_scene:
@@ -22,7 +22,8 @@ func define_timer(value: float, label):
 	$timebar/final.text = label
 
 func _on_timer_timeout() -> void:
-	progress.value -= 0.5
+	if !Dialogic.is_playing:
+		progress.value -= 0.5
 
 func _appear() -> void:
 	$timebar/AnimationPlayer.play("appear")

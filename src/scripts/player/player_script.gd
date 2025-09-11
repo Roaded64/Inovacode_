@@ -26,6 +26,7 @@ var is_mission = false
 var is_blocked = false
 var stuck_time = 0.0 # tempo preso para parar o movimento automático
 
+var last_is_city = null
 
 func _process(delta: float) -> void:
 	_use_camera()
@@ -152,9 +153,18 @@ func _popup():
 			mm.play_backwards("popup")
 
 func _use_camera():
-	match Main.cur_scene:
-		"cidade_scene":
-			playerCamera.limit_left = 0
-			playerCamera.limit_right = 1681
-			playerCamera.limit_top = -40
-			playerCamera.limit_bottom = 1430
+	if Main.is_city == last_is_city:
+		return # nada mudou, não atualiza
+
+	last_is_city = Main.is_city
+
+	if Main.is_city:
+		playerCamera.limit_left = 0
+		playerCamera.limit_right = 1681
+		playerCamera.limit_top = -40
+		playerCamera.limit_bottom = 1430
+	else:
+		playerCamera.limit_left = 0
+		playerCamera.limit_right = 0
+		playerCamera.limit_top = 0
+		playerCamera.limit_bottom = 0

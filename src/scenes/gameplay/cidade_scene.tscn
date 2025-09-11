@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://bbiiq0283jj7k"]
+[gd_scene load_steps=103 format=4 uid="uid://bbiiq0283jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://by38f6mkk84em" path="res://assets/images/cidade/calçada_tileset.png" id="1_645yb"]
 [ext_resource type="Script" uid="uid://cgcxu1ducvgsd" path="res://src/scripts/gameplay/cidade_scene.gd" id="1_eroxr"]
@@ -39,6 +39,8 @@
 [ext_resource type="AudioStream" uid="uid://f2lt350ifp74" path="res://assets/music/city_ambience.wav" id="30_lh3hu"]
 [ext_resource type="Texture2D" uid="uid://bqoimu7eu4gjg" path="res://assets/images/cidade/npcs/negacionista_sprite.png" id="31_axoyq"]
 [ext_resource type="Texture2D" uid="uid://bo78wdjrcdiyy" path="res://assets/images/cidade/npcs/mudo_sprite.png" id="33_13jk5"]
+[ext_resource type="Script" uid="uid://bkx1b5vhpcujf" path="res://src/scripts/misc/cidade/npc_andar.gd" id="34_mrl7o"]
+[ext_resource type="Texture2D" uid="uid://ut1s1exrh3n2" path="res://assets/images/cidade/lojas_sair.png" id="36_quvpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n3o1"]
 texture = ExtResource("4_aydav")
@@ -304,31 +306,95 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4itaf"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mfyb"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo4hs"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1n40"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lki18"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu3rk"]
+atlas = ExtResource("5_5n3o1")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72u1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4itaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mfyb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo4hs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1n40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lki18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu3rk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo4hs"]
+size = Vector2(36, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1n40"]
+size = Vector2(28, 70)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh3hu"]
 texture = ExtResource("26_u75d6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 1.6, -8, 1.6)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 1.6, -8, 1.6)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 4.8, -8, 4.8, -8, 1.6, 8, 1.6)
 3:1/0 = 0
 4:1/0 = 0
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 8, -8, 8, -8, -8)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 4.8, 8, 8, 8, 8, -8)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 1.6, 8, 4.8, -8, 4.8, -8, 1.6)
 0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 4.8, 8, 4.8, 8, 8, -8, 8, -8, -8)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 8, -8, 8)
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 8, -8, 8, -8, -8)
 2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 4.8, 4.8, 4.8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, 8, 4.8, -8, 8, -8, 8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 4.8, 8, 4.8, 8, 8, -8, 8, -8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 4.8, 4.8, -8, 4.8, -8, 8, 8, 8, 8, -8)
+3:2/0 = 0
+4:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6, 8, 1.6, 8, 4.8, -8, 4.8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6, -8, 4.8, 8, 4.8, 8, 1.6)
 
 [sub_resource type="TileSet" id="TileSet_53nd2"]
 physics_layer_0/collision_layer = 1
@@ -356,16 +422,19 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mfyb"]
+size = Vector2(48, 33.3333)
+
 [node name="cidade_scene" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_eroxr")
 metadata/_edit_horizontal_guides_ = [-372.0]
 
 [node name="bg" type="ColorRect" parent="."]
-z_index = -2
-offset_left = 19.0
+z_index = -3
+offset_left = 14.0
 offset_top = -2.0
-offset_right = 1731.0
+offset_right = 3736.0
 offset_bottom = 1413.0
 color = Color(0, 0, 0, 1)
 
@@ -1119,6 +1188,7 @@ position = Vector2(0.833313, 10.6667)
 shape = SubResource("RectangleShape2D_heuos")
 
 [node name="Banner" type="Sprite2D" parent="cidade_map"]
+y_sort_enabled = true
 position = Vector2(504, 640)
 scale = Vector2(3, 3)
 texture = ExtResource("27_vsmpn")
@@ -1172,7 +1242,7 @@ position = Vector2(1.52588e-05, 6.56667)
 shape = SubResource("RectangleShape2D_vlk8u")
 
 [node name="negacionista" type="AnimatedSprite2D" parent="cidade_map/npcs"]
-position = Vector2(117, 988.5)
+position = Vector2(124, 1008.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_mrl7o")
 autoplay = "default"
@@ -1192,20 +1262,60 @@ type = 2
 position = Vector2(0.166687, 2.66667)
 shape = SubResource("RectangleShape2D_vlk8u")
 
+[node name="npcs_andando" type="Node2D" parent="cidade_map"]
+
+[node name="npc2" type="Node2D" parent="cidade_map/npcs_andando"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="cidade_map/npcs_andando/npc2"]
+collision_layer = 2
+collision_mask = 2
+collision_priority = 2.0
+script = ExtResource("34_mrl7o")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="cidade_map/npcs_andando/npc2/CharacterBody2D"]
+position = Vector2(648, 728)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_72u1o")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.63546
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs_andando/npc2/CharacterBody2D"]
+position = Vector2(648, 741.5)
+shape = SubResource("RectangleShape2D_lo4hs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs_andando/npc2"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs_andando/npc2/StaticBody2D"]
+position = Vector2(288, 725)
+shape = SubResource("RectangleShape2D_p1n40")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="cidade_map/npcs_andando/npc2"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs_andando/npc2/StaticBody2D2"]
+position = Vector2(1045, 720)
+shape = SubResource("RectangleShape2D_p1n40")
+
 [node name="conveniencia_map" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(1778, 173)
+position = Vector2(2448, 295)
 
 [node name="floor" type="TileMapLayer" parent="conveniencia_map"]
+z_index = -1
 position = Vector2(0, -13)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAAAAIAAAADAAAAAAACAAAAAAADAAAAAAACAAIAAAADAAAAAAAEAAAAAAADAAAAAAAEAAIAAAADAAAAAAABAAAAAAAEAAAAAAABAAIAAAAEAAAAAAADAAAAAAAEAAAAAAADAAIAAAAEAAAAAAAFAAAAAAAEAAAAAAAFAAIAAAAEAAAAAAAAAAEAAAADAAEAAAAAAAMAAAADAAEAAAACAAEAAAADAAEAAAACAAMAAAADAAEAAAAEAAEAAAADAAEAAAAEAAMAAAADAAEAAAABAAMAAAAEAAEAAAABAAEAAAAEAAEAAAADAAEAAAAEAAEAAAADAAMAAAAEAAEAAAAFAAEAAAAEAAEAAAAFAAMAAAAEAAEAAAAGAAAAAAADAAAAAAAGAAEAAAADAAEAAAAHAAAAAAAEAAAAAAAHAAEAAAAEAAEAAAAIAAAAAAADAAAAAAAIAAEAAAADAAEAAAAGAAIAAAADAAAAAAAGAAMAAAADAAEAAAAHAAIAAAAEAAAAAAAHAAMAAAAEAAEAAAAIAAIAAAADAAAAAAAIAAMAAAADAAEAAAAAAAQAAAADAAAAAAAAAAUAAAADAAEAAAABAAQAAAAEAAAAAAABAAUAAAAEAAEAAAACAAQAAAADAAAAAAACAAUAAAADAAEAAAADAAQAAAAEAAAAAAADAAUAAAAEAAEAAAAEAAQAAAADAAAAAAAEAAUAAAADAAEAAAAFAAQAAAAEAAAAAAAFAAUAAAAEAAEAAAAGAAQAAAADAAAAAAAGAAUAAAADAAEAAAAHAAQAAAAEAAAAAAAHAAUAAAAEAAEAAAAIAAQAAAADAAAAAAAIAAUAAAADAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAAAAAEAAAADAAIAAAABAAAAAAAEAAEAAAABAAEAAAAEAAIAAAAAAAIAAAADAAEAAAAAAAMAAAADAAIAAAABAAIAAAAEAAEAAAABAAMAAAAEAAIAAAAAAAQAAAADAAEAAAAAAAUAAAADAAIAAAABAAQAAAAEAAEAAAABAAUAAAAEAAIAAAACAAAAAAADAAEAAAACAAEAAAADAAIAAAADAAAAAAAEAAEAAAADAAEAAAAEAAIAAAACAAIAAAADAAEAAAACAAMAAAADAAIAAAADAAIAAAAEAAEAAAADAAMAAAAEAAIAAAACAAQAAAADAAEAAAACAAUAAAADAAIAAAADAAQAAAAEAAEAAAADAAUAAAAEAAIAAAAEAAAAAAADAAEAAAAEAAEAAAADAAIAAAAFAAAAAAAEAAEAAAAFAAEAAAAEAAIAAAAEAAIAAAADAAEAAAAEAAMAAAADAAIAAAAFAAIAAAAEAAEAAAAFAAMAAAAEAAIAAAAEAAQAAAADAAEAAAAEAAUAAAADAAIAAAAFAAQAAAAEAAEAAAAFAAUAAAAEAAIAAAAGAAAAAAADAAEAAAAGAAEAAAADAAIAAAAHAAAAAAAEAAEAAAAHAAEAAAAEAAIAAAAGAAIAAAADAAEAAAAGAAMAAAADAAIAAAAHAAIAAAAEAAEAAAAHAAMAAAAEAAIAAAAGAAQAAAADAAEAAAAGAAUAAAADAAIAAAAHAAQAAAAEAAEAAAAHAAUAAAAEAAIAAAAIAAAAAAADAAEAAAAIAAEAAAADAAIAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAIAAAAIAAIAAAADAAEAAAAIAAMAAAADAAIAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAIAAAAIAAQAAAADAAEAAAAIAAUAAAADAAIAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAIAAAAKAAAAAAADAAEAAAAKAAEAAAADAAIAAAAKAAIAAAADAAEAAAAKAAMAAAADAAIAAAAKAAQAAAADAAEAAAAKAAUAAAADAAIAAAA=")
 tile_set = SubResource("TileSet_53nd2")
 
 [node name="walls" type="TileMapLayer" parent="conveniencia_map"]
+z_index = -1
 position = Vector2(0, -13)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAIAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAEAP7/AAABAAAAAAADAP7/AAABAAAAAAACAP7/AAABAAAAAAABAP7/AAABAAAAAAAAAP//AAAAAAEAAAAAAP7/AAAAAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAACAAAAAAAFAP//AAABAAEAAAAIAP//AAACAAEAAAAGAP//AAABAAEAAAAHAP//AAABAAEAAAAAAAMAAAAAAAIAAAAIAAAAAAACAAIAAAAIAAEAAAACAAIAAAAIAAIAAAACAAIAAAAIAAMAAAACAAIAAAAIAAQAAAACAAIAAAAAAAQAAAAAAAIAAAAAAAUAAAAAAAMAAAABAAUAAAABAAMAAAACAAUAAAABAAMAAAAGAAUAAAABAAMAAAAHAAUAAAABAAMAAAAIAAUAAAACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAMAAAAAAAIAAAAAAAMAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAAAP//AAAAAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAAAAMAAAAAAAMAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAAAP3/AAAAAAAAAAABAP3/AAABAAAAAAACAP3/AAABAAAAAAADAP3/AAABAAAAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAABAAAAAAAHAP3/AAABAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAJAP7/AAABAAEAAAAAAP7/AAAAAAEAAAAAAAQAAAAAAAMAAAABAAUAAAABAAQAAAACAAUAAAABAAQAAAADAAUAAAABAAQAAAAEAAUAAAABAAQAAAAFAAUAAAABAAQAAAAGAAUAAAABAAQAAAAHAAUAAAABAAQAAAAIAAUAAAABAAQAAAAJAAUAAAABAAQAAAAKAAUAAAACAAQAAAAAAAUAAAAAAAQAAAAAAAAAAAAAAAMAAAAKAP3/AAACAAAAAAAKAP7/AAACAAEAAAAKAP//AAACAAIAAAAKAAAAAAACAAMAAAAKAAEAAAACAAMAAAAKAAIAAAACAAMAAAAKAAMAAAACAAMAAAAKAAQAAAACAAMAAAA=")
 tile_set = SubResource("TileSet_53nd2")
 
 [node name="npcs" type="Node2D" parent="conveniencia_map"]
@@ -1231,6 +1341,19 @@ type = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/npcs/mudo/InteractionArea"]
 position = Vector2(0.166687, 2.66667)
 shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="saida" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(262, -51)
+scale = Vector2(3, 3)
+texture = ExtResource("36_quvpo")
+script = ExtResource("7_hk50e")
+obj_id = 3
+
+[node name="InteractionArea" parent="conveniencia_map/saida" instance=ExtResource("7_5tygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/saida/InteractionArea"]
+position = Vector2(0, 6.66667)
+shape = SubResource("RectangleShape2D_5mfyb")
 
 [node name="player_scene" parent="." instance=ExtResource("2_ddj74")]
 position = Vector2(72, 1314)
