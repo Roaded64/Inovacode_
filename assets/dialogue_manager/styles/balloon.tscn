@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://byrc6xccyodgc"]
+[gd_scene load_steps=13 format=3 uid="uid://byrc6xccyodgc"]
 
 [ext_resource type="Script" uid="uid://b1ju346t8tx4n" path="res://assets/dialogue_manager/styles/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="2_qn7ah"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://b44kq6ayettxb" path="res://assets/dialogue_manager/assets_portraits/negacionista_portrait.png" id="5_civbx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -65,6 +64,45 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="Animation" id="Animation_78oi2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Balloon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Balloon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_civbx"]
 resource_name = "fade"
 length = 0.3
@@ -92,32 +130,17 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_78oi2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Balloon:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -43)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Balloon:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.345098)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5k5em"]
@@ -129,6 +152,13 @@ _data = {
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 0
 script = ExtResource("1_36de5")
+next_action = &"key_interact"
+skip_action = &"key_interact"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -196,6 +226,7 @@ size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_qn7ah")
 theme_override_font_sizes/normal_font_size = 16
 text = "Dialogue..."
+skip_action = &"key_interact"
 pause_at_characters = ""
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon" node_paths=PackedStringArray("response_template")]
@@ -223,9 +254,9 @@ layout_mode = 2
 text = "Response example"
 
 [node name="portrait" type="Sprite2D" parent="Balloon"]
-position = Vector2(302, 602)
+unique_name_in_owner = true
+position = Vector2(287, 550)
 scale = Vector2(14.8833, 14.8833)
-texture = ExtResource("5_civbx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

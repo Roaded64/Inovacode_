@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0yqr8x5tt23w"
-path="res://.godot/imported/cicle.jpg-dff2ba38f80213dcfaebd3bfdf05f5da.ctex"
+uid="uid://bo8qq71cu8kom"
+path="res://.godot/imported/cadeirante_portrait.png-8749b0d161e4584e3e12ae808fa6c78d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/cicle.jpg"
-dest_files=["res://.godot/imported/cicle.jpg-dff2ba38f80213dcfaebd3bfdf05f5da.ctex"]
+source_file="res://assets/dialogue_manager/assets_portraits/cadeirante_portrait.png"
+dest_files=["res://.godot/imported/cadeirante_portrait.png-8749b0d161e4584e3e12ae808fa6c78d.ctex"]
 
 [params]
 

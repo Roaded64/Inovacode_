@@ -17,12 +17,12 @@ func _interact():
 	if !Dialogic.is_playing:
 		match npc_int:
 			1:
-					Dialogic.start("cidade_cego")
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/cego.dialogue"))
 			2:
-					Dialogic.start("cidade_cadeirante")
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/cadeirante.dialogue"))
 			3:
-					Dialogic.start("cidade_mudo")
+				Dialogic.start("cidade_mudo")
 			5:
-					Dialogic.start("cidade_negacionista")
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/negacionista.dialogue"))
 
 	interaction_area.queue_free()

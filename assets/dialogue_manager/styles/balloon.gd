@@ -51,6 +51,8 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+## Portrair
+@onready var portrait: Sprite2D = %portrait
 
 func _ready() -> void:
 	balloon.hide()
@@ -98,6 +100,13 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
+	var portrait_path: String = "res://assets/dialogue_manager/assets_portraits/%s_portrait.png" % dialogue_line.character
+	
+	if ResourceLoader.exists(portrait_path):
+		portrait.texture = load(portrait_path)
+	else:
+		portrait.texture = null
+
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
@@ -139,6 +148,8 @@ func next(next_id: String) -> void:
 
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
+		$AnimationPlayer.play_backwards("fade")
+		await get_tree().create_timer(0.3).timeout
 		will_hide_balloon = false
 		balloon.hide()
 

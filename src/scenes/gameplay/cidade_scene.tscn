@@ -432,10 +432,10 @@ metadata/_edit_horizontal_guides_ = [-372.0]
 
 [node name="bg" type="ColorRect" parent="."]
 z_index = -3
-offset_left = 14.0
-offset_top = -2.0
-offset_right = 3736.0
-offset_bottom = 1413.0
+offset_left = 64.0
+offset_top = 136.0
+offset_right = 3786.0
+offset_bottom = 1551.0
 color = Color(0, 0, 0, 1)
 
 [node name="cidade_map" type="Node2D" parent="."]

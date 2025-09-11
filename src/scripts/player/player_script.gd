@@ -164,7 +164,7 @@ func _use_camera():
 		playerCamera.limit_top = -40
 		playerCamera.limit_bottom = 1430
 	else:
-		playerCamera.limit_left = 0
-		playerCamera.limit_right = 0
-		playerCamera.limit_top = 0
-		playerCamera.limit_bottom = 0
+		playerCamera.limit_left = 99999
+		playerCamera.limit_right = 99999
+		playerCamera.limit_top = 99999
+		playerCamera.limit_bottom = 9999

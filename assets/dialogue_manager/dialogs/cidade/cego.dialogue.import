@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://kdirdxlp0ct3"
+path="res://.godot/imported/cego.dialogue-0e74cf440559ed5fbf9b740769d3470d.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/cego.dialogue"
+dest_files=["res://.godot/imported/cego.dialogue-0e74cf440559ed5fbf9b740769d3470d.tres"]
+
+[params]
+
+defaults=true

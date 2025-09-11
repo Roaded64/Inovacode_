@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://70h5qn07u60o"
+path="res://.godot/imported/cadeirante.dialogue-68b67b69facd266e704b4a403a4a76c7.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/cadeirante.dialogue"
+dest_files=["res://.godot/imported/cadeirante.dialogue-68b67b69facd266e704b4a403a4a76c7.tres"]
+
+[params]
+
+defaults=true

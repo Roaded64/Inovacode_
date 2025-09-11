@@ -1,20 +1,11 @@
 extends Node2D
 
-var descoberto = [" _ ", " _ ", " _ ", " _ "]
-
 func _ready() -> void:
 	Main._cur_scene()
 	Main.emotion = 5
 	
 	var vetor = Main._rand_vetor()
 	Main.cod = vetor
-	
-	Dialogic.VAR.set_variable("codigo_1", vetor[0])
-	Dialogic.VAR.set_variable("codigo_2", vetor[1])
-	Dialogic.VAR.set_variable("codigo_3", vetor[2])
-	Dialogic.VAR.set_variable("codigo_4", vetor[3])
-	
-	Dialogic.signal_event.connect(_dialogic_signal)
 
 	_entrance()
 
@@ -34,15 +25,3 @@ func _entrance():
 		PrincipalHud._mission("Explore o mapa")
 		
 		$CanvasLayer/entrance.queue_free()
-
-func _dialogic_signal(argument: String):
-	match argument:
-		"cego":
-			descoberto[2] = Main.cod[2]
-		"cadeirante":
-			descoberto[1] = Main.cod[1]
-		"mudo":
-			descoberto[0] = Main.cod[0]
-	
-	if argument == "cego" || argument == "cadeirante" || argument == "mae" || argument == "mudo":
-		PrincipalHud._mission("Descubra o código completo (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")")

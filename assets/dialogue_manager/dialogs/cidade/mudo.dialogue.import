@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ch4newejipha4"
+path="res://.godot/imported/mudo.dialogue-4282b65f83a0f7dacb96007f05449d51.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/mudo.dialogue"
+dest_files=["res://.godot/imported/mudo.dialogue-4282b65f83a0f7dacb96007f05449d51.tres"]
+
+[params]
+
+defaults=true

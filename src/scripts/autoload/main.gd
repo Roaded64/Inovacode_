@@ -13,6 +13,11 @@ var emotion = 5
 var numbers = [2810, 2904, 1052, 0903, 0603, 1504, 1658]
 var cod
 var is_city = true
+var descoberto = [" _ ", " _ ", " _ ", " _ "]
+signal dialogue_cod
+
+func _ready() -> void:
+	dialogue_cod.connect(_signal)
 
 func _process(_delta):
 	# pra deixar tela cheia XD
@@ -56,3 +61,18 @@ func _rand_vetor() -> Array:
 
 	print(vetor)
 	return vetor
+	
+func _codigo(co: int):
+	return cod[co]
+
+func _signal(argument: String):
+	match argument:
+		"cego":
+			descoberto[2] = cod[2]
+		"cadeirante":
+			descoberto[1] = cod[1]
+		"mudo":
+			descoberto[0] = cod[0]
+	
+	if argument == "cego" || argument == "cadeirante" || argument == "mae" || argument == "mudo":
+		PrincipalHud._mission("Descubra o código completo (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")")
