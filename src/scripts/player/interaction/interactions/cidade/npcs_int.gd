@@ -7,6 +7,7 @@ extends AnimatedSprite2D
 # 3 - mudo
 # 4 - mae
 # 5 - negacionista
+# 6 - louco
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 
@@ -21,8 +22,12 @@ func _interact():
 			2:
 				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/cadeirante.dialogue"))
 			3:
-				Dialogic.start("cidade_mudo")
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/mudo.dialogue"))
+			4:
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/mae.dialogue"))
 			5:
 				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/negacionista.dialogue"))
+			6:
+				DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/cidade/louco.dialogue"))
 
 	interaction_area.queue_free()

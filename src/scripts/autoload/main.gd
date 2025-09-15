@@ -73,6 +73,8 @@ func _signal(argument: String):
 			descoberto[1] = cod[1]
 		"mudo":
 			descoberto[0] = cod[0]
+		"mae":
+			descoberto[3] = cod[3]
 	
 	if argument == "cego" || argument == "cadeirante" || argument == "mae" || argument == "mudo":
 		PrincipalHud._mission("Descubra o código completo (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")")

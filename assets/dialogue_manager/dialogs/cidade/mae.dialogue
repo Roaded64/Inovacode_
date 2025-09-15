@@ -1,0 +1,4 @@
+Mãe: Que bom que aquele moço gentil pediu essa pulseira para você filha, você quer comer o que?
+Chefe: Olá! Com licença. Ouvi dizer que você recebeu ajuda de alguém que já passou, ele tinha um código? Se tinha pode me falar o número?
+Mãe: Olá! Ele tinha sim! Eu não lembro do código, mas sei que o último número era {{Main.cod[3]}}.
+do Main.dialogue_cod.emit("mae")

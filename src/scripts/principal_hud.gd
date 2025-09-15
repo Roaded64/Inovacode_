@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var timer = $timebar/TextureProgressBar/Timer
 @onready var progress = $timebar/TextureProgressBar
 
+# Sinal que será emitido no ending
+signal ending_triggered
+
 func _process(delta: float) -> void:
 	if progress.value == 0:
 		timer.stop()
@@ -12,7 +15,7 @@ func _process(delta: float) -> void:
 				Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")
 				progress.value = 1
 			"cidade_scene":
-				Transition.scene("res://src/scenes/cutscene.tscn")
+				emit_signal("ending_triggered")  # Emite sinal quando o ending deve começar
 
 func define_timer(value: float, label):
 	_appear()

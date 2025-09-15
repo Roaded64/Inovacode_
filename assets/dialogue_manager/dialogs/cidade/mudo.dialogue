@@ -1,11 +1,7 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
-=> END
+Chefe: Olá! Com licença. Está tendo algum problema?
+Mudo: (Faz sinais de libras falando que não precisa se preocupar, que já conseguiu ajuda.)
+Chefe: Perdão a pergunta, mas poderia me descrever quem te ajudou?
+Mudo: (Faz sinais de libras falando que era alguém com braço queimado, ele pediu uma inovação.)
+Chefe: Ele estava carregando um código consigo? Caso sim, consegue me instruir o número?
+Mudo: (Faz sinais de libras falando que não lembra o número todo, mas que o primeiro número era {{Main.cod[0]}}.)
+do Main.dialogue_cod.emit("mudo")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cklufv5j7h0jy"
+path="res://.godot/imported/mae.dialogue-08e9a0b8fbc48974829ca7b909eb937c.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/mae.dialogue"
+dest_files=["res://.godot/imported/mae.dialogue-08e9a0b8fbc48974829ca7b909eb937c.tres"]
+
+[params]
+
+defaults=true

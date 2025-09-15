@@ -2,5 +2,5 @@ Chefe: Olá! Bom dia, boa tarde ou boa noite. Vi que está tentando mexer na má
 Cego: Poxa, agradeço demais! Mas olha… alguém já passou por aqui e me deu uma força.
 Cego: Ele disse que ia colocar o código dele pra pedir uma inovação pra mim. Não aguento mais esse bastão… queria algo mais moderno, sabe?
 Chefe: Entendo bem. E você lembra qual era o código que ele usou? Agradeço se me contar.
-Cego: Não todo… Mas tenho certeza de que o terceiro dígito era {{Main.cod[3]}}.
+Cego: Não todo… Mas tenho certeza de que o terceiro dígito era {{Main.cod[2]}}.
 do Main.dialogue_cod.emit("cego")

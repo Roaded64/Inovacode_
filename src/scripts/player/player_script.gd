@@ -7,7 +7,7 @@ var canUse = false
 var state = "normal"
 var placeUse = false
 
-var playerMove = true
+var playerMove = false
 @export var sideMove = false
 
 @onready var playerSprite = $player_sprite
@@ -25,8 +25,6 @@ var is_mission = false
 
 var is_blocked = false
 var stuck_time = 0.0 # tempo preso para parar o movimento automático
-
-var last_is_city = null
 
 func _process(delta: float) -> void:
 	_use_camera()
@@ -76,8 +74,6 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not playerMove or isUsing:
-		return
 
 	var moved = false
 	var target_vel = Vector2.ZERO
@@ -112,6 +108,10 @@ func _physics_process(delta: float) -> void:
 				target_vel.y = playerSpeed * input_dir.y
 			moved = true
 			playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
+			
+			playerMove = true
+		else:
+			playerMove = false
 
 		if moved:
 			hasClicked = false
@@ -153,18 +153,13 @@ func _popup():
 			mm.play_backwards("popup")
 
 func _use_camera():
-	if Main.is_city == last_is_city:
-		return # nada mudou, não atualiza
-
-	last_is_city = Main.is_city
-
 	if Main.is_city:
 		playerCamera.limit_left = 0
 		playerCamera.limit_right = 1681
 		playerCamera.limit_top = -40
 		playerCamera.limit_bottom = 1430
 	else:
-		playerCamera.limit_left = 99999
-		playerCamera.limit_right = 99999
-		playerCamera.limit_top = 99999
-		playerCamera.limit_bottom = 9999
+		playerCamera.limit_left = 2178
+		playerCamera.limit_right = 3242
+		playerCamera.limit_top = 53
+		playerCamera.limit_bottom = 572
