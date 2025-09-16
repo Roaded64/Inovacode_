@@ -15,7 +15,9 @@ func _process(delta: float) -> void:
 				Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")
 				progress.value = 1
 			"cidade_scene":
-				emit_signal("ending_triggered")  # Emite sinal quando o ending deve começar
+				Transition.scene("res://src/scenes/cutscene.tscn")
+				progress.value = 1
+				#emit_signal("ending_triggered")  # Emite sinal quando o ending deve começar
 
 func define_timer(value: float, label):
 	_appear()

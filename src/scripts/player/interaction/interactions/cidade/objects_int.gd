@@ -16,6 +16,7 @@ extends Sprite2D
 # maps
 @onready var conveniencia_map = $"../../conveniencia_map"
 @onready var doceria_map = $"../../doceria_map"
+@onready var brecho_map = $"../../brecho_map"
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 
@@ -36,6 +37,7 @@ func _interact():
 				conveniencia_map.position = Vector2(2448, 137)
 				
 				doceria_map.position = Vector2(3859, 67)
+				brecho_map.position = Vector2(3859, 67)
 				
 				# Teleporta player para dentro da conveniência
 				player._position(2710, 300)
@@ -54,6 +56,7 @@ func _interact():
 				doceria_map.position = Vector2(2448, 137)
 				
 				conveniencia_map.position = Vector2(3859, 67)
+				brecho_map.position = Vector2(3859, 67)
 				
 				player._position(2710, 300)
 				Main.is_city = false
@@ -62,4 +65,22 @@ func _interact():
 				await get_tree().create_timer(1.5).timeout
 				
 				player.position = Vector2(384, 1014)
+				Main.is_city = true
+			
+			6: # Brecho Entrar
+				Transition.play()
+				await get_tree().create_timer(1.5).timeout
+				
+				brecho_map.position = Vector2(2448, 137)
+				
+				conveniencia_map.position = Vector2(3859, 67)
+				doceria_map.position = Vector2(3859, 67)
+				
+				player._position(2710, 300)
+				Main.is_city = false
+			7: # Brecho Sair
+				Transition.play()
+				await get_tree().create_timer(1.5).timeout
+				
+				player.position = Vector2(1295, 233)
 				Main.is_city = true

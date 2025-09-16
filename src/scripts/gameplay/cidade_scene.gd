@@ -29,7 +29,7 @@ func _entrance():
 		$ambience.play()
 		Main.is_cutscene = false
 		
-		PrincipalHud.define_timer(30.0, '01:30')
+		PrincipalHud.define_timer(120.0, '02:00')
 		await get_tree().create_timer(1).timeout
 		PrincipalHud._mission("Explore o mapa")
 		

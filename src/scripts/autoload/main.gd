@@ -28,11 +28,6 @@ func _process(_delta):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	
-	if Input.is_key_pressed(KEY_F1):
-		is_mouse = false
-	elif Input.is_key_pressed(KEY_F2):
-		is_mouse = true
 
 	if Input.is_key_pressed(KEY_1):
 		emotion = 1

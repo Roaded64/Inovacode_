@@ -39,7 +39,6 @@
 [ext_resource type="AudioStream" uid="uid://f2lt350ifp74" path="res://assets/music/city_ambience.wav" id="30_lh3hu"]
 [ext_resource type="Texture2D" uid="uid://bqoimu7eu4gjg" path="res://assets/images/cidade/npcs/negacionista_sprite.png" id="31_axoyq"]
 [ext_resource type="Texture2D" uid="uid://bo78wdjrcdiyy" path="res://assets/images/cidade/npcs/mudo_sprite.png" id="33_13jk5"]
-[ext_resource type="Script" uid="uid://bkx1b5vhpcujf" path="res://src/scripts/misc/cidade/npc_andar.gd" id="34_mrl7o"]
 [ext_resource type="Texture2D" uid="uid://b47cinklrawie" path="res://assets/images/cidade/npcs/mae_crianca.png" id="34_xu3rk"]
 [ext_resource type="Texture2D" uid="uid://ut1s1exrh3n2" path="res://assets/images/cidade/lojas_sair.png" id="36_quvpo"]
 [ext_resource type="Texture2D" uid="uid://dpd7vqdg6f8k8" path="res://assets/images/cidade/doceria/tileset.png" id="39_4itaf"]
@@ -48,6 +47,10 @@
 [ext_resource type="Texture2D" uid="uid://exh2ad0n3a7h" path="res://assets/images/cidade/doceria/toddy.png" id="41_lo4hs"]
 [ext_resource type="Texture2D" uid="uid://ce1a427cogi6y" path="res://assets/images/cidade/conveniencia/conveniencia_dentro2.png" id="42_lp7ov"]
 [ext_resource type="Texture2D" uid="uid://q65s2ru8scre" path="res://assets/images/cidade/doceria/dono_loja.png" id="43_xu3rk"]
+[ext_resource type="Texture2D" uid="uid://cdxqs6dtdn37u" path="res://assets/images/cidade/brecho/cabine.png" id="44_ejl36"]
+[ext_resource type="Texture2D" uid="uid://byocduh53x5bj" path="res://assets/images/cidade/brecho/cabine_roupas.png" id="49_7en3g"]
+[ext_resource type="Texture2D" uid="uid://buhuifgjy87cs" path="res://assets/images/cidade/brecho/estande_roupas.png" id="50_7c4ul"]
+[ext_resource type="Texture2D" uid="uid://duelqmrviepsj" path="res://assets/images/cidade/brecho/estande_roupas2.png" id="51_qye7e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n3o1"]
 texture = ExtResource("4_aydav")
@@ -120,7 +123,37 @@ size = Vector2(28, 38.6667)
 size = Vector2(62.3333, 57.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vumlt"]
-size = Vector2(28, 57)
+size = Vector2(28, 41)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eroxr"]
+texture = ExtResource("5_5n3o1")
+0:1/animation_columns = 2
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 0.5
+0:1/animation_frame_1/duration = 0.5
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
+0:0/animation_columns = 2
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 0.5
+0:0/animation_frame_1/duration = 0.5
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
+0:2/animation_columns = 2
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 0.5
+0:2/animation_frame_1/duration = 0.5
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 4, -8, 4)
+0:3/animation_mode = 1
+0:3/animation_frame_0/duration = 0.5
+0:3/animation_frame_1/duration = 0.5
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 4, -8, 4)
+
+[sub_resource type="TileSet" id="TileSet_d28hq"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_eroxr")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_aydav"]
 a = Vector2(-4.57764e-05, 3.66647)
@@ -151,6 +184,12 @@ size = Vector2(30, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkvsa"]
 size = Vector2(14, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heuos"]
+size = Vector2(24, 7.00002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu3rk"]
+size = Vector2(13, 15.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7eq0p"]
 size = Vector2(22, 24)
@@ -198,45 +237,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsmpn"]
 size = Vector2(64.6666, 61.6667)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eroxr"]
-texture = ExtResource("5_5n3o1")
-0:1/animation_columns = 2
-0:1/animation_mode = 1
-0:1/animation_frame_0/duration = 0.5
-0:1/animation_frame_1/duration = 0.5
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
-0:0/animation_columns = 2
-0:0/animation_mode = 1
-0:0/animation_frame_0/duration = 0.5
-0:0/animation_frame_1/duration = 0.5
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
-0:2/animation_columns = 2
-0:2/animation_mode = 1
-0:2/animation_frame_0/duration = 0.5
-0:2/animation_frame_1/duration = 0.5
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 4, -8, 4)
-0:3/animation_mode = 1
-0:3/animation_frame_0/duration = 0.5
-0:3/animation_frame_1/duration = 0.5
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 4, -8, 4)
-
-[sub_resource type="TileSet" id="TileSet_d28hq"]
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_eroxr")
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4qie"]
-radius = 14.3333
-height = 34.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enjem"]
+size = Vector2(30, 25.3333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4qie"]
 size = Vector2(120.333, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_heuos"]
-size = Vector2(23, 8.33333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_13jk5"]
 atlas = ExtResource("28_81t5p")
@@ -334,64 +339,6 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4itaf"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mfyb"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lo4hs"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1n40"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lki18"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xu3rk"]
-atlas = ExtResource("5_5n3o1")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_72u1o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4itaf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5mfyb")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lo4hs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p1n40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lki18")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xu3rk")
-}],
-"loop": true,
-"name": &"run",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo4hs"]
-size = Vector2(36, 15)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh3hu"]
 texture = ExtResource("26_u75d6")
@@ -515,6 +462,48 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lki18"]
+texture = ExtResource("39_4itaf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xu3rk"]
+sources/0 = SubResource("TileSetAtlasSource_lki18")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72u1o"]
+texture = ExtResource("39_4itaf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_enjem"]
+sources/0 = SubResource("TileSetAtlasSource_72u1o")
+
 [node name="cidade_scene" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_eroxr")
@@ -634,6 +623,8 @@ y_sort_enabled = true
 position = Vector2(1296, 144)
 scale = Vector2(3, 3)
 texture = ExtResource("10_4socy")
+script = ExtResource("7_hk50e")
+obj_id = 6
 
 [node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Lojinha2"]
 
@@ -642,10 +633,18 @@ position = Vector2(-0.166687, 1.00001)
 shape = SubResource("RectangleShape2D_4itaf")
 
 [node name="InteractionArea" parent="cidade_map/Lojinha2" instance=ExtResource("7_5tygx")]
+position = Vector2(0, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Lojinha2/InteractionArea"]
-position = Vector2(0, 18.5)
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_vumlt")
+
+[node name="npcs_tileset2" type="TileMapLayer" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(0, -28)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAADAA0AAQAAAAAAAAAGAA0AAQAAAAIAAAAJAA0AAQAAAAMAAAADAAcAAQAAAAEAAAAGAAcAAQAAAAIAAAAJAAcAAQAAAAAAAAAOAAUAAQAAAAIAAAARAAUAAQAAAAIAAAAUAAUAAQAAAAMAAAAYAAcAAQAAAAAAAAAbAAcAAQAAAAAAAAAeAAcAAQAAAAIAAAAeAA0AAQAAAAIAAAAbAA0AAQAAAAIAAAAYAA0AAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_d28hq")
 
 [node name="cidade_props" type="Node2D" parent="cidade_map"]
 y_sort_enabled = true
@@ -1189,6 +1188,345 @@ texture = ExtResource("19_x7qg0")
 position = Vector2(-0.483337, 0)
 shape = SubResource("RectangleShape2D_lkvsa")
 
+[node name="bancas" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="BancaVenda" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(151.333, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda2" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(103.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda2"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda3" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(55.6667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda3"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda4" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(151.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda4"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda5" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(103.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda5"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda6" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(55.6667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda6"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda7" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(487.333, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda7"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda8" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(439.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda8"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda9" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(391.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda9"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda10" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(487.333, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda10"]
+y_sort_enabled = true
+position = Vector2(-11.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda11" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(439.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda11"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda12" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(391.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda12"]
+y_sort_enabled = true
+position = Vector2(18, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda13" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(327.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda13"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda14" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(279.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda14"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+frame = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda15" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(231.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda15"]
+y_sort_enabled = true
+position = Vector2(-20, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
 [node name="lixeira" type="Sprite2D" parent="cidade_map"]
 y_sort_enabled = true
 position = Vector2(1473, 900)
@@ -1243,7 +1581,7 @@ shape = SubResource("RectangleShape2D_vsmpn")
 [node name="npcs_tileset" type="TileMapLayer" parent="cidade_map"]
 y_sort_enabled = true
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAALABEAAQAAAAAAAAAZABUAAQAAAAEAAAAYABUAAQAAAAIAAAAEAA4AAQAAAAIAAAAJABUAAQAAAAMAAAAhABsAAQAAAAAAAAAGABAAAQAAAAIAAAAHABAAAQAAAAAAAAADAA8AAQAAAAEAAAACAA8AAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAALABEAAQAAAAAAAAAZABUAAQAAAAEAAAAYABUAAQAAAAIAAAAEAA4AAQAAAAIAAAAJABUAAQAAAAMAAAAhABsAAQAAAAAAAAAGABAAAQAAAAIAAAACAA8AAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAMAAAACAAgAAQAAAAAAAAADAAgAAQAAAAMAAAAFAAkAAQAAAAEAAAAHAAgAAQAAAAIAAAANAAcAAQAAAAMAAAARAAYAAQAAAAMAAAATAAcAAQAAAAIAAAAUAAcAAQAAAAEAAAAYAAgAAQAAAAIAAAAbAAgAAQAAAAEAAAAeAAgAAQAAAAEAAAAaAAgAAQAAAAIAAAAgAAcAAQAAAAEAAAAgAAkAAQAAAAIAAAAhAAkAAQAAAAMAAAAYAA4AAQAAAAIAAAAbAA4AAQAAAAAAAAAdAA4AAQAAAAIAAAAeAA4AAQAAAAEAAAAgAA8AAQAAAAMAAAANAAoAAQAAAAAAAAAOAAwAAQAAAAIAAAAVAAkAAQAAAAEAAAAUAA4AAQAAAAAAAAAQAA4AAQAAAAAAAAAJAA4AAQAAAAEAAAAIAA8AAQAAAAMAAAA=")
 tile_set = SubResource("TileSet_d28hq")
 
 [node name="MáquinaInovação" type="Sprite2D" parent="cidade_map"]
@@ -1254,8 +1592,8 @@ texture = ExtResource("21_vk3gu")
 [node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/MáquinaInovação"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/MáquinaInovação/StaticBody2D"]
-position = Vector2(0.333333, 1.66667)
-shape = SubResource("CapsuleShape2D_g4qie")
+position = Vector2(0, 6.33333)
+shape = SubResource("RectangleShape2D_enjem")
 
 [node name="Mercadao" type="Sprite2D" parent="cidade_map"]
 position = Vector2(288, 144)
@@ -1267,24 +1605,6 @@ texture = ExtResource("23_g4qie")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Mercadao/StaticBody2D"]
 position = Vector2(1.00001, 2)
 shape = SubResource("RectangleShape2D_g4qie")
-
-[node name="BancaVenda" type="Sprite2D" parent="cidade_map"]
-position = Vector2(448, 624)
-scale = Vector2(3, 3)
-texture = ExtResource("26_g4qie")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/BancaVenda"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/BancaVenda/StaticBody2D"]
-position = Vector2(0.833313, 10.6667)
-shape = SubResource("RectangleShape2D_heuos")
-
-[node name="Banner" type="Sprite2D" parent="cidade_map"]
-y_sort_enabled = true
-position = Vector2(504, 640)
-scale = Vector2(3, 3)
-texture = ExtResource("27_vsmpn")
-hframes = 2
 
 [node name="npcs" type="Node2D" parent="cidade_map"]
 y_sort_enabled = true
@@ -1376,29 +1696,6 @@ type = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/mae_crianca/InteractionArea"]
 position = Vector2(0.166687, 2.66667)
 shape = SubResource("RectangleShape2D_vlk8u")
-
-[node name="npcs_andando" type="Node2D" parent="cidade_map"]
-
-[node name="npc2" type="Node2D" parent="cidade_map/npcs_andando"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="cidade_map/npcs_andando/npc2"]
-collision_layer = 2
-collision_mask = 2
-collision_priority = 2.0
-script = ExtResource("34_mrl7o")
-
-[node name="AnimatedSprite" type="AnimatedSprite2D" parent="cidade_map/npcs_andando/npc2/CharacterBody2D"]
-position = Vector2(648, 728)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_72u1o")
-animation = &"run"
-autoplay = "run"
-frame_progress = 0.63546
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs_andando/npc2/CharacterBody2D"]
-position = Vector2(648, 741.5)
-shape = SubResource("RectangleShape2D_lo4hs")
-disabled = true
 
 [node name="conveniencia_map" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1577,6 +1874,86 @@ type = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/louco/InteractionArea"]
 position = Vector2(-1.83325, 7)
 shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="brecho_map" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(3859, 564)
+
+[node name="floors" type="TileMapLayer" parent="brecho_map"]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAABAAMAAAADAAEAAAABAAQAAAADAAEAAAABAAUAAAADAAEAAAABAAYAAAADAAEAAAABAAcAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAADAAEAAAAJAAgAAAADAAEAAAAJAAcAAAADAAEAAAAJAAYAAAADAAEAAAAJAAUAAAADAAEAAAAJAAQAAAADAAEAAAAJAAMAAAADAAEAAAAIAAMAAAADAAEAAAAHAAMAAAADAAEAAAAGAAMAAAADAAEAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAACAAQAAAADAAEAAAACAAYAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAADAAEAAAADAAYAAAADAAEAAAADAAUAAAADAAEAAAADAAQAAAADAAEAAAACAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAFAAQAAAADAAEAAAAEAAQAAAADAAEAAAAEAAYAAAADAAEAAAAEAAcAAAADAAEAAAAFAAYAAAADAAEAAAAFAAcAAAADAAEAAAAGAAYAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAHAAQAAAADAAEAAAAGAAQAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAHAAYAAAADAAEAAAAIAAUAAAADAAEAAAAIAAQAAAADAAEAAAAIAAYAAAADAAEAAAAIAAcAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_xu3rk")
+
+[node name="walls" type="TileMapLayer" parent="brecho_map"]
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAABAAEAAAAAAAEAAAABAAIAAAAAAAIAAAABAAMAAAAAAAMAAAABAAQAAAAAAAMAAAABAAUAAAAAAAMAAAABAAYAAAAAAAMAAAABAAcAAAAAAAMAAAABAAgAAAAAAAQAAAACAAgAAAABAAQAAAADAAgAAAABAAQAAAAEAAgAAAABAAQAAAAFAAgAAAABAAQAAAAGAAgAAAABAAQAAAAHAAgAAAABAAQAAAAIAAgAAAABAAQAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAFAAEAAAABAAEAAAAFAAIAAAABAAIAAAAGAAEAAAABAAEAAAAGAAIAAAABAAIAAAAHAAEAAAABAAEAAAAHAAIAAAABAAIAAAAIAAEAAAABAAEAAAAIAAIAAAABAAIAAAAJAAEAAAACAAEAAAAJAAIAAAACAAIAAAAJAAMAAAACAAMAAAAJAAQAAAACAAMAAAAJAAUAAAACAAMAAAAJAAYAAAACAAMAAAAJAAcAAAACAAMAAAAJAAgAAAACAAQAAAA=")
+tile_set = SubResource("TileSet_enjem")
+
+[node name="saida" type="Sprite2D" parent="brecho_map"]
+position = Vector2(262, 106.5)
+scale = Vector2(3, 3)
+texture = ExtResource("36_quvpo")
+script = ExtResource("7_hk50e")
+obj_id = 7
+
+[node name="InteractionArea" parent="brecho_map/saida" instance=ExtResource("7_5tygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/saida/InteractionArea"]
+position = Vector2(0, 6.66667)
+shape = SubResource("RectangleShape2D_5mfyb")
+
+[node name="cabine" type="Sprite2D" parent="brecho_map"]
+position = Vector2(435, 189)
+scale = Vector2(3, 3)
+texture = ExtResource("44_ejl36")
+
+[node name="cabine2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(435, 284)
+scale = Vector2(3, 3)
+texture = ExtResource("44_ejl36")
+
+[node name="arquiibanca" type="Sprite2D" parent="brecho_map"]
+position = Vector2(375.5, 356)
+scale = Vector2(3, 3)
+texture = ExtResource("41_lki18")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brecho_map/arquiibanca"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/arquiibanca/StaticBody2D"]
+position = Vector2(0.5, 4.50003)
+shape = SubResource("RectangleShape2D_72u1o")
+
+[node name="CabineRoupas" type="Sprite2D" parent="brecho_map"]
+position = Vector2(334.5, 294.5)
+scale = Vector2(3, 3)
+texture = ExtResource("49_7en3g")
+
+[node name="CabineRoupas2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(334.5, 201.5)
+scale = Vector2(3, 3)
+texture = ExtResource("49_7en3g")
+
+[node name="EstandeRoupas" type="Sprite2D" parent="brecho_map"]
+position = Vector2(116, 196)
+scale = Vector2(3, 3)
+texture = ExtResource("50_7c4ul")
+
+[node name="EstandeRoupas2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(116, 266)
+scale = Vector2(3, 3)
+texture = ExtResource("50_7c4ul")
+
+[node name="EstandeRoupas3" type="Sprite2D" parent="brecho_map"]
+position = Vector2(82, 357)
+scale = Vector2(3, 3)
+texture = ExtResource("51_qye7e")
+flip_h = true
+
+[node name="EstandeRoupas4" type="Sprite2D" parent="brecho_map"]
+position = Vector2(150, 357)
+scale = Vector2(3, 3)
+texture = ExtResource("51_qye7e")
+flip_h = true
 
 [node name="player_scene" parent="." instance=ExtResource("2_ddj74")]
 position = Vector2(840, 1323)
