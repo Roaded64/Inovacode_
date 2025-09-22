@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var playerSpeed = 275
+var playerSpeed
 var isRunning = false
 var isUsing = false
 var canUse = false
@@ -26,9 +26,15 @@ var is_mission = false
 var is_blocked = false
 var stuck_time = 0.0 # tempo preso para parar o movimento automático
 
-func _process(delta: float) -> void:
+var ending_signal = false
+
+func _ready() -> void:
+	var hud = PrincipalHud
+	hud.connect("ending_triggered", Callable(self, "_ending"))
+
+func _process(_delta: float) -> void:
 	_use_camera()
-	
+
 	match Main.emotion:
 		1:
 			playerSprite.texture = load("res://assets/images/player/emotions/sheet_depre.png")
@@ -62,16 +68,12 @@ func _process(delta: float) -> void:
 	if isRunning and !is_blocked:
 		progress.value -= 0.4
 		Main.fade(progress, 0.7, Color.WHITE)
-		playerSpeed = 500
+		playerSpeed = 175
 		playerAnim.speed_scale = 1.2
 	else:
 		Main.fade(progress, 0.7, Color.TRANSPARENT)
-		playerSpeed = 275
+		playerSpeed = 91
 		playerAnim.speed_scale = 1
-
-	if Input.is_action_just_pressed("key_mission"):
-		_popup()
-
 
 func _physics_process(delta: float) -> void:
 
@@ -79,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	var target_vel = Vector2.ZERO
 
 	if Main.is_mouse:
-		if Input.is_action_just_pressed("left_mouse") and !Dialogic.is_playing:
+		if Input.is_action_just_pressed("left_mouse") and !Main.is_cutscene:
 			if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
 				click_position = get_global_mouse_position()
 				hasClicked = true
@@ -102,7 +104,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		mouse_location.visible = false
 		var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
-		if input_dir != Vector2.ZERO and !Dialogic.is_playing:
+		if input_dir != Vector2.ZERO and !Main.is_cutscene:
 			target_vel.x = playerSpeed * input_dir.x
 			if not sideMove:
 				target_vel.y = playerSpeed * input_dir.y
@@ -117,7 +119,7 @@ func _physics_process(delta: float) -> void:
 			hasClicked = false
 			mouse_location.visible = false
 
-	if !Dialogic.is_playing:
+	if Main.is_cutscene:
 		velocity = target_vel
 	else:
 		velocity = velocity.move_toward(target_vel, playerSpeed * delta * 6)
@@ -144,22 +146,24 @@ func _on_timer_timeout() -> void:
 	if !isRunning:
 		progress.value += 0.4
 
-func _popup():
-	if !mm.is_playing():
-		is_mission = !is_mission
-		if is_mission:
-			mm.play("popup")
-		else:
-			mm.play_backwards("popup")
-
 func _use_camera():
 	if Main.is_city:
-		playerCamera.limit_left = 0
-		playerCamera.limit_right = 1681
-		playerCamera.limit_top = -40
-		playerCamera.limit_bottom = 1430
+		if ending_signal == true:
+			playerCamera.limit_left = 0
+			playerCamera.limit_right = 1500
+			playerCamera.limit_top = 0
+			playerCamera.limit_bottom = 1500
+		else:
+			playerCamera.limit_left = 0
+			playerCamera.limit_right = 560
+			playerCamera.limit_top = 0
+			playerCamera.limit_bottom = 470
+			
 	else:
-		playerCamera.limit_left = 2178
-		playerCamera.limit_right = 3242
-		playerCamera.limit_top = 53
-		playerCamera.limit_bottom = 572
+		playerCamera.limit_left = 856
+		playerCamera.limit_right = 1080
+		playerCamera.limit_top = 40
+		playerCamera.limit_bottom = 232
+		
+func _ending():
+	ending_signal = true

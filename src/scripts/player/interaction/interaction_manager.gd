@@ -15,14 +15,14 @@ func _unregister_area(area: InteractionArea):
 	if index != 1:
 		active_areas.remove_at(index)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance)
 
 		var area: InteractionArea = active_areas[0]
 		thing.global_position = area.global_position
 
-		thing.global_position.y -= 36
+		thing.global_position.y -= 13
 		thing.play("default", true) 
 		
 		await get_tree().create_timer(0.03).timeout

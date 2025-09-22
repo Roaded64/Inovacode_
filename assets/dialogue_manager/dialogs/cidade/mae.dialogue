@@ -1,4 +1,5 @@
-Mãe: Que bom que aquele moço gentil pediu essa pulseira para você filha, você quer comer o que?
-Chefe: Olá! Com licença. Ouvi dizer que você recebeu ajuda de alguém que já passou, ele tinha um código? Se tinha pode me falar o número?
-Mãe: Olá! Ele tinha sim! Eu não lembro do código, mas sei que o último número era {{Main.cod[3]}}.
+Chefe: Olá! Com licença. Desculpa a minha intrusão, mas eu vi no seu celular o aplicativo A.P.T.A, por acaso, você já tem a pulseira?
+Mãe: Olá! Não tenho não, estou testando pois minha filha tem dificuldade em se comunicar, você sabe, mas alguém pediu pra mim essa pulseira.
+Chefe: Por acaso foi uma pessoa com um dos braço queimado e um código?
+Mãe: Sim Sim! Eu não lembro do código inteiro sabe...Mas sei que o último número era {{Main.cod[3]}}.
 do Main.dialogue_cod.emit("mae")

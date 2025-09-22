@@ -2,7 +2,7 @@ extends Sprite2D
 
 @export var obj_id: int
 
-# 1 - lixeira
+# 1 - 
 # 2 - loja
 # 3 - lojinha2
 # 4 - loja
@@ -26,61 +26,54 @@ func _ready() -> void:
 func _interact():
 	if !Main.is_cutscene || Transition.can_trans:
 		match obj_id:
-			1:
-				if !Dialogic.is_playing:
-					Dialogic.start("cidade_lixeira")
-					$"../lixeira/InteractionArea".queue_free()
 			2: # Conveniencia Entrar
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				conveniencia_map.position = Vector2(2448, 137)
-				
-				doceria_map.position = Vector2(3859, 67)
-				brecho_map.position = Vector2(3859, 67)
+				_enter(conveniencia_map, doceria_map, brecho_map)
 				
 				# Teleporta player para dentro da conveniência
-				player._position(2710, 300)
+				player._position(968, 112)
 				Main.is_city = false
 			3: # Conveniencia Sair
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
 				# Teleporta player para dentro da área visível da cidade
-				player.position = Vector2(1320, 1008)
+				player.position = Vector2(424, 336)
 				Main.is_city = true
 			4: # Doceria Entrar
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				doceria_map.position = Vector2(2448, 137)
+				_enter(doceria_map, conveniencia_map, brecho_map)
 				
-				conveniencia_map.position = Vector2(3859, 67)
-				brecho_map.position = Vector2(3859, 67)
-				
-				player._position(2710, 300)
+				player._position(968, 112)
 				Main.is_city = false
 			5: # Doceria Sair
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				player.position = Vector2(384, 1014)
+				player.position = Vector2(128, 336)
 				Main.is_city = true
 			
 			6: # Brecho Entrar
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				brecho_map.position = Vector2(2448, 137)
+				_enter(brecho_map, doceria_map, conveniencia_map)
 				
-				conveniencia_map.position = Vector2(3859, 67)
-				doceria_map.position = Vector2(3859, 67)
-				
-				player._position(2710, 300)
+				player._position(968, 112)
 				Main.is_city = false
 			7: # Brecho Sair
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				player.position = Vector2(1295, 233)
+				player.position = Vector2(416, 80)
 				Main.is_city = true
+
+func _enter(node, node2, node3):
+	node.position = Vector2(880, 64)
+	
+	node2.position = Vector2(1288, 8)
+	node3.position = Vector2(1288, 8)

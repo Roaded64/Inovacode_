@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://byrc6xccyodgc"]
+[gd_scene load_steps=18 format=3 uid="uid://byrc6xccyodgc"]
 
 [ext_resource type="Script" uid="uid://b1ju346t8tx4n" path="res://assets/dialogue_manager/styles/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="2_qn7ah"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://gvdgfpi8ebe2" path="res://assets/images/misc/interact_thing.png" id="4_civbx"]
+[ext_resource type="Texture2D" uid="uid://c2ttp81rx4mql" path="res://assets/dialogue_manager/assets_portraits/chefe_portrait.png" id="6_78oi2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -139,7 +140,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -32), Vector2(0, -43)]
+"values": [Vector2(0, -32), Vector2(0, -42)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -174,6 +175,8 @@ _data = {
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 0
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("1_36de5")
 next_action = &"key_interact"
 skip_action = &"key_interact"
@@ -197,24 +200,23 @@ offset_right = 1280.0
 offset_bottom = 763.0
 color = Color(0, 0, 0, 0.658824)
 
-[node name="ColorRect" type="ColorRect" parent="Balloon/ColorRect2"]
-layout_mode = 0
-offset_top = 504.0
-offset_right = 1280.0
-offset_bottom = 507.0
-
-[node name="ColorRect2" type="ColorRect" parent="Balloon/ColorRect2"]
-layout_mode = 0
-offset_top = 641.0
-offset_right = 1280.0
-offset_bottom = 644.0
-
 [node name="ColorRect" type="ColorRect" parent="Balloon"]
-layout_mode = 2
+layout_mode = 0
 offset_top = 550.0
 offset_right = 1280.0
 offset_bottom = 684.0
 color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Balloon/ColorRect"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 1280.0
+
+[node name="ColorRect2" type="ColorRect" parent="Balloon/ColorRect"]
+layout_mode = 0
+offset_top = 134.0
+offset_right = 1280.0
+offset_bottom = 137.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
@@ -222,10 +224,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 387.0
-offset_top = 93.0
-offset_right = -219.0
-offset_bottom = 245.0
+offset_left = 416.0
+offset_top = 635.0
+offset_right = 708.0
+offset_bottom = 787.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -284,10 +286,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -35.0
-offset_right = 290.5
-offset_bottom = 35.0
+offset_left = -184.0
+offset_top = 733.0
+offset_right = 397.0
+offset_bottom = 803.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -302,8 +304,9 @@ text = "Response example"
 
 [node name="portrait" type="Sprite2D" parent="Balloon"]
 unique_name_in_owner = true
-position = Vector2(287, 550)
+position = Vector2(287, 554.0001)
 scale = Vector2(14.8833, 14.8833)
+texture = ExtResource("6_78oi2")
 
 [node name="voice" type="AudioStreamPlayer2D" parent="Balloon"]
 unique_name_in_owner = true

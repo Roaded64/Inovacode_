@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d4iv2uetgsk1c"
+path="res://.godot/imported/cj.dialogue-6c68bf1a825b4c372d4c516137fa24e3.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/cj.dialogue"
+dest_files=["res://.godot/imported/cj.dialogue-6c68bf1a825b4c372d4c516137fa24e3.tres"]
+
+[params]
+
+defaults=true

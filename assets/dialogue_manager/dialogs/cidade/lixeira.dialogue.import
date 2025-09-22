@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bkf1nirlyj1se"
+path="res://.godot/imported/lixeira.dialogue-1ec61b0141c43c70219036128d8018d2.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/lixeira.dialogue"
+dest_files=["res://.godot/imported/lixeira.dialogue-1ec61b0141c43c70219036128d8018d2.tres"]
+
+[params]
+
+defaults=true

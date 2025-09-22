@@ -19,14 +19,16 @@ var phrases = [
 var base_y: float
 
 func _ready() -> void:
-	Main.fade($Cutscene_HUD/ColorRect, 4, Color.TRANSPARENT)
 	base_y = $logo.position.y
 	
 	PrincipalHud.visible = false
 	$Cutscene_HUD/AnimationPlayer.play("dis")
+	
+	await get_tree().create_timer(1).timeout
+	Main.fade($Cutscene_HUD/ColorRect, 4, Color.TRANSPARENT)
 
-func _process(delta: float) -> void:
-	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 10  # ajustável
+func _process(_delta: float) -> void:
+	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 2  # ajustável
 	
 	$logo.position.y = base_y + float_offset
 

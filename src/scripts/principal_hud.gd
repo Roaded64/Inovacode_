@@ -2,11 +2,14 @@ extends CanvasLayer
 
 @onready var timer = $timebar/TextureProgressBar/Timer
 @onready var progress = $timebar/TextureProgressBar
+@onready var tempo_label = $timebar/tempo
 
 # Sinal que será emitido no ending
 signal ending_triggered
 
-func _process(delta: float) -> void:
+var total_time: int = 0  # tempo total em segundos
+
+func _process(_delta: float) -> void:
 	if progress.value == 0:
 		timer.stop()
 			
@@ -15,20 +18,31 @@ func _process(delta: float) -> void:
 				Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")
 				progress.value = 1
 			"cidade_scene":
-				Transition.scene("res://src/scenes/cutscene.tscn")
+				#Transition.scene("res://src/scenes/cutscene.tscn")
 				progress.value = 1
-				#emit_signal("ending_triggered")  # Emite sinal quando o ending deve começar
+				emit_signal("ending_triggered")  # Emite sinal quando o ending deve começar
 
-func define_timer(value: float, label):
+# Define o tempo e inicia o contador
+func define_timer(value: float) -> void:
 	_appear()
 	timer.start()
 	progress.max_value = value
 	progress.value = value
-	$timebar/final.text = label
+	total_time = int(value)  # salva em segundos
+	tempo_label.text = format_time(total_time)
 
+# Quando o timer dá timeout, reduzir 1 segundo
 func _on_timer_timeout() -> void:
-	if !Dialogic.is_playing:
-		progress.value -= 0.5
+	if !Dialogic.is_playing and total_time > 0:
+		total_time -= 1
+		progress.value = total_time
+		tempo_label.text = format_time(total_time)
+
+# Formatar segundos em MM:SS
+func format_time(seconds: int) -> String:
+	var minutes = seconds / 60
+	var secs = seconds % 60
+	return str(minutes).pad_zeros(2) + ":" + str(secs).pad_zeros(2)
 
 func _appear() -> void:
 	$timebar/AnimationPlayer.play("appear")
