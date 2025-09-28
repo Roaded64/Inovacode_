@@ -40,7 +40,7 @@ func _interact():
 				await get_tree().create_timer(1.5).timeout
 				
 				# Teleporta player para dentro da área visível da cidade
-				player.position = Vector2(424, 336)
+				player._position(424, 336)
 				Main.is_city = true
 			4: # Doceria Entrar
 				Transition.play()
@@ -54,7 +54,7 @@ func _interact():
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				player.position = Vector2(128, 336)
+				player._position(128, 336)
 				Main.is_city = true
 			
 			6: # Brecho Entrar
@@ -69,7 +69,7 @@ func _interact():
 				Transition.play()
 				await get_tree().create_timer(1.5).timeout
 				
-				player.position = Vector2(416, 80)
+				player._position(416, 80)
 				Main.is_city = true
 
 func _enter(node, node2, node3):

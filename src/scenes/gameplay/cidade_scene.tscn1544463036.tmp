@@ -601,7 +601,7 @@ y_sort_enabled = true
 
 [node name="cone_tileset" type="TileMapLayer" parent="cidade_map"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAiAA8AAAAAAAAAAAAiAA4AAAAAAAAAAAAiAA0AAAAAAAAAAAAiAAkAAAAAAAAAAAAiAAgAAAAAAAAAAAAiAAcAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABcAAAAAAAAAAAAAABkAAAAAAAAAAAAAABgAAAAAAAAAAAAiABcAAAAAAAAAAAAiABgAAAAAAAAAAAAiABkAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAANABYAAAAAAAAAAAAPABYAAAAAAAAAAAARABYAAAAAAAAAAAATABYAAAAAAAAAAAAVABYAAAAAAAAAAAAiAA8AAAAAAAAAAAAiAA4AAAAAAAAAAAAiAA0AAAAAAAAAAAAiAAkAAAAAAAAAAAAiAAgAAAAAAAAAAAAiAAcAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA8AAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_eroxr")
 metadata/_edit_lock_ = true
 
@@ -925,6 +925,16 @@ max_distance = 150.0
 [node name="lixos" type="Node2D" parent="cidade_map/cidade_props"]
 y_sort_enabled = true
 
+[node name="lixo" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(23.667, 182.5)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
 [node name="lixo7" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
 position = Vector2(199.667, 438.667)
 texture = ExtResource("10_3tjn6")
@@ -992,6 +1002,16 @@ texture = ExtResource("10_3tjn6")
 [node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo6/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo2" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(535.667, 182.5)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo2/StaticBody2D"]
 position = Vector2(0, -0.0831451)
 shape = SubResource("RectangleShape2D_vk3gu")
 
@@ -2035,6 +2055,7 @@ position = Vector2(0, 19)
 texture = ExtResource("53_2juux")
 
 [node name="entrance" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

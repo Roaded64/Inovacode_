@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dusl8dc6xabgc"
-path="res://.godot/imported/b.png-e88be461c9a55e693c1df7b6ba92387b.ctex"
+uid="uid://dbs8b1rexs3v3"
+path="res://.godot/imported/minimap_sprite.png-e3f029fc03ddd7c748788276af2522a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/b.png"
-dest_files=["res://.godot/imported/b.png-e88be461c9a55e693c1df7b6ba92387b.ctex"]
+source_file="res://assets/images/cidade/minimap/minimap_sprite.png"
+dest_files=["res://.godot/imported/minimap_sprite.png-e3f029fc03ddd7c748788276af2522a7.ctex"]
 
 [params]
 

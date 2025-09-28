@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var playerSpeed
+var playerSpeed = 91
 var isRunning = false
 var isUsing = false
 var canUse = false
@@ -20,7 +20,6 @@ var click_position = Vector2()
 var hasClicked = false
 @onready var mouse_location = $"../mouse_location"
 
-@onready var mm = $"../hud/mission_menu/AnimationPlayer"
 var is_mission = false
 
 var is_blocked = false
@@ -75,54 +74,59 @@ func _process(_delta: float) -> void:
 		playerSpeed = 91
 		playerAnim.speed_scale = 1
 
-func _physics_process(delta: float) -> void:
-
+func _physics_process(_delta: float) -> void:
 	var moved = false
 	var target_vel = Vector2.ZERO
 
 	if Main.is_mouse:
-		if Input.is_action_just_pressed("left_mouse") and !Main.is_cutscene:
-			if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
-				click_position = get_global_mouse_position()
-				hasClicked = true
-				stuck_time = 0.0
+		if !Main.is_cutscene || !DialogueManager.is_playing:
+			if Input.is_action_just_pressed("left_mouse"):
+				if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
+					click_position = get_global_mouse_position()
+					hasClicked = true
+					stuck_time = 0.0
 
-		if hasClicked:
-			var distance = global_position.distance_to(click_position)
-			if distance > 3:
-				var dir = (click_position - global_position).normalized()
-				target_vel = dir * playerSpeed
-				moved = true
-				mouse_location.visible = true
-				mouse_location.position = mouse_location.get_parent().to_local(click_position)
-				playerSprite.flip_h = dir.x < 0
+			if hasClicked:
+				var distance = global_position.distance_to(click_position)
+				if distance > 3:
+					var dir = (click_position - global_position).normalized()
+					target_vel = dir * playerSpeed
+					moved = true
+					mouse_location.visible = true
+					mouse_location.position = mouse_location.get_parent().to_local(click_position)
+					playerSprite.flip_h = dir.x < 0
+				else:
+					hasClicked = false
+					mouse_location.visible = false
 			else:
-				hasClicked = false
 				mouse_location.visible = false
-		else:
-			mouse_location.visible = false
 	else:
 		mouse_location.visible = false
-		var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
-		if input_dir != Vector2.ZERO and !Main.is_cutscene:
-			target_vel.x = playerSpeed * input_dir.x
-			if not sideMove:
-				target_vel.y = playerSpeed * input_dir.y
-			moved = true
-			playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
+		
+		if !Main.is_cutscene || !DialogueManager.is_playing:
+			var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
 			
-			playerMove = true
-		else:
-			playerMove = false
+			if input_dir != Vector2.ZERO:
+				target_vel.x = playerSpeed * input_dir.x
+				if not sideMove:
+					target_vel.y = playerSpeed * input_dir.y
+				moved = true
+				
+				if !DialogueManager.is_playing:
+					playerSprite.flip_h = input_dir.x < 0 if input_dir.x != 0 else playerSprite.flip_h
+				
+				playerMove = true
+			else:
+				playerMove = false
 
-		if moved:
-			hasClicked = false
-			mouse_location.visible = false
+			if moved:
+				hasClicked = false
+				mouse_location.visible = false
 
-	if Main.is_cutscene:
-		velocity = target_vel
+	if Main.is_cutscene || DialogueManager.is_playing:
+		velocity = Vector2.ZERO
 	else:
-		velocity = velocity.move_toward(target_vel, playerSpeed * delta * 6)
+		velocity = velocity.move_toward(target_vel, playerSpeed * _delta * 6)
 
 	move_and_slide()
 
@@ -130,7 +134,7 @@ func _physics_process(delta: float) -> void:
 
 	if Main.is_mouse and hasClicked:
 		if is_blocked:
-			stuck_time += delta
+			stuck_time += _delta
 			if stuck_time > 1.0:
 				hasClicked = false
 				mouse_location.visible = false

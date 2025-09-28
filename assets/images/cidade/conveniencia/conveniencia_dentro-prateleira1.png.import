@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmb6cr4vdjdy2"
-path="res://.godot/imported/conveniencia_dentro8.png-582e17e441d61800c6640da3e8edaed7.ctex"
+uid="uid://dayu83kcfn2cw"
+path="res://.godot/imported/conveniencia_dentro-prateleira1.png-a0ce967c1ce94fdbf2e940e552cda366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cidade/conveniencia/conveniencia_dentro8.png"
-dest_files=["res://.godot/imported/conveniencia_dentro8.png-582e17e441d61800c6640da3e8edaed7.ctex"]
+source_file="res://assets/images/cidade/conveniencia/conveniencia_dentro-prateleira1.png"
+dest_files=["res://.godot/imported/conveniencia_dentro-prateleira1.png-a0ce967c1ce94fdbf2e940e552cda366.ctex"]
 
 [params]
 

@@ -64,6 +64,7 @@ _data = {
 }
 
 [node name="transition" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_uv32a")
 
 [node name="TopBar" type="ColorRect" parent="."]

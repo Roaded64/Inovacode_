@@ -67,6 +67,7 @@ var _dotnet_dialogue_manager: RefCounted
 
 var _expression_parser: DMExpressionParser = DMExpressionParser.new()
 
+var is_playing = false
 
 func _ready() -> void:
 	# Cache the known Node2D properties
@@ -105,6 +106,7 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 
 	# If our dialogue is nothing then we hit the end
 	if not _is_valid(dialogue):
+		is_playing = false
 		dialogue_ended.emit.call_deferred(resource)
 		return null
 
@@ -120,6 +122,7 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 				pass
 		if actual_next_id in [DMConstants.ID_END_CONVERSATION, DMConstants.ID_NULL, null]:
 			# End the conversation
+			is_playing = false
 			dialogue_ended.emit.call_deferred(resource)
 			return null
 		else:
@@ -464,6 +467,8 @@ func static_id_to_line_ids(resource: DialogueResource, static_id: String) -> Pac
 
 # Call "start" on the given balloon.
 func _start_balloon(balloon: Node, resource: DialogueResource, title: String, extra_game_states: Array) -> void:
+	is_playing = true
+	
 	get_current_scene.call().add_child(balloon)
 
 	if balloon.has_method(&"start"):
@@ -475,7 +480,6 @@ func _start_balloon(balloon: Node, resource: DialogueResource, title: String, ex
 
 	dialogue_started.emit(resource)
 	bridge_dialogue_started.emit(resource)
-
 
 # Get the path to the example balloon
 func _get_example_balloon_path() -> String:

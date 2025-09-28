@@ -19,6 +19,7 @@ offset_bottom = 180.0
 color = Color(0, 0, 0, 1)
 
 [node name="aviso" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1599.9999
 offset_bottom = 899.9999

@@ -20,6 +20,11 @@ func _ready() -> void:
 	dialogue_cod.connect(_signal)
 
 func _process(_delta):
+	if Main.is_mouse:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 	# pra deixar tela cheia XD
 	if Input.is_action_just_pressed("key_fullscreen"):
 		fullscreen = !fullscreen
@@ -28,15 +33,6 @@ func _process(_delta):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-
-	if Input.is_key_pressed(KEY_1):
-		emotion = 1
-	elif Input.is_key_pressed(KEY_2):
-		emotion = 2
-	elif Input.is_key_pressed(KEY_3):
-		emotion = 3
-	elif Input.is_key_pressed(KEY_4):
-		emotion = 4
 
 func fade(node, fade_duration, color):
 	if color == null: color = Color.BLACK
