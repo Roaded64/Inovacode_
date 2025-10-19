@@ -1,0 +1,5 @@
+Chefe: Que bom que te encontrei! Sinto muito pela sua casa...
+Jogador: (Acena em agradecimento)
+Chefe: Nesse teste, coloque no cesto o objeto soletrado na TV. Melhor de três!
+Chefe: Seja atencioso... você foi feito para isso.
+do Main.test.emit("begin")

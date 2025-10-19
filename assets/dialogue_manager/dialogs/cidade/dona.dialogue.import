@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cqpaegg2a5cmn"
+path="res://.godot/imported/dona.dialogue-5142074e6a8e7c23a554336660501f5a.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/dona.dialogue"
+dest_files=["res://.godot/imported/dona.dialogue-5142074e6a8e7c23a554336660501f5a.tres"]
+
+[params]
+
+defaults=true

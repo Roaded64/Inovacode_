@@ -112,7 +112,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -174,15 +174,14 @@ _data = {
 }
 
 [node name="ExampleBalloon" type="CanvasLayer"]
-layer = 0
+layer = 2
 scale = Vector2(0.25, 0.25)
 transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
 script = ExtResource("1_36de5")
-next_action = &"key_interact"
-skip_action = &"key_interact"
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -225,9 +224,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 416.0
-offset_top = 635.0
+offset_top = 631.0
 offset_right = 708.0
-offset_bottom = 787.0
+offset_bottom = 783.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -304,7 +303,7 @@ text = "Response example"
 
 [node name="portrait" type="Sprite2D" parent="Balloon"]
 unique_name_in_owner = true
-position = Vector2(287, 554.0001)
+position = Vector2(287, 546.5)
 scale = Vector2(14.8833, 14.8833)
 texture = ExtResource("6_78oi2")
 

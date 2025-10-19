@@ -1,4 +1,4 @@
-Cadeirante: Ei! Eu te conheço! Você é o chefe da DES Corp, não é? Eu acho que você ta precisando dar umas ajeitadas aqui nessa área!
-Chefe: Olá! Sou eu sim! Perdão por tudo, você consegue informar isso para a máquina de inovações?
-Cadeirante: Eu nem preciso, já veio um cara com o braço queimado, ele tava com um código! A única coisa que lembro dele, falando nisso, qual era o número? Só sei que o segundo número era {{Main.cod[1]}}.
+Cadeirante: Ei, pera aí... você é o chefe da DES Corp, né? Essa área tá meio largada, hein!
+Chefe: Haha, sou eu sim! Desculpe por isso. Consegue avisar a máquina de inovações?
+Cadeirante: Relaxa, já veio um cara com o braço queimado e um código misterioso. Só lembro que o segundo número era {{Main.cod[1]}}.
 do Main.dialogue_cod.emit("cadeirante")

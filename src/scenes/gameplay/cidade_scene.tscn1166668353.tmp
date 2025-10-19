@@ -1,0 +1,2255 @@
+[gd_scene load_steps=160 format=4 uid="uid://bbiiq0283jj7k"]
+
+[ext_resource type="Texture2D" uid="uid://by38f6mkk84em" path="res://assets/images/cidade/calçada_tileset.png" id="1_645yb"]
+[ext_resource type="Script" uid="uid://cgcxu1ducvgsd" path="res://src/scripts/gameplay/cidade_scene.gd" id="1_eroxr"]
+[ext_resource type="PackedScene" uid="uid://bifndl8cdqn4c" path="res://src/scenes/player/player_scene.tscn" id="2_ddj74"]
+[ext_resource type="Texture2D" uid="uid://ciblmct5vcsbs" path="res://assets/images/cidade/rua_tileset.png" id="2_esxqw"]
+[ext_resource type="Texture2D" uid="uid://nooitxgirvsb" path="res://assets/images/cidade/lixos_tileset.png" id="3_jqdn6"]
+[ext_resource type="Texture2D" uid="uid://cg84d7wkvjn8a" path="res://assets/images/cidade/cone.png" id="4_aydav"]
+[ext_resource type="Texture2D" uid="uid://cnstfduslfwgj" path="res://assets/images/cidade/poste_01.png" id="4_n8ba5"]
+[ext_resource type="Texture2D" uid="uid://budlpm88wxp1l" path="res://assets/images/cidade/npcs/unknown_npcs.png" id="5_5n3o1"]
+[ext_resource type="Texture2D" uid="uid://3sxr6gtf3hdh" path="res://assets/images/cidade/conveniencia.png" id="6_vumlt"]
+[ext_resource type="PackedScene" uid="uid://dsxuylwhbi7ks" path="res://src/scenes/player/interaction/interaction_area.tscn" id="7_5tygx"]
+[ext_resource type="Texture2D" uid="uid://ditpdtc4ivqdu" path="res://assets/images/cidade/lixeira.png" id="7_7eq0p"]
+[ext_resource type="Script" uid="uid://drv33ra2pxmgv" path="res://src/scripts/player/interaction/interactions/cidade/objects_int.gd" id="7_hk50e"]
+[ext_resource type="Texture2D" uid="uid://b0ba4pwueodvx" path="res://assets/images/cidade/poste_02.png" id="7_nt6kj"]
+[ext_resource type="Texture2D" uid="uid://by68sva7mjkqh" path="res://assets/images/cidade/semafaro_01.png" id="8_1bdl1"]
+[ext_resource type="Texture2D" uid="uid://djphedxhruw0j" path="res://assets/images/cidade/semafaro_02.png" id="9_aydav"]
+[ext_resource type="Texture2D" uid="uid://p4t5yhygqd32" path="res://assets/images/cidade/doceria.png" id="9_iqv1j"]
+[ext_resource type="Texture2D" uid="uid://fgxwk4ne8kqe" path="res://assets/images/cidade/lixo.png" id="10_3tjn6"]
+[ext_resource type="Texture2D" uid="uid://b5yuya02bvx4p" path="res://assets/images/cidade/brecho.png" id="10_4socy"]
+[ext_resource type="Texture2D" uid="uid://di1vfbj5cyyqb" path="res://assets/images/cidade/arvore_01.png" id="11_5n3o1"]
+[ext_resource type="Texture2D" uid="uid://btfayjvys5jog" path="res://assets/images/cidade/arvore_02.png" id="12_eroxr"]
+[ext_resource type="Script" uid="uid://xng502qi4rd8" path="res://src/scripts/misc/cidade/semafaro.gd" id="15_jjou8"]
+[ext_resource type="AudioStream" uid="uid://cnht7mkyqfv6" path="res://assets/sounds/cidade/semafaro.wav" id="16_vlk8u"]
+[ext_resource type="Texture2D" uid="uid://bsbdu08nnnmuq" path="res://assets/images/cidade/lixeira_pc.png" id="19_53nd2"]
+[ext_resource type="Material" uid="uid://c80baonhxios6" path="res://assets/shader/wind.tres" id="19_tk0if"]
+[ext_resource type="Texture2D" uid="uid://bgq6dkg2e5kco" path="res://assets/images/cidade/banco_vertical.png" id="19_x7qg0"]
+[ext_resource type="Texture2D" uid="uid://ckvsv738bmwqg" path="res://assets/images/cidade/parquinho.png" id="20_d28hq"]
+[ext_resource type="Texture2D" uid="uid://cgeh8agknpj4y" path="res://assets/images/cidade/máquina_inovação.png" id="21_vk3gu"]
+[ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="22_iqv1j"]
+[ext_resource type="Texture2D" uid="uid://cr43iuwg64xb4" path="res://assets/images/cidade/mercadao.png" id="23_g4qie"]
+[ext_resource type="Texture2D" uid="uid://dcp0qm67pyhp2" path="res://assets/images/cidade/banca_venda.png" id="26_g4qie"]
+[ext_resource type="Texture2D" uid="uid://d00aqqgccn6s4" path="res://assets/images/cidade/conveniencia/tileset.png" id="26_u75d6"]
+[ext_resource type="Texture2D" uid="uid://bcwja04fbovab" path="res://assets/images/cidade/banner.png" id="27_vsmpn"]
+[ext_resource type="Texture2D" uid="uid://cp20lpvabx0bm" path="res://assets/images/cidade/npcs/cego_sprite.png" id="28_81t5p"]
+[ext_resource type="Script" uid="uid://rjaoirltpeiw" path="res://src/scripts/player/interaction/interactions/cidade/npcs_int.gd" id="28_lkvsa"]
+[ext_resource type="Texture2D" uid="uid://dk6kxwjuxfpka" path="res://assets/images/cidade/banco.png" id="28_u75d6"]
+[ext_resource type="Texture2D" uid="uid://c0crurpcqd1pq" path="res://assets/images/cidade/npcs/cadeirante_sprite.png" id="29_dpkfa"]
+[ext_resource type="AudioStream" uid="uid://f2lt350ifp74" path="res://assets/music/city_ambience.wav" id="30_lh3hu"]
+[ext_resource type="Texture2D" uid="uid://bqoimu7eu4gjg" path="res://assets/images/cidade/npcs/negacionista_sprite.png" id="31_axoyq"]
+[ext_resource type="Texture2D" uid="uid://bo78wdjrcdiyy" path="res://assets/images/cidade/npcs/mudo_sprite.png" id="33_13jk5"]
+[ext_resource type="Texture2D" uid="uid://b47cinklrawie" path="res://assets/images/cidade/npcs/mae_crianca.png" id="34_xu3rk"]
+[ext_resource type="Texture2D" uid="uid://w65dwqecse4l" path="res://assets/images/cidade/npcs/chato_sprite.png" id="35_7c4ul"]
+[ext_resource type="Texture2D" uid="uid://ut1s1exrh3n2" path="res://assets/images/cidade/lojas_sair.png" id="36_quvpo"]
+[ext_resource type="Texture2D" uid="uid://dpd7vqdg6f8k8" path="res://assets/images/cidade/doceria/tileset.png" id="39_4itaf"]
+[ext_resource type="Texture2D" uid="uid://d1ed3jygj6vsa" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-sorvetes.png" id="39_bhfdw"]
+[ext_resource type="Texture2D" uid="uid://bd0n8auvckgnw" path="res://assets/images/cidade/doceria/mesa_sprite.png" id="40_5mfyb"]
+[ext_resource type="Texture2D" uid="uid://nmysx1tjpqay" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-geladeira.png" id="40_6qe3v"]
+[ext_resource type="Texture2D" uid="uid://dayu83kcfn2cw" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-prateleira1.png" id="41_in4pm"]
+[ext_resource type="Texture2D" uid="uid://cfsim4pcsgl4s" path="res://assets/images/cidade/doceria/mesa.png" id="41_lki18"]
+[ext_resource type="Texture2D" uid="uid://exh2ad0n3a7h" path="res://assets/images/cidade/doceria/toddy.png" id="41_lo4hs"]
+[ext_resource type="Texture2D" uid="uid://bcntrkdujd61" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-prateleira2.png" id="42_yrvfu"]
+[ext_resource type="Texture2D" uid="uid://cbtqfchdcret5" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-mesa.png" id="43_gn66w"]
+[ext_resource type="Texture2D" uid="uid://q65s2ru8scre" path="res://assets/images/cidade/doceria/dono_loja.png" id="43_xu3rk"]
+[ext_resource type="Texture2D" uid="uid://cdxqs6dtdn37u" path="res://assets/images/cidade/brecho/cabine.png" id="44_ejl36"]
+[ext_resource type="Texture2D" uid="uid://6raj5utln2nc" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-mesinha.png" id="44_tk0if"]
+[ext_resource type="Texture2D" uid="uid://bx8jdrax81p3" path="res://assets/images/cidade/conveniencia/conveniencia_dentro-maquininha1.png" id="45_8oji3"]
+[ext_resource type="Texture2D" uid="uid://byocduh53x5bj" path="res://assets/images/cidade/brecho/cabine_roupas.png" id="49_7en3g"]
+[ext_resource type="Texture2D" uid="uid://buhuifgjy87cs" path="res://assets/images/cidade/brecho/estande_roupas.png" id="50_7c4ul"]
+[ext_resource type="Texture2D" uid="uid://duelqmrviepsj" path="res://assets/images/cidade/brecho/estande_roupas2.png" id="51_qye7e"]
+[ext_resource type="Texture2D" uid="uid://sg187eguwnvl" path="res://assets/images/cidade/npcs/quem.png" id="52_7en3g"]
+[ext_resource type="Texture2D" uid="uid://dbs8b1rexs3v3" path="res://assets/images/cidade/minimap/minimap_sprite.png" id="52_qye7e"]
+[ext_resource type="Texture2D" uid="uid://vsfg7oq874dc" path="res://assets/images/cidade/minimap/player_map.png" id="53_2juux"]
+[ext_resource type="Texture2D" uid="uid://goej1awovdyx" path="res://assets/images/cidade/minimap/cego_ponto.png" id="59_yrvfu"]
+[ext_resource type="Texture2D" uid="uid://b151k6eqhygpf" path="res://assets/images/cidade/minimap/mae_ponto.png" id="60_gn66w"]
+[ext_resource type="Texture2D" uid="uid://deprjkx4alw31" path="res://assets/images/cidade/minimap/mudo_ponto.png" id="61_tk0if"]
+[ext_resource type="Texture2D" uid="uid://bx8n7s61ofgr1" path="res://assets/images/cidade/minimap/cadeirante_ponto.png" id="62_8oji3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n3o1"]
+texture = ExtResource("4_aydav")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 4, 8, 4, 8, 0)
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eroxr"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5n3o1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7eq0p"]
+texture = ExtResource("3_jqdn6")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 0, -8, 0)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 4, -8, 4, -8, 0)
+
+[sub_resource type="TileSet" id="TileSet_5tygx"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_7eq0p")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eroxr"]
+size = Vector2(31.001022, 559.9999)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esxqw"]
+texture = ExtResource("1_645yb")
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:1/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ciap"]
+texture = ExtResource("2_esxqw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6ciap"]
+sources/0 = SubResource("TileSetAtlasSource_esxqw")
+sources/2 = SubResource("TileSetAtlasSource_6ciap")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrl7o"]
+size = Vector2(78.3333, 56.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33bqr"]
+size = Vector2(36, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp7ov"]
+size = Vector2(62.6667, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d28hq"]
+size = Vector2(28, 38.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4itaf"]
+size = Vector2(62.3333, 57.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vumlt"]
+size = Vector2(28, 41)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eroxr"]
+texture = ExtResource("5_5n3o1")
+0:1/animation_columns = 2
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 0.5
+0:1/animation_frame_1/duration = 0.5
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, 4.8, 4.8, 4.8, 4.8, 1.6000004, -4.8, 1.6000004)
+0:0/animation_columns = 2
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 0.5
+0:0/animation_frame_1/duration = 0.5
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, 4.8, 4.8, 4.8, 4.8, 1.6000004, -4.8, 1.6000004)
+0:2/animation_columns = 2
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 0.5
+0:2/animation_frame_1/duration = 0.5
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, 1.6000004, 4.8, 1.6000004, 4.8, 4.8, -4.8, 4.8)
+0:3/animation_mode = 1
+0:3/animation_frame_0/duration = 0.5
+0:3/animation_frame_1/duration = 0.5
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, 1.6000004, 4.8, 1.6000004, 4.8, 4.8, -4.8, 4.8)
+
+[sub_resource type="TileSet" id="TileSet_d28hq"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_eroxr")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aydav"]
+a = Vector2(-4.57764e-05, 3.66647)
+b = Vector2(0, 17.3333)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5n3o1"]
+a = Vector2(0, -3.666)
+b = Vector2(0.000312805, 11.667)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eroxr"]
+a = Vector2(0, -0.666672)
+b = Vector2(0, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_d28hq"]
+a = Vector2(0, -3.666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk3gu"]
+size = Vector2(17.3333, 13.1663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aydav"]
+size = Vector2(16, 7.66668)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n3o1"]
+size = Vector2(15.3333, 8.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u75d6"]
+size = Vector2(30, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkvsa"]
+size = Vector2(14, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heuos"]
+size = Vector2(24, 7.00002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu3rk"]
+size = Vector2(13, 15.3333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c4ul"]
+atlas = ExtResource("19_53nd2")
+region = Rect2(0, 0, 22, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qye7e"]
+atlas = ExtResource("19_53nd2")
+region = Rect2(22, 0, 22, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2juux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c4ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qye7e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7eq0p"]
+size = Vector2(22, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hk50e"]
+size = Vector2(37, 51)
+
+[sub_resource type="Animation" id="Animation_x7qg0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_53nd2"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lkvsa"]
+_data = {
+&"RESET": SubResource("Animation_x7qg0"),
+&"idle": SubResource("Animation_53nd2")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqd1e"]
+atlas = ExtResource("20_d28hq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt084"]
+atlas = ExtResource("20_d28hq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxpoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqd1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt084")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsmpn"]
+size = Vector2(64.6666, 61.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enjem"]
+size = Vector2(30, 25.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4qie"]
+size = Vector2(120.333, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13jk5"]
+atlas = ExtResource("28_81t5p")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjou8"]
+atlas = ExtResource("28_81t5p")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlk8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13jk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjou8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quvpo"]
+size = Vector2(14, 7.33334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlk8u"]
+size = Vector2(30, 27.3333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpkfa"]
+atlas = ExtResource("29_dpkfa")
+region = Rect2(0, 0, 26, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axoyq"]
+atlas = ExtResource("29_dpkfa")
+region = Rect2(26, 0, 26, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13jk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpkfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axoyq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjou8"]
+size = Vector2(21.3333, 9.1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlk8u"]
+atlas = ExtResource("31_axoyq")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quvpo"]
+atlas = ExtResource("31_axoyq")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mrl7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlk8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quvpo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72u1o"]
+atlas = ExtResource("34_xu3rk")
+region = Rect2(0, 0, 22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7en3g"]
+atlas = ExtResource("34_xu3rk")
+region = Rect2(22, 0, 22, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7c4ul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72u1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7en3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2juux"]
+atlas = ExtResource("35_7c4ul")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pudnr"]
+atlas = ExtResource("35_7c4ul")
+region = Rect2(17, 0, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqd1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2juux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pudnr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh3hu"]
+texture = ExtResource("26_u75d6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 1.6, 8, 4.8, -8, 4.8, -8, 1.6)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 8, -8, 8, -8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, 8, 4.8, -8, 8, -8, 8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 4.8, 8, 4.8, 8, 8, -8, 8, -8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 4.8, 4.8, -8, 4.8, -8, 8, 8, 8, 8, -8)
+3:2/0 = 0
+4:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6, 8, 1.6, 8, 4.8, -8, 4.8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6, -8, 4.8, 8, 4.8, 8, 1.6)
+
+[sub_resource type="TileSet" id="TileSet_53nd2"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lh3hu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrl7o"]
+atlas = ExtResource("33_13jk5")
+region = Rect2(0, 0, 16, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp7ov"]
+atlas = ExtResource("33_13jk5")
+region = Rect2(16, 0, 16, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4itaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrl7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp7ov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mfyb"]
+size = Vector2(48, 33.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrvfu"]
+size = Vector2(28, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn66w"]
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk0if"]
+size = Vector2(65, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oji3"]
+size = Vector2(64, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxsa3"]
+size = Vector2(51, 9.935505)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de8w4"]
+size = Vector2(11, 6.9547997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlusk"]
+size = Vector2(8.5, 9.0201645)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj5cw"]
+size = Vector2(41, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvulv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp7ov"]
+texture = ExtResource("39_4itaf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, 8, -4.8, 4.8, 8, 4.8, 8, 1.6, -8, 1.6, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 1.6, -8, 1.6)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, 8, 4.8, 4.8, -8, 4.8, -8, 1.6, 8, 1.6, 8, 8)
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 8, -8, 8, -8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 4.8, 8, 8, 8, 8, -8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 4.8, 8, 4.8, 8, 8, -8, 8, -8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 4.8, 4.8, 4.8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_lp7ov"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_lp7ov")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1n40"]
+size = Vector2(38, 12.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72u1o"]
+size = Vector2(64, 12.666619)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lki18"]
+size = Vector2(11.3332, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjem"]
+atlas = ExtResource("43_xu3rk")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejl36"]
+atlas = ExtResource("43_xu3rk")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7en3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enjem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejl36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lki18"]
+texture = ExtResource("39_4itaf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xu3rk"]
+sources/0 = SubResource("TileSetAtlasSource_lki18")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72u1o"]
+texture = ExtResource("39_4itaf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6000004, 8, 1.6000004, 8, 4.8, -8, 4.8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6000004, 8, 1.6000004, 8, 4.8, -8, 4.8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.6000004, 8, 1.6000004, 8, 4.8, -8, 4.8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 8, -8, 8, -8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 8, -8, 8, 8, 4.8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.8, -8, -4.8, 4.8, 8, 4.8, 8, 8, -8, 8, -8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4.8, 8, 4.8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.8, -8, 4.8, 4.8, -8, 4.8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_enjem"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_72u1o")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gjj3"]
+size = Vector2(19, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7ipn"]
+size = Vector2(19, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idqbm"]
+size = Vector2(32, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86rk8"]
+size = Vector2(32, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i2md"]
+size = Vector2(30, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhyo"]
+size = Vector2(30, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oscmo"]
+size = Vector2(10, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6xbe"]
+size = Vector2(10, 17)
+
+[node name="cidade_scene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_eroxr")
+metadata/_edit_horizontal_guides_ = [-372.0]
+
+[node name="bg" type="ColorRect" parent="."]
+z_index = -3
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1282.0
+offset_bottom = 721.0
+color = Color(0, 0, 0, 1)
+
+[node name="cidade_map" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="cone_tileset" type="TileMapLayer" parent="cidade_map"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAiAA8AAAAAAAAAAAAiAA4AAAAAAAAAAAAiAA0AAAAAAAAAAAAiAAkAAAAAAAAAAAAiAAgAAAAAAAAAAAAiAAcAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABcAAAAAAAAAAAAAABkAAAAAAAAAAAAAABgAAAAAAAAAAAAiABcAAAAAAAAAAAAiABgAAAAAAAAAAAAiABkAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_eroxr")
+metadata/_edit_lock_ = true
+
+[node name="lixo_tileset" type="TileMapLayer" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(-16, 8)
+tile_map_data = PackedByteArray("AAAeABMAAQAAAAIAAAACAAMAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_5tygx")
+metadata/_edit_lock_ = true
+
+[node name="border_collision" type="Node2D" parent="cidade_map"]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/border_collision"]
+position = Vector2(-37, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/border_collision/StaticBody2D"]
+position = Vector2(30, 219)
+shape = SubResource("RectangleShape2D_eroxr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="cidade_map/border_collision"]
+position = Vector2(-37, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/border_collision/StaticBody2D2"]
+position = Vector2(605, 186)
+shape = SubResource("RectangleShape2D_eroxr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="cidade_map/border_collision"]
+position = Vector2(-37, 19)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/border_collision/StaticBody2D3"]
+position = Vector2(-11.5016575, -317.00003)
+shape = SubResource("RectangleShape2D_eroxr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="cidade_map/border_collision"]
+position = Vector2(-37, 19)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/border_collision/StaticBody2D4"]
+position = Vector2(451.99887, -319.00168)
+shape = SubResource("RectangleShape2D_eroxr")
+
+[node name="tilesets" type="Node2D" parent="cidade_map"]
+
+[node name="calçada_tileset" type="TileMapLayer" parent="cidade_map/tilesets"]
+position = Vector2(192, 128)
+tile_map_data = PackedByteArray("AAAGABQAAAABAAIAAAANAAYAAgACAAIAAAAOAAYAAgACAAIAAAAPAAYAAgACAAIAAAAQAAYAAgACAAIAAAD4//j/AAABAAAAAAD5//j/AAABAAAAAAD6//j/AAABAAAAAAD7//j/AAABAAAAAAD1/wMAAAABAAEAAAAKAAMAAAAAAAEAAAAVAAMAAAABAAEAAAAFAPn/AgABAAAAAAAFAP//AgABAAEAAAAJAP//AgABAAEAAAAIAP//AgABAAEAAAAHAP//AgABAAEAAAAGAP//AgABAAEAAAAEAP//AgABAAEAAAADAP//AgABAAEAAAACAP//AgABAAEAAAABAP//AgABAAEAAAD//wYAAgACAAIAAAD//wUAAgABAAEAAAD//wQAAAABAAIAAAD//wIAAAABAAAAAAD//wEAAgABAAEAAAD//wAAAgACAAIAAAAKAAAAAgACAAEAAAAKAAEAAgACAAEAAAAKAAIAAAAAAAAAAAAKAAQAAAAAAAIAAAALAAUAAgABAAEAAAALAAYAAgACAAIAAAAKAAYAAgACAAEAAAAKAAUAAgACAAEAAAAAAAYAAgACAAEAAAAAAAUAAgACAAEAAAAAAAQAAAACAAIAAAAAAAMAAAACAAEAAAAAAAIAAAACAAAAAAAAAAEAAgACAAEAAAAAAAAAAgACAAEAAAABAPj/AgABAAEAAAABAPn/AgABAAAAAAACAPn/AgABAAAAAAADAPn/AgABAAAAAAAEAPn/AgABAAAAAAAGAPn/AgABAAAAAAAHAPn/AgABAAAAAAAIAPn/AgABAAAAAAAJAPn/AgABAAAAAAAVAAYAAgACAAEAAAAVAAUAAgACAAEAAAAVAAQAAAABAAIAAAAVAAIAAAABAAAAAAAVAAEAAgACAAEAAAAVAAAAAgACAAEAAAD1/wYAAgACAAEAAAD1/wUAAgACAAEAAAD1/wQAAAABAAIAAAD1/wIAAAABAAAAAAD1/wEAAgACAAEAAAD1/wAAAgACAAEAAAAFAPr/AgABAAEAAAAFAPv/AgABAAEAAAAFAPz/AgABAAEAAAAFAP3/AgABAAEAAAAFAP7/AgABAAAAAAAHAP7/AgABAAAAAAAHAP3/AgACAAAAAAAHAPz/AgACAAAAAAAHAPv/AgACAAAAAAAHAPr/AgACAAAAAAAIAPr/AgABAAEAAAAIAPv/AgABAAEAAAAIAPz/AgABAAEAAAAIAP3/AgABAAEAAAAIAP7/AgABAAAAAAADAPr/AgACAAAAAAADAPv/AgACAAAAAAADAPz/AgACAAAAAAADAP3/AgACAAAAAAADAP7/AgABAAAAAAACAPr/AgABAAEAAAACAPv/AgABAAEAAAACAPz/AgABAAEAAAACAP3/AgABAAEAAAACAP7/AgABAAAAAAALAAMAAAABAAEAAAAMAAMAAAABAAEAAAANAAMAAAABAAEAAAAOAAMAAAABAAEAAAAPAAMAAAABAAEAAAAQAAMAAAABAAEAAAARAAMAAAABAAEAAAASAAMAAAABAAEAAAATAAMAAAABAAEAAAAUAAMAAAABAAEAAAD//wMAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD8/wMAAAABAAEAAAD7/wMAAAABAAEAAAD6/wMAAAABAAEAAAD5/wMAAAABAAEAAAD4/wMAAAABAAEAAAD3/wMAAAABAAEAAAD2/wMAAAABAAEAAAAUAAIAAAABAAAAAAATAAIAAAABAAAAAAASAAIAAAABAAAAAAARAAIAAAABAAAAAAAQAAIAAAABAAAAAAAPAAIAAAABAAAAAAAOAAIAAAABAAAAAAANAAIAAAABAAAAAAAMAAIAAAABAAAAAAALAAIAAAABAAAAAAALAAQAAAABAAIAAAAMAAQAAAABAAIAAAANAAQAAAABAAIAAAAOAAQAAAABAAIAAAAPAAQAAAABAAIAAAAQAAQAAAABAAIAAAARAAQAAAABAAIAAAASAAQAAAABAAIAAAATAAQAAAABAAIAAAAUAAQAAAABAAIAAAD+/wQAAAABAAIAAAD9/wQAAAABAAIAAAD8/wQAAAABAAIAAAD7/wQAAAABAAIAAAD6/wQAAAABAAIAAAD5/wQAAAABAAIAAAD4/wQAAAABAAIAAAD3/wQAAAABAAIAAAD2/wQAAAABAAIAAAD+/wIAAAABAAAAAAD9/wIAAAABAAAAAAD8/wIAAAABAAAAAAD7/wIAAAABAAAAAAD6/wIAAAABAAAAAAD5/wIAAAABAAAAAAD4/wIAAAABAAAAAAD3/wIAAAABAAAAAAD2/wIAAAABAAAAAAD1//n/AAABAAEAAAD1//r/AAABAAEAAAD1//v/AAABAAEAAAD1//z/AAABAAEAAAD1//3/AAABAAEAAAD1//7/AAABAAIAAAD2//n/AAABAAEAAAD2//r/AAABAAEAAAD2//v/AAABAAEAAAD2//z/AAABAAEAAAD2//3/AAABAAEAAAD2//7/AAABAAIAAAD3//n/AAABAAEAAAD3//r/AgABAAEAAAD3//v/AgABAAEAAAD3//z/AgABAAEAAAD3//3/AAABAAEAAAD3//7/AAABAAIAAAD4//n/AAABAAEAAAD4//r/AAABAAEAAAD4//v/AgABAAEAAAD4//z/AgABAAEAAAD4//3/AAABAAEAAAD4//7/AAADAAAAAAD5//n/AAABAAEAAAD5//r/AAABAAEAAAD5//v/AgABAAEAAAD5//z/AgABAAEAAAD5//3/AAABAAEAAAD5//7/AAADAAAAAAD6//n/AAABAAEAAAD6//r/AAABAAEAAAD6//v/AAABAAEAAAD6//z/AgABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAIAAAD7//n/AAABAAEAAAD7//r/AgABAAEAAAD7//v/AAABAAEAAAD7//z/AgABAAEAAAD7//3/AAABAAEAAAD7//7/AAABAAIAAAD8//n/AAABAAEAAAD8//r/AgABAAEAAAD8//v/AAABAAEAAAD8//z/AAABAAEAAAD8//3/AAABAAEAAAD8//7/AAABAAIAAAD9//n/AAABAAEAAAD9//r/AAABAAEAAAD9//v/AAABAAEAAAD9//z/AAABAAEAAAD9//3/AAABAAEAAAD9//7/AAABAAIAAAD+//n/AAABAAEAAAD+//r/AAABAAEAAAD+//v/AAABAAEAAAD+//z/AAABAAEAAAD+//3/AAABAAEAAAD+//7/AAABAAIAAAD///n/AAABAAEAAAD///r/AAABAAEAAAD///v/AAABAAEAAAD///z/AAABAAEAAAD///3/AAABAAEAAAD///7/AAABAAIAAAAAAPn/AAACAAEAAAAAAPr/AAACAAEAAAAAAPv/AAACAAEAAAAAAPz/AAACAAEAAAAAAP3/AAACAAEAAAAAAP7/AAACAAIAAAD1//j/AAABAAAAAAD2//j/AAABAAAAAAD3//j/AAABAAAAAAD8//j/AAABAAAAAAD9//j/AAABAAAAAAD+//j/AAABAAAAAAD///j/AAABAAAAAAAAAPj/AAACAAAAAAAKAPn/AAAAAAEAAAAKAPr/AAAAAAEAAAAKAPv/AAAAAAEAAAAKAPz/AAAAAAEAAAAKAP3/AAAAAAEAAAAKAP7/AAAAAAIAAAALAPn/AAABAAEAAAALAPr/AAABAAEAAAALAPv/AAABAAEAAAALAPz/AAABAAEAAAALAP3/AAABAAEAAAALAP7/AAABAAIAAAAMAPn/AAABAAEAAAAMAPr/AAABAAEAAAAMAPv/AAABAAEAAAAMAPz/AAABAAEAAAAMAP3/AAABAAEAAAAMAP7/AAABAAIAAAANAPj/AAABAAAAAAANAPn/AAABAAEAAAANAPr/AgABAAEAAAANAPv/AgABAAEAAAANAPz/AAABAAEAAAANAP3/AAABAAEAAAANAP7/AAABAAIAAAAOAPj/AAABAAAAAAAOAPn/AAABAAEAAAAOAPr/AAABAAEAAAAOAPv/AAABAAEAAAAOAPz/AAABAAEAAAAOAP3/AAABAAEAAAAOAP7/AAADAAAAAAAPAPj/AAABAAAAAAAPAPn/AAABAAEAAAAPAPr/AAABAAEAAAAPAPv/AAABAAEAAAAPAPz/AAABAAEAAAAPAP3/AAABAAEAAAAPAP7/AAABAAIAAAAQAPj/AAABAAAAAAAQAPn/AAABAAEAAAAQAPr/AAABAAEAAAAQAPv/AAABAAEAAAAQAPz/AAABAAEAAAAQAP3/AAABAAEAAAAQAP7/AAADAAAAAAARAPn/AAABAAEAAAARAPr/AAABAAEAAAARAPv/AAABAAEAAAARAPz/AAABAAEAAAARAP3/AAABAAEAAAARAP7/AAABAAIAAAASAPn/AAABAAEAAAASAPr/AAABAAEAAAASAPv/AAABAAEAAAASAPz/AAABAAEAAAASAP3/AAABAAEAAAASAP7/AAABAAIAAAATAPn/AAABAAEAAAATAPr/AAABAAEAAAATAPv/AAABAAEAAAATAPz/AAABAAEAAAATAP3/AAABAAEAAAATAP7/AAABAAIAAAAUAPn/AAABAAEAAAAUAPr/AAABAAEAAAAUAPv/AAABAAEAAAAUAPz/AAABAAEAAAAUAP3/AAABAAEAAAAUAP7/AAABAAIAAAAVAPn/AAABAAEAAAAVAPr/AAABAAEAAAAVAPv/AAABAAEAAAAVAPz/AAABAAEAAAAVAP3/AAABAAEAAAAVAP7/AAABAAIAAAAKAPj/AAAAAAAAAAALAPj/AAABAAAAAAAMAPj/AAABAAAAAAARAPj/AAABAAAAAAASAPj/AAABAAAAAAATAPj/AAABAAAAAAAUAPj/AAABAAAAAAAVAPj/AAABAAAAAAAVAP//AgACAAEAAAAKAP//AgACAAEAAAAAAP//AgACAAEAAAD1////AgACAAEAAAAUAAAAAgACAAIAAAATAAAAAgACAAIAAAASAAAAAgACAAIAAAARAAAAAgACAAIAAAAQAAAAAgACAAIAAAAPAAAAAgACAAIAAAAOAAAAAgACAAIAAAANAAAAAgACAAIAAAAMAAAAAgACAAIAAAALAAAAAgACAAIAAAD+/wAAAgACAAIAAAD9/wAAAgACAAIAAAD8/wAAAgACAAIAAAD7/wAAAgACAAIAAAD6/wAAAgACAAIAAAD5/wAAAgACAAIAAAD4/wAAAgACAAIAAAD3/wAAAgACAAIAAAD2/wAAAgACAAIAAAAJAP7/AgABAAAAAAAGAP7/AgABAAAAAAAEAP7/AgABAAAAAAABAP7/AgABAAAAAAD1/xIAAAABAAAAAAD1/xMAAAABAAEAAAD2/xIAAAABAAAAAAD2/xMAAAABAAEAAAD3/xIAAAABAAAAAAD3/xMAAAABAAEAAAD4/xIAAAABAAAAAAD4/xMAAAABAAEAAAD5/xIAAAABAAAAAAD5/xMAAAABAAEAAAD6/xIAAAABAAAAAAD6/xMAAAABAAEAAAD7/xIAAAABAAAAAAD7/xMAAAABAAEAAAD8/xIAAAABAAAAAAD8/xMAAAABAAEAAAD9/xIAAAABAAAAAAD9/xMAAAABAAEAAAD+/xIAAAABAAAAAAD+/xMAAAABAAEAAAD//xIAAAABAAAAAAD//xMAAAABAAEAAAAAABIAAAABAAAAAAAAABMAAAABAAEAAAABABIAAAABAAAAAAABABMAAAABAAEAAAACABIAAAABAAAAAAACABMAAAABAAEAAAADABIAAAABAAAAAAADABMAAAABAAEAAAAEABIAAAABAAAAAAAEABMAAAABAAEAAAAFABIAAAABAAAAAAAFABMAAAABAAEAAAAGABIAAAABAAAAAAAGABMAAAABAAEAAAAHABIAAAABAAAAAAAHABMAAAABAAEAAAAIABIAAAABAAAAAAAIABMAAAABAAEAAAAJABIAAAABAAAAAAAJABMAAAABAAEAAAAKABIAAAABAAAAAAAKABMAAAABAAEAAAALABIAAAABAAAAAAALABMAAAABAAEAAAAMABIAAAABAAAAAAAMABMAAAABAAEAAAANABIAAAABAAAAAAANABMAAAABAAEAAAAOABIAAAABAAAAAAAOABMAAAABAAEAAAAPABIAAAABAAAAAAAPABMAAAABAAEAAAAQABIAAAABAAAAAAAQABMAAAABAAEAAAARABIAAAABAAAAAAARABMAAAABAAEAAAASABIAAAABAAAAAAASABMAAAABAAEAAAATABIAAAABAAAAAAATABMAAAABAAEAAAAUABIAAAABAAAAAAAUABMAAAABAAEAAAAVABIAAAABAAAAAAAVABMAAAABAAEAAAD1/xQAAAABAAIAAAD2/xQAAAABAAIAAAD3/xQAAAABAAIAAAD4/xQAAAABAAIAAAD5/xQAAAABAAIAAAD6/xQAAAABAAIAAAD7/xQAAAABAAIAAAD8/xQAAAABAAIAAAD9/xQAAAABAAIAAAD+/xQAAAABAAIAAAD//xQAAAABAAIAAAAAABQAAAABAAIAAAABABQAAAABAAIAAAACABQAAAABAAIAAAADABQAAAABAAIAAAAEABQAAAABAAIAAAAFABQAAAABAAIAAAAHABQAAAABAAIAAAAIABQAAAABAAIAAAAJABQAAAABAAIAAAAKABQAAAABAAIAAAALABQAAAABAAIAAAAMABQAAAABAAIAAAANABQAAAABAAIAAAAOABQAAAABAAIAAAAPABQAAAABAAIAAAAQABQAAAABAAIAAAARABQAAAABAAIAAAASABQAAAABAAIAAAATABQAAAABAAIAAAAUABQAAAABAAIAAAAVABQAAAABAAIAAAD1/w8AAgACAAEAAAD1/xAAAgACAAEAAAAAAA8AAgACAAEAAAAAABAAAgACAAEAAAAKAA8AAgACAAEAAAAKABAAAgACAAEAAAAVAA8AAgACAAEAAAAVABAAAgACAAEAAAD1/xEAAgACAAEAAAD2/xAAAgACAAIAAAD3/xAAAgACAAIAAAD4/xAAAgACAAIAAAD5/xAAAgACAAIAAAD6/xAAAgACAAIAAAD7/xAAAgACAAIAAAD8/xAAAgACAAIAAAD9/xAAAgACAAIAAAD+/xAAAgACAAIAAAD//xAAAgACAAIAAAAAABEAAgACAAEAAAABABAAAgACAAIAAAACABAAAgACAAIAAAADABAAAgACAAIAAAAEABAAAgACAAIAAAAFABAAAgACAAIAAAAGABAAAgACAAIAAAAHABAAAgACAAIAAAAIABAAAgACAAIAAAAJABAAAgACAAIAAAAKABEAAgACAAEAAAALABAAAgACAAIAAAAMABAAAgACAAIAAAANABAAAgACAAIAAAAOABAAAgACAAIAAAAPABAAAgACAAIAAAAQABAAAgACAAIAAAARABAAAgACAAIAAAASABAAAgACAAIAAAATABAAAgACAAIAAAAUABAAAgACAAIAAAAVABEAAgACAAEAAAD1/wgAAAABAAAAAAD1/wkAAAABAAEAAAD1/woAAAABAAEAAAD1/wsAAAABAAEAAAD1/wwAAAABAAEAAAD1/w0AAAABAAEAAAD2/wgAAAABAAAAAAD2/wkAAAABAAEAAAD2/woAAAABAAEAAAD2/wsAAAABAAEAAAD2/wwAAAABAAEAAAD2/w0AAAABAAEAAAD3/wgAAAABAAAAAAD3/wkAAAABAAEAAAD3/woAAAABAAEAAAD3/wsAAAABAAEAAAD3/wwAAAABAAEAAAD3/w0AAAABAAEAAAD4/wgAAAABAAAAAAD4/wkAAAABAAEAAAD4/woAAAABAAEAAAD4/wsAAAABAAEAAAD4/wwAAAABAAEAAAD4/w0AAAABAAEAAAD5/wgAAAABAAAAAAD5/wkAAAABAAEAAAD5/woAAAABAAEAAAD5/wsAAAABAAEAAAD5/wwAAAABAAEAAAD5/w0AAAABAAEAAAD6/wgAAAABAAAAAAD6/wkAAAABAAEAAAD6/woAAAABAAEAAAD6/wsAAAABAAEAAAD6/wwAAAABAAEAAAD6/w0AAAABAAEAAAD7/wgAAAABAAAAAAD7/wkAAAABAAEAAAD7/woAAgABAAEAAAD7/wsAAAABAAEAAAD7/wwAAAABAAEAAAD7/w0AAAABAAEAAAD8/wgAAAABAAAAAAD8/wkAAAABAAEAAAD8/woAAAABAAEAAAD8/wsAAAABAAEAAAD8/wwAAAABAAEAAAD8/w0AAAABAAEAAAD9/wgAAAABAAAAAAD9/wkAAAABAAEAAAD9/woAAAABAAEAAAD9/wsAAAABAAEAAAD9/wwAAAABAAEAAAD9/w0AAAABAAEAAAD+/wgAAAABAAAAAAD+/wkAAAABAAEAAAD+/woAAAABAAEAAAD+/wsAAAABAAEAAAD+/wwAAAABAAEAAAD+/w0AAAABAAEAAAD//wgAAAABAAAAAAD//wkAAAABAAEAAAD//woAAAABAAEAAAD//wsAAAABAAEAAAD//wwAAAABAAEAAAD//w0AAAABAAEAAAAAAAgAAAACAAAAAAAAAAkAAAACAAEAAAAAAAoAAAACAAEAAAAAAAsAAAACAAEAAAAAAAwAAAACAAEAAAAAAA0AAAACAAEAAAACAAgAAgABAAAAAAACAAkAAgABAAEAAAACAAoAAgABAAEAAAACAAsAAgABAAEAAAACAAwAAgABAAEAAAACAA0AAgABAAEAAAADAAgAAgABAAAAAAADAAkAAgACAAAAAAADAAoAAgACAAAAAAADAAsAAgACAAAAAAADAAwAAgACAAAAAAADAA0AAgACAAAAAAAHAAgAAgABAAAAAAAHAAkAAgACAAAAAAAHAAoAAgACAAAAAAAHAAsAAgACAAAAAAAHAAwAAgACAAAAAAAHAA0AAgACAAAAAAAIAAgAAgABAAAAAAAIAAkAAgABAAEAAAAIAAoAAgABAAEAAAAIAAsAAgABAAEAAAAIAAwAAgABAAEAAAAIAA0AAgABAAEAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAEAAAAKAAoAAAAAAAEAAAAKAAsAAAAAAAEAAAAKAAwAAAAAAAEAAAAKAA0AAAAAAAEAAAALAAgAAAABAAAAAAALAAkAAAABAAEAAAALAAoAAAABAAEAAAALAAsAAAABAAEAAAALAAwAAAABAAEAAAALAA0AAAABAAEAAAAMAAgAAAABAAAAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAAMAA0AAAABAAEAAAANAAgAAAABAAAAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAANAAwAAAABAAEAAAANAA0AAAABAAEAAAAOAAgAAAABAAAAAAAOAAkAAAABAAEAAAAOAAoAAAABAAEAAAAOAAsAAAABAAEAAAAOAAwAAAABAAEAAAAOAA0AAAABAAEAAAAPAAgAAAABAAAAAAAPAAkAAAABAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAEAAAAPAA0AAAABAAEAAAAQAAgAAAABAAAAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAABAAEAAAAQAA0AAAABAAEAAAARAAgAAAABAAAAAAARAAkAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAARAAwAAAABAAEAAAARAA0AAAABAAEAAAASAAgAAAABAAAAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAASAAsAAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAEAAAATAAgAAAABAAAAAAATAAkAAAABAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAATAA0AAAABAAEAAAAUAAgAAAABAAAAAAAUAAkAAAABAAEAAAAUAAoAAAABAAEAAAAUAAsAAAABAAEAAAAUAAwAAAABAAEAAAAUAA0AAAABAAEAAAAVAAgAAAABAAAAAAAVAAkAAAABAAEAAAAVAAoAAAABAAEAAAAVAAsAAAABAAEAAAAVAAwAAAABAAEAAAAVAA0AAAABAAEAAAD1/w4AAAABAAIAAAD2/w4AAAABAAIAAAD3/w4AAAABAAIAAAD4/w4AAAABAAIAAAD5/w4AAAADAAAAAAD6/w4AAAABAAIAAAD7/w4AAAABAAIAAAD8/w4AAAADAAAAAAD9/w4AAAABAAIAAAD+/w4AAAABAAIAAAD//w4AAAABAAIAAAAAAA4AAAACAAIAAAABAAgAAgABAAAAAAABAA4AAgABAAAAAAACAA4AAgABAAAAAAADAA4AAgABAAAAAAAEAAgAAgABAAAAAAAEAA4AAgABAAAAAAAFAAgAAgABAAAAAAAFAA4AAgABAAAAAAAGAAgAAgABAAAAAAAGAA4AAgABAAAAAAAHAA4AAgABAAAAAAAIAA4AAgABAAAAAAAJAAgAAgABAAAAAAAJAA4AAgABAAAAAAAKAA4AAAAAAAIAAAALAA4AAAABAAIAAAAMAA4AAAABAAIAAAANAA4AAAABAAIAAAAOAA4AAAADAAAAAAAPAA4AAAADAAAAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAASAA4AAAABAAIAAAATAA4AAAABAAIAAAAUAA4AAAABAAIAAAAVAA4AAAABAAIAAAAVAAcAAgACAAEAAAAKAAcAAgACAAEAAAALAAcAAgABAAEAAAALAAEAAgABAAEAAAALAP//AgABAAEAAAD/////AgABAAEAAAD//wcAAgABAAEAAAD1/wcAAgACAAEAAAAAAAcAAgACAAEAAAAMAAYAAgACAAIAAAARAAYAAgACAAIAAAASAAYAAgACAAIAAAATAAYAAgACAAIAAAAUAAYAAgACAAIAAAD+/wYAAgACAAIAAAD9/wYAAgACAAIAAAD8/wYAAgACAAIAAAD7/wYAAgACAAIAAAD6/wYAAgACAAIAAAD5/wYAAgACAAIAAAD4/wYAAgACAAIAAAD3/wYAAgACAAIAAAD2/wYAAgACAAIAAAAFAAkAAgABAAEAAAAFAAoAAgABAAEAAAAFAAsAAgABAAEAAAAFAAwAAgABAAEAAAAFAA0AAgABAAEAAAD2/wUAAgABAAEAAAD3/wUAAgABAAEAAAD4/wUAAgABAAEAAAD5/wUAAgABAAEAAAD6/wUAAgABAAEAAAD7/wUAAgABAAEAAAD8/wUAAgABAAEAAAD9/wUAAgABAAEAAAD+/wUAAgABAAEAAAD+/wcAAgABAAEAAAD9/wcAAgABAAEAAAD8/wcAAgABAAEAAAD7/wcAAgABAAEAAAD6/wcAAgABAAEAAAD5/wcAAgABAAEAAAD4/wcAAgABAAEAAAD3/wcAAgABAAEAAAD2/wcAAgABAAEAAAD2/xEAAgABAAEAAAD3/xEAAgABAAEAAAD4/xEAAgABAAEAAAD5/xEAAgABAAEAAAD6/xEAAgABAAEAAAD7/xEAAgABAAEAAAD8/xEAAgABAAEAAAD9/xEAAgABAAEAAAD+/xEAAgABAAEAAAD//xEAAgABAAEAAAD//w8AAgABAAEAAAD+/w8AAgABAAEAAAD9/w8AAgABAAEAAAD8/w8AAgABAAEAAAD7/w8AAgABAAEAAAD6/w8AAgABAAEAAAD5/w8AAgABAAEAAAD4/w8AAgABAAEAAAD3/w8AAgABAAEAAAD2/w8AAgABAAEAAAAJAA8AAgABAAEAAAAIAA8AAgABAAEAAAAHAA8AAgABAAEAAAAGAA8AAgABAAEAAAAFAA8AAgABAAEAAAAEAA8AAgABAAEAAAADAA8AAgABAAEAAAACAA8AAgABAAEAAAABAA8AAgABAAEAAAABABEAAgABAAEAAAACABEAAgABAAEAAAADABEAAgABAAEAAAAEABEAAgABAAEAAAAFABEAAgABAAEAAAAGABEAAgABAAEAAAAHABEAAgABAAEAAAAIABEAAgABAAEAAAAJABEAAgABAAEAAAALAA8AAgABAAEAAAAMAA8AAgABAAEAAAANAA8AAgABAAEAAAAOAA8AAgABAAEAAAAPAA8AAgABAAEAAAAQAA8AAgABAAEAAAARAA8AAgABAAEAAAASAA8AAgABAAEAAAATAA8AAgABAAEAAAAUAA8AAgABAAEAAAAUABEAAgABAAEAAAATABEAAgABAAEAAAASABEAAgABAAEAAAARABEAAgABAAEAAAAQABEAAgABAAEAAAAPABEAAgABAAEAAAAOABEAAgABAAEAAAANABEAAgABAAEAAAAMABEAAgABAAEAAAALABEAAgABAAEAAAABAAkAAgABAAEAAAABAAoAAgABAAEAAAABAAsAAgABAAEAAAABAAwAAgABAAEAAAABAA0AAgABAAEAAAAEAA0AAgABAAEAAAAEAAwAAgABAAEAAAAEAAsAAgABAAEAAAAEAAoAAgABAAEAAAAEAAkAAgABAAEAAAAGAAkAAgABAAEAAAAGAAoAAgABAAEAAAAGAAsAAgABAAEAAAAGAAwAAgABAAEAAAAGAA0AAgABAAEAAAAJAA0AAgABAAEAAAAJAAwAAgABAAEAAAAJAAsAAgABAAEAAAAJAAoAAgABAAEAAAAJAAkAAgABAAEAAAABAAAAAgABAAEAAAABAAEAAgABAAEAAAABAAIAAgABAAEAAAABAAMAAgABAAEAAAABAAQAAgABAAEAAAABAAUAAgABAAEAAAABAAYAAgABAAEAAAABAAcAAgABAAEAAAACAAcAAgABAAEAAAADAAcAAgABAAEAAAAEAAcAAgABAAEAAAAFAAcAAgABAAEAAAAGAAcAAgABAAEAAAAHAAcAAgABAAEAAAAIAAcAAgABAAEAAAAJAAcAAgABAAEAAAAJAAYAAgABAAEAAAAJAAUAAgABAAEAAAAJAAQAAgABAAEAAAAIAAMAAgABAAEAAAAIAAIAAgABAAEAAAAIAAEAAgABAAEAAAAIAAAAAgABAAEAAAAJAAAAAgABAAEAAAAJAAEAAgABAAEAAAAJAAIAAgABAAEAAAAJAAMAAgABAAEAAAACAAAAAgABAAEAAAADAAAAAgABAAEAAAAEAAAAAgABAAEAAAAFAAAAAgABAAEAAAAGAAAAAgABAAEAAAAHAAAAAgABAAEAAAAFAAEAAgABAAEAAAAEAAEAAgABAAEAAAADAAEAAgABAAEAAAACAAEAAgABAAEAAAAGAAEAAgABAAEAAAAHAAIAAgABAAEAAAADAAIAAgABAAEAAAACAAIAAgABAAEAAAACAAMAAgABAAEAAAADAAMAAgABAAEAAAAHAAMAAgABAAEAAAAIAAQAAgABAAEAAAAHAAQAAgABAAEAAAADAAQAAgABAAEAAAACAAQAAgABAAEAAAACAAUAAgABAAEAAAADAAUAAgABAAEAAAAEAAUAAgABAAEAAAAFAAUAAgABAAEAAAAGAAUAAgABAAEAAAAHAAUAAgABAAEAAAAIAAUAAgABAAEAAAAIAAYAAgABAAEAAAAHAAYAAgABAAEAAAAGAAYAAgABAAEAAAAFAAYAAgABAAEAAAAEAAYAAgABAAEAAAADAAYAAgABAAEAAAACAAYAAgABAAEAAAAMAAEAAgABAAEAAAANAAEAAgABAAEAAAAOAAEAAgABAAEAAAAPAAEAAgABAAEAAAAQAAEAAgABAAEAAAARAAEAAgABAAEAAAASAAEAAgABAAEAAAATAAEAAgABAAEAAAAUAAEAAgABAAEAAAAUAP//AgABAAEAAAATAP//AgABAAEAAAASAP//AgABAAEAAAARAP//AgABAAEAAAAQAP//AgABAAEAAAAPAP//AgABAAEAAAAOAP//AgABAAEAAAANAP//AgABAAEAAAAMAP//AgABAAEAAAAMAAcAAgABAAEAAAANAAcAAgABAAEAAAAOAAcAAgABAAEAAAAPAAcAAgABAAEAAAAQAAcAAgABAAEAAAARAAcAAgABAAEAAAASAAcAAgABAAEAAAATAAcAAgABAAEAAAAUAAcAAgABAAEAAAAUAAUAAgABAAEAAAATAAUAAgABAAEAAAASAAUAAgABAAEAAAARAAUAAgABAAEAAAAQAAUAAgABAAEAAAAPAAUAAgABAAEAAAAOAAUAAgABAAEAAAANAAUAAgABAAEAAAAMAAUAAgABAAEAAAACAPj/AgABAAEAAAADAPj/AgABAAEAAAAEAPj/AgABAAEAAAAFAPj/AgABAAEAAAAGAPj/AgABAAEAAAAHAPj/AgABAAEAAAAIAPj/AgABAAEAAAAJAPj/AgABAAEAAAAJAPr/AgABAAEAAAAJAP3/AgABAAEAAAAJAPz/AgABAAEAAAAJAPv/AgABAAEAAAAGAP3/AgABAAEAAAAEAP3/AgABAAEAAAAEAPz/AgABAAEAAAAEAPv/AgABAAEAAAAGAPv/AgABAAEAAAAGAPr/AgABAAEAAAAEAPr/AgABAAEAAAAGAPz/AgABAAEAAAABAP3/AgABAAEAAAABAPz/AgABAAEAAAABAPv/AgABAAEAAAABAPr/AgABAAEAAAD5/wEAAgABAAEAAAD6/wEAAgABAAEAAAD7/wEAAgABAAEAAAD8/wEAAgABAAEAAAD9/wEAAgABAAEAAAD+/wEAAgABAAEAAAD4/wEAAgABAAEAAAD3/wEAAgABAAEAAAD2/wEAAgABAAEAAAD2////AgABAAEAAAD3////AgABAAEAAAD4////AgABAAEAAAD5////AgABAAEAAAD6////AgABAAEAAAD7////AgABAAEAAAD8////AgABAAEAAAD9////AgABAAEAAAD+////AgABAAEAAAD0/wkAAAAAAAEAAAD0/woAAAAAAAEAAAD0/wsAAAAAAAEAAAD0/wwAAAAAAAEAAAD0/w0AAAAAAAEAAAD0/w4AAAAAAAIAAAD0/wgAAAAAAAAAAAD0/xIAAAAAAAAAAAD0/xMAAAAAAAEAAAD0/xQAAAAAAAIAAAD0/wIAAAAAAAAAAAD0/wMAAAAAAAEAAAD0/wQAAAAAAAIAAAD0//7/AAAAAAIAAAD0//3/AAAAAAEAAAD0//z/AAAAAAEAAAD0//v/AAAAAAEAAAD0//r/AAAAAAEAAAD0//n/AAAAAAEAAAD0//j/AAAAAAAAAAAWABMAAAACAAEAAAAWABQAAAACAAIAAAAWABIAAAACAAAAAAAWAA0AAAACAAEAAAAWAAwAAAACAAEAAAAWAAsAAAACAAEAAAAWAAoAAAACAAEAAAAWAAkAAAACAAEAAAAWAA4AAAACAAIAAAAWAAgAAAACAAAAAAAWAAIAAAACAAAAAAAWAAMAAAACAAEAAAAWAAQAAAACAAIAAAAWAP3/AAACAAEAAAAWAPz/AAACAAEAAAAWAPv/AAACAAEAAAAWAPr/AAACAAEAAAAWAPn/AAACAAEAAAAWAP7/AAACAAIAAAAWAPj/AAACAAAAAAAWAP//AgABAAEAAAAWAAAAAgABAAEAAAAWAAEAAgABAAEAAAAWAAUAAgABAAEAAAAWAAYAAgABAAEAAAAWAAcAAgABAAEAAAAWAA8AAgABAAEAAAAWABAAAgABAAEAAAAWABEAAgABAAEAAAD0/xEAAgABAAEAAAD0/xAAAgABAAEAAAD0/w8AAgABAAEAAAD0/wcAAgABAAEAAAD0/wYAAgABAAEAAAD0/wUAAgABAAEAAAD0/wAAAgABAAEAAAD0////AgABAAEAAAAEAAIAAgABAAEAAAAEAAMAAgABAAEAAAAEAAQAAgABAAEAAAAFAAQAAgABAAEAAAAGAAQAAgABAAEAAAAGAAMAAgABAAEAAAAGAAIAAgABAAEAAAAFAAIAAgABAAEAAAAFAAMAAgABAAEAAAD0/wEAAgABAAEAAAAHAAEAAgABAAEAAAA=")
+tile_set = SubResource("TileSet_6ciap")
+metadata/_edit_lock_ = true
+
+[node name="Loja" type="Sprite2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(424, 304)
+texture = ExtResource("6_vumlt")
+script = ExtResource("7_hk50e")
+obj_id = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Loja"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Loja/StaticBody2D"]
+position = Vector2(0.166656, 1.33334)
+shape = SubResource("RectangleShape2D_mrl7o")
+
+[node name="InteractionArea" parent="cidade_map/Loja" instance=ExtResource("7_5tygx")]
+position = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Loja/InteractionArea"]
+position = Vector2(0, 20.1667)
+shape = SubResource("RectangleShape2D_33bqr")
+
+[node name="Lojinha" type="Sprite2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(128, 304)
+texture = ExtResource("9_iqv1j")
+script = ExtResource("7_hk50e")
+obj_id = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Lojinha"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Lojinha/StaticBody2D"]
+position = Vector2(0.333328, 1.16666)
+shape = SubResource("RectangleShape2D_lp7ov")
+
+[node name="InteractionArea" parent="cidade_map/Lojinha" instance=ExtResource("7_5tygx")]
+position = Vector2(5.0962e-06, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Lojinha/InteractionArea"]
+position = Vector2(0, 9.33334)
+shape = SubResource("RectangleShape2D_d28hq")
+
+[node name="Lojinha2" type="Sprite2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(416, 48)
+texture = ExtResource("10_4socy")
+script = ExtResource("7_hk50e")
+obj_id = 6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Lojinha2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Lojinha2/StaticBody2D"]
+position = Vector2(-0.166687, 1.00001)
+shape = SubResource("RectangleShape2D_4itaf")
+
+[node name="InteractionArea" parent="cidade_map/Lojinha2" instance=ExtResource("7_5tygx")]
+position = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Lojinha2/InteractionArea"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_vumlt")
+
+[node name="npcs_tileset2" type="TileMapLayer" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(0.63, -10)
+tile_map_data = PackedByteArray("AAADAA0AAQAAAAAAAAAGAA0AAQAAAAIAAAAJAA0AAQAAAAMAAAADAAcAAQAAAAEAAAAGAAcAAQAAAAIAAAAJAAcAAQAAAAAAAAAOAAUAAQAAAAIAAAARAAUAAQAAAAIAAAAUAAUAAQAAAAMAAAAYAAcAAQAAAAAAAAAbAAcAAQAAAAAAAAAeAAcAAQAAAAIAAAAeAA0AAQAAAAIAAAAbAA0AAQAAAAIAAAAYAA0AAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_d28hq")
+metadata/_edit_lock_ = true
+
+[node name="cidade_props" type="Node2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(1, 0)
+metadata/_edit_lock_ = true
+
+[node name="postes_01" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="poste_01" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(194, 332)
+texture = ExtResource("4_n8ba5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_01"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_01/StaticBody2D"]
+position = Vector2(-2.66666, 4.66677)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="poste_05" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(69.3333, 315)
+texture = ExtResource("4_n8ba5")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_05"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_05/StaticBody2D"]
+position = Vector2(2, 4.66699)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="poste_08" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(69.3333, 274.333)
+texture = ExtResource("4_n8ba5")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_08"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_08/StaticBody2D"]
+position = Vector2(2, 4.66699)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="poste_02" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(365.333, 332)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_n8ba5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_02"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_02/StaticBody2D"]
+position = Vector2(-2.66666, 4.66677)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="poste_03" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(365.333, 252)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_n8ba5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_03"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_03/StaticBody2D"]
+position = Vector2(-2.66666, 4.66677)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="poste_04" type="Sprite2D" parent="cidade_map/cidade_props/postes_01"]
+position = Vector2(194, 76.3337)
+texture = ExtResource("4_n8ba5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_01/poste_04"]
+position = Vector2(0.333333, -1.00033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_01/poste_04/StaticBody2D"]
+position = Vector2(-2.66666, 4.66677)
+shape = SubResource("SegmentShape2D_aydav")
+
+[node name="postes_02" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="postes_02" type="Sprite2D" parent="cidade_map/cidade_props/postes_02"]
+position = Vector2(103.666, 172)
+texture = ExtResource("7_nt6kj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_02/postes_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_02/postes_02/StaticBody2D"]
+position = Vector2(0, 5.33333)
+shape = SubResource("SegmentShape2D_5n3o1")
+
+[node name="postes_04" type="Sprite2D" parent="cidade_map/cidade_props/postes_02"]
+position = Vector2(111.666, 427.999)
+texture = ExtResource("7_nt6kj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_02/postes_04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_02/postes_04/StaticBody2D"]
+position = Vector2(0, 5.33333)
+shape = SubResource("SegmentShape2D_5n3o1")
+
+[node name="postes_03" type="Sprite2D" parent="cidade_map/cidade_props/postes_02"]
+position = Vector2(456.667, 172)
+texture = ExtResource("7_nt6kj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_02/postes_03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_02/postes_03/StaticBody2D"]
+position = Vector2(0, 5.33333)
+shape = SubResource("SegmentShape2D_5n3o1")
+
+[node name="postes_05" type="Sprite2D" parent="cidade_map/cidade_props/postes_02"]
+position = Vector2(447.667, 428)
+texture = ExtResource("7_nt6kj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/postes_02/postes_05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/postes_02/postes_05/StaticBody2D"]
+position = Vector2(0, 5.33333)
+shape = SubResource("SegmentShape2D_5n3o1")
+
+[node name="semafaros_01" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="semafaro_01" type="Sprite2D" parent="cidade_map/cidade_props/semafaros_01"]
+position = Vector2(192, 177.333)
+texture = ExtResource("8_1bdl1")
+hframes = 3
+script = ExtResource("15_jjou8")
+type = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_01/StaticBody2D"]
+position = Vector2(0, 5.33368)
+shape = SubResource("SegmentShape2D_eroxr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_01"]
+stream = ExtResource("16_vlk8u")
+volume_db = -20.0
+max_distance = 120.0
+
+[node name="semafaro_02" type="Sprite2D" parent="cidade_map/cidade_props/semafaros_01"]
+position = Vector2(368, 177.333)
+texture = ExtResource("8_1bdl1")
+hframes = 3
+script = ExtResource("15_jjou8")
+type = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_02/StaticBody2D"]
+position = Vector2(0, 5.33368)
+shape = SubResource("SegmentShape2D_eroxr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="cidade_map/cidade_props/semafaros_01/semafaro_02"]
+stream = ExtResource("16_vlk8u")
+volume_db = -20.0
+max_distance = 120.0
+
+[node name="semafaro_02" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="semafaro_02" type="Sprite2D" parent="cidade_map/cidade_props/semafaro_02"]
+position = Vector2(203.667, 252)
+texture = ExtResource("9_aydav")
+hframes = 4
+script = ExtResource("15_jjou8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_02"]
+position = Vector2(-0.000345866, -0.333333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_02/StaticBody2D"]
+position = Vector2(-11.667, 11.3334)
+shape = SubResource("SegmentShape2D_d28hq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_02"]
+stream = ExtResource("16_vlk8u")
+volume_db = -20.0
+max_distance = 120.0
+
+[node name="semafaro_03" type="Sprite2D" parent="cidade_map/cidade_props/semafaro_02"]
+position = Vector2(356.5, 76)
+scale = Vector2(-1, 1)
+texture = ExtResource("9_aydav")
+hframes = 4
+frame = 3
+script = ExtResource("15_jjou8")
+type = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_03"]
+position = Vector2(-0.000345866, -0.333333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_03/StaticBody2D"]
+position = Vector2(-11.667, 11.3334)
+shape = SubResource("SegmentShape2D_d28hq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="cidade_map/cidade_props/semafaro_02/semafaro_03"]
+stream = ExtResource("16_vlk8u")
+volume_db = -20.0
+max_distance = 120.0
+
+[node name="lixos" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="lixo7" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(199.667, 438.667)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo7/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo8" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(359.667, 438.333)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo8/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo3" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(191.333, 310.333)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo3/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo4" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(367.666, 310.333)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo4/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo5" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(191.333, 54.6668)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo5/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo9" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(369, 54.6667)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo9/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="lixo6" type="Sprite2D" parent="cidade_map/cidade_props/lixos"]
+position = Vector2(463, 80)
+texture = ExtResource("10_3tjn6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/lixos/lixo6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/lixos/lixo6/StaticBody2D"]
+position = Vector2(0, -0.0831451)
+shape = SubResource("RectangleShape2D_vk3gu")
+
+[node name="arvores_01" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="arvore_01" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+material = ExtResource("19_tk0if")
+position = Vector2(152, 175)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_01/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvore_06" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+material = ExtResource("19_tk0if")
+position = Vector2(40.15, 79)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_06"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_06/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvore_03" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+material = ExtResource("19_tk0if")
+position = Vector2(168.15, 431)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_03/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvore_02" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+material = ExtResource("19_tk0if")
+position = Vector2(408.333, 175)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_02/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvore_04" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+material = ExtResource("19_tk0if")
+position = Vector2(392.15, 431)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_04/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvore_05" type="Sprite2D" parent="cidade_map/cidade_props/arvores_01"]
+position = Vector2(328.15, 431)
+texture = ExtResource("11_5n3o1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_01/arvore_05"]
+material = ExtResource("19_tk0if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_01/arvore_05/StaticBody2D"]
+position = Vector2(-0.333374, 10.1667)
+shape = SubResource("RectangleShape2D_aydav")
+
+[node name="arvores_02" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="arvore_02" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(56.6666, 175)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_02/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_04" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(56.6666, 431)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_04/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_07" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(24.6667, 318)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_07"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_07/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_08" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(24.667, 288)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_08"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_08/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_09" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(536.667, 319)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_09"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_09/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_10" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(536.667, 289)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_10/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_06" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(232.667, 431)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_06"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_06/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_03" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(505.667, 175)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_03/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="arvore_05" type="Sprite2D" parent="cidade_map/cidade_props/arvores_02"]
+material = ExtResource("19_tk0if")
+position = Vector2(505.667, 430.667)
+texture = ExtResource("12_eroxr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/arvores_02/arvore_05"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/arvores_02/arvore_05/StaticBody2D"]
+position = Vector2(-0.999969, 10.6667)
+shape = SubResource("RectangleShape2D_5n3o1")
+
+[node name="bancos" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="banco" type="Sprite2D" parent="cidade_map/cidade_props/bancos"]
+y_sort_enabled = true
+position = Vector2(134.667, 441)
+texture = ExtResource("28_u75d6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancos/banco"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancos/banco/StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_u75d6")
+
+[node name="banco2" type="Sprite2D" parent="cidade_map/cidade_props/bancos"]
+y_sort_enabled = true
+position = Vector2(88.6667, 441)
+texture = ExtResource("28_u75d6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancos/banco2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancos/banco2/StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_u75d6")
+
+[node name="banco3" type="Sprite2D" parent="cidade_map/cidade_props/bancos"]
+y_sort_enabled = true
+position = Vector2(471.667, 441)
+texture = ExtResource("28_u75d6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancos/banco3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancos/banco3/StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_u75d6")
+
+[node name="banco4" type="Sprite2D" parent="cidade_map/cidade_props/bancos"]
+y_sort_enabled = true
+position = Vector2(423.666, 441)
+texture = ExtResource("28_u75d6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancos/banco4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancos/banco4/StaticBody2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_u75d6")
+
+[node name="banco_vertical" type="Sprite2D" parent="cidade_map/cidade_props/bancos"]
+position = Vector2(71.15, 303)
+texture = ExtResource("19_x7qg0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancos/banco_vertical"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancos/banco_vertical/StaticBody2D"]
+position = Vector2(-0.483337, 0)
+shape = SubResource("RectangleShape2D_lkvsa")
+
+[node name="bancas" type="Node2D" parent="cidade_map/cidade_props"]
+y_sort_enabled = true
+
+[node name="BancaVenda" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(151.333, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda2" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(103.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda2"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda2/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda3" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(55.6667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda3"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda3/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda4" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(151.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda4"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda4/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda5" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(103.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda5"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda5/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda6" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(55.6667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda6"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda6/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda7" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(487.333, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda7"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda7/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda8" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(439.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda8"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda8/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda9" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(391.667, 208)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda9"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda9/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda10" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(487.333, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda10"]
+y_sort_enabled = true
+position = Vector2(-11.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda10/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda11" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(439.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda11"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda11/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda12" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(391.667, 112)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda12"]
+y_sort_enabled = true
+position = Vector2(18, 5.33334)
+texture = ExtResource("27_vsmpn")
+flip_h = true
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda12/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda13" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(327.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda13"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda13/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda14" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(279.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda14"]
+y_sort_enabled = true
+position = Vector2(18.6667, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+frame = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda14/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="BancaVenda15" type="Sprite2D" parent="cidade_map/cidade_props/bancas"]
+position = Vector2(231.667, 80.6666)
+texture = ExtResource("26_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_heuos")
+
+[node name="Banner" type="Sprite2D" parent="cidade_map/cidade_props/bancas/BancaVenda15"]
+y_sort_enabled = true
+position = Vector2(-20, 5.33334)
+texture = ExtResource("27_vsmpn")
+hframes = 3
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/Banner"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/cidade_props/bancas/BancaVenda15/Banner/StaticBody2D"]
+position = Vector2(-0.5, 2.33333)
+shape = SubResource("RectangleShape2D_xu3rk")
+
+[node name="lixeira" type="AnimatedSprite2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(475, 298)
+sprite_frames = SubResource("SpriteFrames_2juux")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "lixeira"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/lixeira"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/lixeira/StaticBody2D"]
+position = Vector2(-6.10352e-05, 8.66669)
+shape = SubResource("RectangleShape2D_7eq0p")
+
+[node name="InteractionArea" parent="cidade_map/lixeira" instance=ExtResource("7_5tygx")]
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/lixeira/InteractionArea"]
+position = Vector2(7.16672, 4.50003)
+shape = SubResource("RectangleShape2D_hk50e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cidade_map/lixeira"]
+libraries = {
+&"": SubResource("AnimationLibrary_lkvsa")
+}
+autoplay = "idle"
+
+[node name="lixeira2" type="Sprite2D" parent="cidade_map"]
+y_sort_enabled = true
+position = Vector2(24, 40)
+texture = ExtResource("7_7eq0p")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/lixeira2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/lixeira2/StaticBody2D"]
+position = Vector2(-6.10352e-05, 8.66669)
+shape = SubResource("RectangleShape2D_7eq0p")
+
+[node name="Parquinho" type="AnimatedSprite2D" parent="cidade_map"]
+position = Vector2(512, 48)
+sprite_frames = SubResource("SpriteFrames_rxpoq")
+autoplay = "default"
+frame_progress = 0.16388798
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Parquinho"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Parquinho/StaticBody2D"]
+position = Vector2(-0.333313, 0.5)
+shape = SubResource("RectangleShape2D_vsmpn")
+
+[node name="npcs_tileset" type="TileMapLayer" parent="cidade_map"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAALABEAAQAAAAAAAAAZABUAAQAAAAEAAAAYABUAAQAAAAIAAAAEAA4AAQAAAAIAAAAJABUAAQAAAAMAAAAhABsAAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAMAAAAFAAkAAQAAAAEAAAAHAAgAAQAAAAIAAAANAAcAAQAAAAMAAAARAAYAAQAAAAMAAAATAAcAAQAAAAIAAAAYAAgAAQAAAAIAAAAeAAgAAQAAAAEAAAAaAAgAAQAAAAIAAAAgAAcAAQAAAAIAAAAYAA4AAQAAAAIAAAAdAA4AAQAAAAIAAAAgAA8AAQAAAAMAAAAVAAkAAQAAAAEAAAAJAA4AAQAAAAEAAAAGABAAAQAAAAIAAAACAA8AAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_d28hq")
+
+[node name="MáquinaInovação" type="Sprite2D" parent="cidade_map"]
+position = Vector2(281, 143)
+texture = ExtResource("21_vk3gu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/MáquinaInovação"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/MáquinaInovação/StaticBody2D"]
+position = Vector2(0, 6.33333)
+shape = SubResource("RectangleShape2D_enjem")
+
+[node name="Mercadao" type="Sprite2D" parent="cidade_map"]
+position = Vector2(96, 48)
+texture = ExtResource("23_g4qie")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/Mercadao"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/Mercadao/StaticBody2D"]
+position = Vector2(1.00001, 2)
+shape = SubResource("RectangleShape2D_g4qie")
+
+[node name="npcs" type="Node2D" parent="cidade_map"]
+y_sort_enabled = true
+
+[node name="cego" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(297, 169)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_vlk8u")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "cego"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/cego"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cego/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="cidade_map/npcs/cego" instance=ExtResource("7_5tygx")]
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cego/InteractionArea"]
+position = Vector2(0.166687, 2.66667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="cadeirante" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(33, 137)
+sprite_frames = SubResource("SpriteFrames_13jk5")
+autoplay = "default"
+frame_progress = 0.236575
+script = ExtResource("28_lkvsa")
+dialogo = "cadeirante"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/cadeirante"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cadeirante/StaticBody2D"]
+position = Vector2(0, 2.78333)
+shape = SubResource("RectangleShape2D_jjou8")
+
+[node name="InteractionArea" parent="cidade_map/npcs/cadeirante" instance=ExtResource("7_5tygx")]
+position = Vector2(0, -5.33334)
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cadeirante/InteractionArea"]
+position = Vector2(1.52588e-05, 6.56667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="negacionista" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(40, 336)
+sprite_frames = SubResource("SpriteFrames_mrl7o")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "negacionista"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/negacionista"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/negacionista/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="cidade_map/npcs/negacionista" instance=ExtResource("7_5tygx")]
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/negacionista/InteractionArea"]
+position = Vector2(0.166687, 2.66667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="mae_crianca" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(532, 80)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_7c4ul")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "mae"
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/mae_crianca"]
+position = Vector2(0, 1.33334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/mae_crianca/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="cidade_map/npcs/mae_crianca" instance=ExtResource("7_5tygx")]
+position = Vector2(0, 1.33334)
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/mae_crianca/InteractionArea"]
+position = Vector2(0.166687, 2.66667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="cara_jumento" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(59, 88)
+sprite_frames = SubResource("SpriteFrames_wqd1e")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "cj"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/cara_jumento"]
+position = Vector2(0, 1.33334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cara_jumento/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="cidade_map/npcs/cara_jumento" instance=ExtResource("7_5tygx")]
+position = Vector2(0, 1.33334)
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cara_jumento/InteractionArea"]
+position = Vector2(0.166687, 2.66667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="conveniencia_map" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(880, 64)
+
+[node name="floor" type="TileMapLayer" parent="conveniencia_map"]
+z_index = -1
+position = Vector2(0, 48)
+tile_map_data = PackedByteArray("AAAAAAAAAAADAAEAAAAAAAEAAAADAAIAAAABAAAAAAAEAAEAAAABAAEAAAAEAAIAAAAAAAIAAAADAAEAAAAAAAMAAAADAAIAAAABAAIAAAAEAAEAAAABAAMAAAAEAAIAAAAAAAQAAAADAAEAAAAAAAUAAAADAAIAAAABAAQAAAAEAAEAAAABAAUAAAAEAAIAAAACAAAAAAADAAEAAAACAAEAAAADAAIAAAADAAAAAAAEAAEAAAADAAEAAAAEAAIAAAACAAIAAAADAAEAAAACAAMAAAADAAIAAAADAAIAAAAEAAEAAAADAAMAAAAEAAIAAAACAAQAAAADAAEAAAACAAUAAAADAAIAAAADAAQAAAAEAAEAAAADAAUAAAAEAAIAAAAEAAAAAAADAAEAAAAEAAEAAAADAAIAAAAFAAAAAAAEAAEAAAAFAAEAAAAEAAIAAAAEAAIAAAADAAEAAAAEAAMAAAADAAIAAAAFAAIAAAAEAAEAAAAFAAMAAAAEAAIAAAAEAAQAAAADAAEAAAAEAAUAAAADAAIAAAAFAAQAAAAEAAEAAAAFAAUAAAAEAAIAAAAGAAAAAAADAAEAAAAGAAEAAAADAAIAAAAHAAAAAAAEAAEAAAAHAAEAAAAEAAIAAAAGAAIAAAADAAEAAAAGAAMAAAADAAIAAAAHAAIAAAAEAAEAAAAHAAMAAAAEAAIAAAAGAAQAAAADAAEAAAAGAAUAAAADAAIAAAAHAAQAAAAEAAEAAAAHAAUAAAAEAAIAAAAIAAAAAAADAAEAAAAIAAEAAAADAAIAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAIAAAAIAAIAAAADAAEAAAAIAAMAAAADAAIAAAAJAAIAAAAEAAEAAAAJAAMAAAAEAAIAAAAIAAQAAAADAAEAAAAIAAUAAAADAAIAAAAJAAQAAAAEAAEAAAAJAAUAAAAEAAIAAAAKAAAAAAADAAEAAAAKAAEAAAADAAIAAAAKAAIAAAADAAEAAAAKAAMAAAADAAIAAAAKAAQAAAADAAEAAAAKAAUAAAADAAIAAAA=")
+tile_set = SubResource("TileSet_53nd2")
+
+[node name="walls" type="TileMapLayer" parent="conveniencia_map"]
+z_index = -1
+position = Vector2(0, 48)
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAMAAAAAAAIAAAAAAAMAAAABAP//AAABAAIAAAACAP//AAABAAIAAAADAP//AAABAAIAAAAEAP//AAABAAIAAAAAAP//AAAAAAIAAAAFAP//AAABAAIAAAAGAP//AAABAAIAAAAHAP//AAABAAIAAAAAAAMAAAAAAAMAAAAIAP//AAABAAIAAAAJAP//AAABAAIAAAAAAP3/AAAAAAAAAAABAP3/AAABAAAAAAACAP3/AAABAAAAAAADAP3/AAABAAAAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAABAAAAAAAHAP3/AAABAAAAAAAIAP3/AAABAAAAAAAJAP3/AAABAAAAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAJAP7/AAABAAEAAAAAAP7/AAAAAAEAAAAAAAQAAAAAAAMAAAABAAUAAAABAAQAAAACAAUAAAABAAQAAAADAAUAAAABAAQAAAAEAAUAAAABAAQAAAAFAAUAAAABAAQAAAAGAAUAAAABAAQAAAAHAAUAAAABAAQAAAAIAAUAAAABAAQAAAAJAAUAAAABAAQAAAAKAAUAAAACAAQAAAAAAAUAAAAAAAQAAAAAAAAAAAAAAAMAAAAKAP3/AAACAAAAAAAKAP7/AAACAAEAAAAKAP//AAACAAIAAAAKAAAAAAACAAMAAAAKAAEAAAACAAMAAAAKAAIAAAACAAMAAAAKAAMAAAACAAMAAAAKAAQAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_53nd2")
+
+[node name="npcs" type="Node2D" parent="conveniencia_map"]
+y_sort_enabled = true
+position = Vector2(0, 61)
+
+[node name="mudo" type="AnimatedSprite2D" parent="conveniencia_map/npcs"]
+position = Vector2(107, 64)
+sprite_frames = SubResource("SpriteFrames_4itaf")
+autoplay = "default"
+script = ExtResource("28_lkvsa")
+dialogo = "mudo"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="conveniencia_map/npcs/mudo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/npcs/mudo/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="conveniencia_map/npcs/mudo" instance=ExtResource("7_5tygx")]
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/npcs/mudo/InteractionArea"]
+position = Vector2(0.166687, 2.66667)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="saida" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(88, 35.5)
+texture = ExtResource("36_quvpo")
+script = ExtResource("7_hk50e")
+obj_id = 3
+
+[node name="InteractionArea" parent="conveniencia_map/saida" instance=ExtResource("7_5tygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/saida/InteractionArea"]
+position = Vector2(0, 6.66667)
+shape = SubResource("RectangleShape2D_5mfyb")
+
+[node name="sorvete" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(18.5, 44)
+texture = ExtResource("39_bhfdw")
+
+[node name="Area2D" type="StaticBody2D" parent="conveniencia_map/sorvete"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/sorvete/Area2D"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_yrvfu")
+
+[node name="geladeira" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(46.5, 41)
+texture = ExtResource("40_6qe3v")
+
+[node name="Area2D" type="StaticBody2D" parent="conveniencia_map/geladeira"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/geladeira/Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_gn66w")
+
+[node name="prateleira_01" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(107, 80)
+texture = ExtResource("41_in4pm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="conveniencia_map/prateleira_01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/prateleira_01/StaticBody2D"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_tk0if")
+
+[node name="prateleira_02" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(107, 117)
+texture = ExtResource("42_yrvfu")
+
+[node name="Node2D" type="StaticBody2D" parent="conveniencia_map/prateleira_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/prateleira_02/Node2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_8oji3")
+
+[node name="mesa" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(29, 101.25)
+scale = Vector2(1, 1.0064934)
+texture = ExtResource("43_gn66w")
+
+[node name="Area2D" type="StaticBody2D" parent="conveniencia_map/mesa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D"]
+position = Vector2(-0.5, -26.080627)
+shape = SubResource("RectangleShape2D_dxsa3")
+
+[node name="Area2D2" type="StaticBody2D" parent="conveniencia_map/mesa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D2"]
+position = Vector2(-20, -11.67421)
+shape = SubResource("RectangleShape2D_de8w4")
+
+[node name="Area2D3" type="StaticBody2D" parent="conveniencia_map/mesa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D3"]
+position = Vector2(-20, 32.081055)
+shape = SubResource("RectangleShape2D_qlusk")
+
+[node name="mesinha" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(151.5, 48)
+texture = ExtResource("44_tk0if")
+
+[node name="Area2D" type="StaticBody2D" parent="conveniencia_map/mesinha"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesinha/Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_xj5cw")
+
+[node name="maquininha" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(118, 43.5)
+texture = ExtResource("45_8oji3")
+
+[node name="Area2D" type="StaticBody2D" parent="conveniencia_map/maquininha"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/maquininha/Area2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_rvulv")
+
+[node name="doceria_map" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1288, 8)
+
+[node name="floor" type="TileMapLayer" parent="doceria_map"]
+tile_map_data = PackedByteArray("AAABAAMAAAADAAEAAAACAAMAAAADAAEAAAADAAMAAAADAAEAAAAEAAMAAAADAAEAAAAFAAMAAAADAAEAAAAGAAMAAAADAAEAAAAHAAMAAAADAAEAAAAIAAMAAAADAAEAAAAJAAMAAAADAAEAAAAJAAQAAAADAAEAAAAIAAQAAAADAAEAAAAHAAQAAAADAAEAAAAGAAQAAAADAAEAAAAFAAQAAAADAAEAAAAEAAQAAAADAAEAAAADAAQAAAADAAEAAAACAAQAAAADAAEAAAABAAQAAAADAAEAAAABAAUAAAADAAEAAAACAAUAAAADAAEAAAADAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAIAAUAAAADAAEAAAAJAAUAAAADAAEAAAAJAAYAAAADAAEAAAAIAAYAAAADAAEAAAAHAAYAAAADAAEAAAAGAAYAAAADAAEAAAAFAAYAAAADAAEAAAAEAAYAAAADAAEAAAADAAYAAAADAAEAAAACAAYAAAADAAEAAAABAAYAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAADAAEAAAAEAAcAAAADAAEAAAAFAAcAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAIAAcAAAADAAEAAAAJAAcAAAADAAEAAAAJAAgAAAADAAEAAAAIAAgAAAADAAEAAAAHAAgAAAADAAEAAAAGAAgAAAADAAEAAAAFAAgAAAADAAEAAAAEAAgAAAADAAEAAAADAAgAAAADAAEAAAACAAgAAAADAAEAAAABAAgAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_lp7ov")
+
+[node name="walls" type="TileMapLayer" parent="doceria_map"]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAABAAEAAAAAAAEAAAABAAIAAAAAAAIAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAFAAEAAAABAAEAAAAFAAIAAAABAAIAAAAGAAEAAAABAAEAAAAGAAIAAAABAAIAAAAHAAEAAAABAAEAAAAHAAIAAAABAAIAAAAIAAEAAAABAAEAAAAIAAIAAAABAAIAAAAJAAEAAAACAAEAAAAJAAIAAAACAAIAAAABAAMAAAAAAAMAAAABAAQAAAAAAAMAAAABAAUAAAAAAAMAAAABAAYAAAAAAAMAAAABAAcAAAAAAAMAAAABAAgAAAAAAAQAAAACAAgAAAABAAQAAAADAAgAAAABAAQAAAAEAAgAAAABAAQAAAAFAAgAAAABAAQAAAAGAAgAAAABAAQAAAAHAAgAAAABAAQAAAAIAAgAAAABAAQAAAAJAAgAAAACAAQAAAAJAAcAAAACAAMAAAAJAAYAAAACAAMAAAAJAAUAAAACAAMAAAAJAAQAAAACAAMAAAAJAAMAAAACAAMAAAA=")
+tile_set = SubResource("TileSet_lp7ov")
+
+[node name="saida" type="Sprite2D" parent="doceria_map"]
+position = Vector2(88, 35.5)
+texture = ExtResource("36_quvpo")
+script = ExtResource("7_hk50e")
+obj_id = 5
+
+[node name="InteractionArea" parent="doceria_map/saida" instance=ExtResource("7_5tygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/saida/InteractionArea"]
+position = Vector2(0, 6.66667)
+shape = SubResource("RectangleShape2D_5mfyb")
+
+[node name="mesa_01" type="Sprite2D" parent="doceria_map"]
+position = Vector2(48, 56)
+texture = ExtResource("40_5mfyb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/mesa_01"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/mesa_01/StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p1n40")
+
+[node name="mesa_02" type="Sprite2D" parent="doceria_map"]
+position = Vector2(48, 88)
+texture = ExtResource("40_5mfyb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/mesa_02"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/mesa_02/StaticBody2D"]
+position = Vector2(0, 1.66666)
+shape = SubResource("RectangleShape2D_p1n40")
+
+[node name="mesa_03" type="Sprite2D" parent="doceria_map"]
+position = Vector2(128, 56)
+texture = ExtResource("40_5mfyb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/mesa_03"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/mesa_03/StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p1n40")
+
+[node name="mesa_04" type="Sprite2D" parent="doceria_map"]
+position = Vector2(128, 88)
+texture = ExtResource("40_5mfyb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/mesa_04"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/mesa_04/StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_p1n40")
+
+[node name="arquiibanca" type="Sprite2D" parent="doceria_map"]
+position = Vector2(124.5, 109)
+texture = ExtResource("41_lki18")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/arquiibanca"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/arquiibanca/StaticBody2D"]
+position = Vector2(0.5, 4.50003)
+shape = SubResource("RectangleShape2D_72u1o")
+
+[node name="toddy" type="Sprite2D" parent="doceria_map"]
+position = Vector2(40, 112)
+texture = ExtResource("41_lo4hs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/toddy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/toddy/StaticBody2D"]
+position = Vector2(0, 3.83333)
+shape = SubResource("RectangleShape2D_lki18")
+
+[node name="louco" type="AnimatedSprite2D" parent="doceria_map"]
+position = Vector2(144, 126)
+sprite_frames = SubResource("SpriteFrames_7en3g")
+autoplay = "default"
+frame_progress = 0.327153
+script = ExtResource("28_lkvsa")
+dialogo = "louco"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="doceria_map/louco"]
+position = Vector2(0, -0.666651)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/louco/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="doceria_map/louco" instance=ExtResource("7_5tygx")]
+position = Vector2(0, -0.666651)
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="doceria_map/louco/InteractionArea"]
+position = Vector2(-1.83325, 7)
+shape = SubResource("RectangleShape2D_vlk8u")
+
+[node name="brecho_map" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1288, 168)
+
+[node name="floors" type="TileMapLayer" parent="brecho_map"]
+tile_map_data = PackedByteArray("AAABAAMAAAADAAEAAAABAAQAAAADAAEAAAABAAUAAAADAAEAAAABAAYAAAADAAEAAAABAAcAAAADAAEAAAABAAgAAAADAAEAAAACAAgAAAADAAEAAAADAAgAAAADAAEAAAAEAAgAAAADAAEAAAAFAAgAAAADAAEAAAAGAAgAAAADAAEAAAAHAAgAAAADAAEAAAAIAAgAAAADAAEAAAAJAAgAAAADAAEAAAAJAAcAAAADAAEAAAAJAAYAAAADAAEAAAAJAAUAAAADAAEAAAAJAAQAAAADAAEAAAAJAAMAAAADAAEAAAAIAAMAAAADAAEAAAAHAAMAAAADAAEAAAAGAAMAAAADAAEAAAAFAAMAAAADAAEAAAAEAAMAAAADAAEAAAADAAMAAAADAAEAAAACAAMAAAADAAEAAAACAAQAAAADAAEAAAACAAYAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAADAAEAAAADAAYAAAADAAEAAAADAAUAAAADAAEAAAADAAQAAAADAAEAAAACAAUAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAFAAQAAAADAAEAAAAEAAQAAAADAAEAAAAEAAYAAAADAAEAAAAEAAcAAAADAAEAAAAFAAYAAAADAAEAAAAFAAcAAAADAAEAAAAGAAYAAAADAAEAAAAGAAUAAAADAAEAAAAHAAUAAAADAAEAAAAHAAQAAAADAAEAAAAGAAQAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAAHAAYAAAADAAEAAAAIAAUAAAADAAEAAAAIAAQAAAADAAEAAAAIAAYAAAADAAEAAAAIAAcAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_xu3rk")
+
+[node name="walls" type="TileMapLayer" parent="brecho_map"]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAAABAAEAAAAAAAEAAAABAAIAAAAAAAIAAAABAAMAAAAAAAMAAAABAAQAAAAAAAMAAAABAAUAAAAAAAMAAAABAAYAAAAAAAMAAAABAAcAAAAAAAMAAAABAAgAAAAAAAQAAAACAAgAAAABAAQAAAADAAgAAAABAAQAAAAEAAgAAAABAAQAAAAFAAgAAAABAAQAAAAGAAgAAAABAAQAAAAHAAgAAAABAAQAAAAIAAgAAAABAAQAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAACAAAAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAADAAEAAAABAAEAAAADAAIAAAABAAIAAAAEAAEAAAABAAEAAAAEAAIAAAABAAIAAAAFAAEAAAABAAEAAAAFAAIAAAABAAIAAAAGAAEAAAABAAEAAAAGAAIAAAABAAIAAAAHAAEAAAABAAEAAAAHAAIAAAABAAIAAAAIAAEAAAABAAEAAAAIAAIAAAABAAIAAAAJAAEAAAACAAEAAAAJAAIAAAACAAIAAAAJAAMAAAACAAMAAAAJAAQAAAACAAMAAAAJAAUAAAACAAMAAAAJAAYAAAACAAMAAAAJAAcAAAACAAMAAAAJAAgAAAACAAQAAAA=")
+tile_set = SubResource("TileSet_enjem")
+
+[node name="saida" type="Sprite2D" parent="brecho_map"]
+position = Vector2(88, 35.5)
+texture = ExtResource("36_quvpo")
+script = ExtResource("7_hk50e")
+obj_id = 7
+
+[node name="InteractionArea" parent="brecho_map/saida" instance=ExtResource("7_5tygx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/saida/InteractionArea"]
+position = Vector2(0, 6.66667)
+shape = SubResource("RectangleShape2D_5mfyb")
+
+[node name="cabine" type="Sprite2D" parent="brecho_map"]
+position = Vector2(148, 61)
+texture = ExtResource("44_ejl36")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/cabine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/cabine/Area2D"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_6gjj3")
+
+[node name="cabine2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(148, 92)
+texture = ExtResource("44_ejl36")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/cabine2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/cabine2/Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_u7ipn")
+
+[node name="arquiibanca" type="Sprite2D" parent="brecho_map"]
+position = Vector2(125, 114)
+texture = ExtResource("41_lki18")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brecho_map/arquiibanca"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/arquiibanca/StaticBody2D"]
+position = Vector2(0.5, 5.666687)
+shape = SubResource("RectangleShape2D_72u1o")
+
+[node name="CabineRoupas" type="Sprite2D" parent="brecho_map"]
+position = Vector2(45, 105)
+texture = ExtResource("49_7en3g")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/CabineRoupas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/CabineRoupas/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_idqbm")
+
+[node name="CabineRoupas2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(45, 127)
+texture = ExtResource("49_7en3g")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/CabineRoupas2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/CabineRoupas2/Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_86rk8")
+
+[node name="EstandeRoupas" type="Sprite2D" parent="brecho_map"]
+position = Vector2(45, 61.5)
+texture = ExtResource("50_7c4ul")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/EstandeRoupas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_2i2md")
+
+[node name="EstandeRoupas2" type="Sprite2D" parent="brecho_map"]
+position = Vector2(45, 84)
+texture = ExtResource("50_7c4ul")
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/EstandeRoupas2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas2/Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_sxhyo")
+
+[node name="EstandeRoupas3" type="Sprite2D" parent="brecho_map"]
+position = Vector2(116, 60)
+texture = ExtResource("51_qye7e")
+flip_h = true
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/EstandeRoupas3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas3/Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_oscmo")
+
+[node name="EstandeRoupas4" type="Sprite2D" parent="brecho_map"]
+position = Vector2(116, 93)
+texture = ExtResource("51_qye7e")
+flip_h = true
+
+[node name="Area2D" type="StaticBody2D" parent="brecho_map/EstandeRoupas4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas4/Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_q6xbe")
+
+[node name="ending_place" type="Node2D" parent="."]
+
+[node name="who" type="Sprite2D" parent="ending_place"]
+position = Vector2(896, 512)
+texture = ExtResource("52_7en3g")
+hframes = 2
+
+[node name="text" type="Label" parent="ending_place"]
+visible = false
+offset_left = 840.0
+offset_top = 484.0
+offset_right = 1404.0
+offset_bottom = 516.0
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("22_iqv1j")
+theme_override_font_sizes/font_size = 32
+text = "A casa de quem você procura pegou fogo."
+horizontal_alignment = 1
+
+[node name="player_scene" parent="." instance=ExtResource("2_ddj74")]
+position = Vector2(280, 441)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="minimap" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(292, 139)
+texture = ExtResource("52_qye7e")
+
+[node name="icon_cego" type="Sprite2D" parent="CanvasLayer/minimap"]
+texture = ExtResource("59_yrvfu")
+
+[node name="icon_mae" type="Sprite2D" parent="CanvasLayer/minimap"]
+texture = ExtResource("60_gn66w")
+
+[node name="icon_mudo" type="Sprite2D" parent="CanvasLayer/minimap"]
+texture = ExtResource("61_tk0if")
+
+[node name="icon_cadeirante" type="Sprite2D" parent="CanvasLayer/minimap"]
+texture = ExtResource("62_8oji3")
+
+[node name="icon_player" type="Sprite2D" parent="CanvasLayer/minimap"]
+process_mode = 3
+position = Vector2(0, 19)
+texture = ExtResource("53_2juux")
+
+[node name="entrance" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="text" type="RichTextLabel" parent="CanvasLayer/entrance"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 0
+offset_left = -3.0517578e-05
+offset_right = 1066.6667
+offset_bottom = 600.0
+scale = Vector2(0.3, 0.3)
+theme_override_constants/paragraph_separation = -9
+theme_override_fonts/normal_font = ExtResource("22_iqv1j")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "CIDADE
+
+
+Complete todas as missões antes do tempo acabar"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="bg" type="ColorRect" parent="CanvasLayer/entrance"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+
+[node name="fg" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
+[node name="ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_lh3hu")
+max_distance = 10000.0

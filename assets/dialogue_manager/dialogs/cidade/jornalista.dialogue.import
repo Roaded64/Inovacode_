@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bfpu2jkhkona4"
+path="res://.godot/imported/jornalista.dialogue-1753e890dbd5f667eef2b142acff2a7e.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/jornalista.dialogue"
+dest_files=["res://.godot/imported/jornalista.dialogue-1753e890dbd5f667eef2b142acff2a7e.tres"]
+
+[params]
+
+defaults=true

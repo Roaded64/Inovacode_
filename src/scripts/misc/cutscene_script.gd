@@ -7,11 +7,11 @@ var phrases = [
 	"Sua IA, feita pela DES Corp. falhou...",
 	"Ocasionando um incêndio na sua casa...",
 	"Você perdeu tudo, queimou seu braço...",
-	"Ele já não tinha mais movimento...",
-	"Dores físicas e noites sem sono...",
-	"A DES Corp. começou a fazer inovações...",
-	"O que lhe restava era pedir uma...",
-	"Será que a DES Corp. vai ajudar?"
+	"Desde então, ele nunca mais se moveu...",
+	"Dores constantes e noites em claro...",
+	"A DES Corp. iniciou uma nova era de inovações...",
+	"E tudo o que resta é um pedido de ajuda...",
+	"Será que, desta vez, a DES Corp. vai te ouvir?"
 ]
 
 @onready var label = $Cutscene_HUD/RichTextLabel
@@ -26,6 +26,14 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(1).timeout
 	Main.fade($Cutscene_HUD/ColorRect, 4, Color.TRANSPARENT)
+	
+	# Reseta as variável
+	Main.descoberto = [" _ ", " _ ", " _ ", " _ "]
+	Main.is_mouse = false
+	Main.is_city = false
+	Main.cod = null
+	Main.is_test = false
+	Main.tent = 0
 
 func _process(_delta: float) -> void:
 	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 2  # ajustável

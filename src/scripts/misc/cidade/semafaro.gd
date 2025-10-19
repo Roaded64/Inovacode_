@@ -29,6 +29,8 @@ func _process(delta):
 				frame = 2
 			else:
 				frame = 0
+		elif contador < 28.0:
+			frame = 1
 		else:
 			contador = 0.0
 
@@ -40,6 +42,6 @@ func _process(delta):
 					audio.play()
 					audio_timer = 0.0
 			3:
-				if contador > 13.0 and audio.stream:
+				if contador > 13.0 and contador < 25.0 and audio.stream:
 					audio.play()
 					audio_timer = 0.0

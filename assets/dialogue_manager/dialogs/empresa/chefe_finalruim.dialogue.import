@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ey4jdaj75r48"
+path="res://.godot/imported/chefe_finalruim.dialogue-ce2d0ac2cc0f6f3b61bc86a3a71c5dd3.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/empresa/chefe_finalruim.dialogue"
+dest_files=["res://.godot/imported/chefe_finalruim.dialogue-ce2d0ac2cc0f6f3b61bc86a3a71c5dd3.tres"]
+
+[params]
+
+defaults=true

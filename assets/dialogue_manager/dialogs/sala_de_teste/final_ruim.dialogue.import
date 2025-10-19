@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cj43b4mpimnjd"
+path="res://.godot/imported/final_ruim.dialogue-6e0ef522756582aba41f781714bf7999.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/sala_de_teste/final_ruim.dialogue"
+dest_files=["res://.godot/imported/final_ruim.dialogue-6e0ef522756582aba41f781714bf7999.tres"]
+
+[params]
+
+defaults=true

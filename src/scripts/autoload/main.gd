@@ -4,6 +4,8 @@ var fullscreen:bool
 var cur_scene
 var is_cutscene = false
 
+var ending = 0
+
 # controles
 var is_mouse = false
 
@@ -12,12 +14,22 @@ var emotion = 5
 # cidade
 var numbers = [2810, 2904, 1052, 0903, 0603, 1504, 1658]
 var cod
-var is_city = true
+var is_city = false
 var descoberto = [" _ ", " _ ", " _ ", " _ "]
+var tent = 0
 signal dialogue_cod
+
+# sala_teste
+var is_test = false
+var objsegurando
+var cur_test: int = 2
+signal test
+signal test_begin
+signal test_end
 
 func _ready() -> void:
 	dialogue_cod.connect(_signal)
+	test.connect(_testS)
 
 func _process(_delta):
 	if Main.is_mouse:
@@ -67,5 +79,16 @@ func _signal(argument: String):
 		"mae":
 			descoberto[3] = cod[3]
 	
-	if argument == "cego" || argument == "cadeirante" || argument == "mae" || argument == "mudo":
-		PrincipalHud._mission("Descubra o código completo (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")")
+	if descoberto == cod:
+		PrincipalHud._mission(("Explore o Mapa - (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")"))
+	else:
+		if argument == "cego" || argument == "cadeirante" || argument == "mae" || argument == "mudo":
+			PrincipalHud._mission("Descubra o código completo (" + str(descoberto[0]) + str(descoberto[1]) + str(descoberto[2]) + str(descoberto[3]) + ")")
+			
+func _testS(argument: String):
+	match argument:
+		"begin":
+			PrincipalHud._mission("Atenção na TV!")
+			emit_signal("test_begin")
+		"end":
+			emit_signal("test_end")

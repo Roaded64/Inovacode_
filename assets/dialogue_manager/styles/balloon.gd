@@ -2,10 +2,10 @@ extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
 ## The action to use for advancing the dialogue
-@export var next_action: StringName = &"ui_accept"
+@export var next_action: StringName = &"key_interact"
 
 ## The action to use to skip typing the dialogue
-@export var skip_action: StringName = &"ui_cancel"
+@export var skip_action: StringName = &"key_interact"
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -93,38 +93,74 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 func apply_dialogue_line() -> void:
 	mutation_cooldown.stop()
 
+	# estado inicial
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
 
+	# label de personagem
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
+	# portrait
 	var portrait_path: String = "res://assets/dialogue_manager/assets_portraits/%s_portrait.png" % dialogue_line.character
-	
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 	else:
 		portrait.texture = null
 
+	# preparar texto/respostas
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
 
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
 
-	# Show our balloon
+	# mostrar balão
 	balloon.show()
 	$AnimationPlayer.play("fade")
-	
 	will_hide_balloon = false
 
+	# digitar texto
 	dialogue_label.show()
 	if not dialogue_line.text.is_empty():
 		dialogue_label.type_out()
 		await dialogue_label.finished_typing
 
-	# Wait for input
+	# pegar singleton do DialogueManager de forma segura
+	var dm = Engine.get_singleton("DialogueManager")
+	var auto_adv := false
+	var auto_delay := 1.0
+	if dm:
+		# usa get("prop") que é seguro — retorna null se a prop não existir
+		var tmp = dm.get("auto_advance")
+		if tmp != null:
+			auto_adv = tmp
+		tmp = dm.get("auto_advance_delay")
+		if tmp != null:
+			# tenta converter para float caso venha como string
+			if typeof(tmp) == TYPE_FLOAT or typeof(tmp) == TYPE_INT:
+				auto_delay = float(tmp)
+			else:
+				# fallback: tenta parsear string
+				auto_delay = float(str(tmp))
+
+	# Se estivermos em auto-advance e não há respostas, bloqueia avanço e espera o delay
+	if auto_adv and dialogue_line.responses.size() == 0:
+		# bloqueia qualquer avanço manual
+		is_waiting_for_input = false
+		balloon.focus_mode = Control.FOCUS_NONE
+
+		# opcional: você pode tocar uma animação de "aguardando" ou diminuir alpha aqui
+		# aguarda o tempo configurado e avança
+		await get_tree().create_timer(auto_delay).timeout
+		# só avança se a linha atual ainda for a mesma (evita avanços duplicados)
+		# (útil caso uma mutação ou outro evento já tenha trocado a linha)
+		if is_instance_valid(self) and dialogue_line != null:
+			next(dialogue_line.next_id)
+		return
+
+	# Modo normal (manual) — respostas/tempo automático definido na própria linha
 	if dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
 		responses_menu.show()
@@ -136,7 +172,6 @@ func apply_dialogue_line() -> void:
 		is_waiting_for_input = true
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
-
 
 ## Go to the next line
 func next(next_id: String) -> void:
@@ -185,5 +220,5 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
-
+	
 #endregion

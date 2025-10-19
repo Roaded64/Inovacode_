@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://djpfvspyky5h"
+path="res://.godot/imported/primeiro_teste.dialogue-7109b0bd4293999c0dcb16b65c5dc20f.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/sala_de_teste/primeiro_teste.dialogue"
+dest_files=["res://.godot/imported/primeiro_teste.dialogue-7109b0bd4293999c0dcb16b65c5dc20f.tres"]
+
+[params]
+
+defaults=true

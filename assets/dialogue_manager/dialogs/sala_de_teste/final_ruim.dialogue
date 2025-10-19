@@ -1,0 +1,4 @@
+Chefe: Aqui está seu braço biônico. Obrigado por confiar novamente na DES Corp!
+Chefe: Sinto muito pela sua casa, não posso fazer nada. Mas... fique com meu chapéu como agradecimento.
+Chefe: “Dizem que ele era perfeito... mas parece só mais um ESP-03 fracassado.”
+do Main.test.emit("end")

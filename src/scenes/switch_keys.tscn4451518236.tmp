@@ -1,0 +1,248 @@
+[gd_scene load_steps=16 format=3 uid="uid://bwhqu0gjve8e8"]
+
+[ext_resource type="Script" uid="uid://3y68shyv0qyy" path="res://src/scripts/misc/switch_keys.gd" id="1_44f3m"]
+[ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="2_44f3m"]
+[ext_resource type="Texture2D" uid="uid://dwiq7pc4sdto8" path="res://assets/images/switch_keys/char_interact.png" id="3_wgu0m"]
+[ext_resource type="Texture2D" uid="uid://iw5g7xb2t7hs" path="res://assets/images/switch_keys/shift.png" id="4_q6fnr"]
+[ext_resource type="Texture2D" uid="uid://3hx0ep8fj43d" path="res://assets/images/switch_keys/char_sprite.png" id="5_t4dbq"]
+[ext_resource type="Texture2D" uid="uid://bthc0nst0a5ox" path="res://assets/images/switch_keys/choice.png" id="5_wgu0m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q6fnr"]
+load_path = "res://.godot/imported/keyboard_icons.png-e1d87662e687503ec7fd4563673baefe.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk2rn"]
+atlas = ExtResource("5_t4dbq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shpbv"]
+atlas = ExtResource("5_t4dbq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldg6d"]
+atlas = ExtResource("5_t4dbq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqekg"]
+atlas = ExtResource("5_t4dbq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cje6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk2rn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shpbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldg6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqekg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4dbq"]
+atlas = ExtResource("3_wgu0m")
+region = Rect2(0, 0, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cje6j"]
+atlas = ExtResource("3_wgu0m")
+region = Rect2(16, 0, 16, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4bca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4dbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cje6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="switch_keys" type="Node2D"]
+script = ExtResource("1_44f3m")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="teclado" type="Node2D" parent="."]
+
+[node name="movimento" type="Node2D" parent="teclado"]
+
+[node name="w" type="Sprite2D" parent="teclado/movimento"]
+position = Vector2(44, 93)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+frame = 1
+
+[node name="a" type="Sprite2D" parent="teclado/movimento"]
+position = Vector2(25, 112)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+frame = 2
+
+[node name="s" type="Sprite2D" parent="teclado/movimento"]
+position = Vector2(44, 112)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+frame = 3
+
+[node name="d" type="Sprite2D" parent="teclado/movimento"]
+position = Vector2(63, 112)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+frame = 4
+
+[node name="char_movimento" type="AnimatedSprite2D" parent="teclado/movimento"]
+position = Vector2(44, 72)
+sprite_frames = SubResource("SpriteFrames_cje6j")
+autoplay = "default"
+frame_progress = 0.22862995
+
+[node name="interagir" type="Node2D" parent="teclado"]
+
+[node name="e" type="Sprite2D" parent="teclado/interagir"]
+position = Vector2(120, 139)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+frame = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="teclado/interagir"]
+position = Vector2(120, 117)
+sprite_frames = SubResource("SpriteFrames_p4bca")
+autoplay = "default"
+frame_progress = 0.55498
+
+[node name="texto" type="Label" parent="teclado"]
+offset_top = 29.0
+offset_right = 320.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "TECLADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="choice" type="Sprite2D" parent="teclado"]
+position = Vector2(80, 25)
+texture = ExtResource("5_wgu0m")
+hframes = 2
+
+[node name="char_movimento2" type="AnimatedSprite2D" parent="teclado"]
+position = Vector2(120, 63)
+sprite_frames = SubResource("SpriteFrames_cje6j")
+autoplay = "default"
+frame_progress = 0.5828042
+
+[node name="shift" type="Sprite2D" parent="teclado"]
+position = Vector2(120, 82)
+texture = ExtResource("4_q6fnr")
+
+[node name="divisao" type="Node2D" parent="."]
+
+[node name="divisão" type="ColorRect" parent="divisao"]
+offset_left = 160.0
+offset_top = 48.0
+offset_right = 161.0
+offset_bottom = 160.0
+
+[node name="texto" type="Label" parent="divisao"]
+offset_top = 20.0
+offset_right = 1066.6666
+offset_bottom = 43.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "Para escolher, clique nas teclas:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="texto3" type="Label" parent="divisao"]
+offset_left = 8.0
+offset_top = 123.0
+offset_right = 248.0
+offset_bottom = 146.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "MOVIMENTO (WASD)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="texto4" type="Label" parent="divisao"]
+offset_left = 84.0
+offset_top = 150.0
+offset_right = 324.0
+offset_bottom = 173.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "INTERAGIR / PULAR DIALÓGO (E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="texto5" type="Label" parent="divisao"]
+offset_left = 84.0
+offset_top = 92.0
+offset_right = 324.0
+offset_bottom = 115.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "CORRER (SHIFT)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="texto2" type="Label" parent="divisao"]
+offset_top = 35.0
+offset_right = 1066.6666
+offset_bottom = 58.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "ou"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="keyboard" type="Sprite2D" parent="divisao"]
+position = Vector2(146, 38)
+texture = SubResource("CompressedTexture2D_q6fnr")
+hframes = 6
+
+[node name="keyboard2" type="Sprite2D" parent="divisao"]
+position = Vector2(173, 38)
+texture = SubResource("CompressedTexture2D_q6fnr")
+flip_h = true
+hframes = 6
+
+[node name="mouse" type="Node2D" parent="."]
+
+[node name="choice" type="Sprite2D" parent="mouse"]
+position = Vector2(240, 25)
+texture = ExtResource("5_wgu0m")
+hframes = 2
+
+[node name="texto" type="Label" parent="mouse"]
+offset_left = 161.0
+offset_top = 29.0
+offset_right = 481.0
+offset_bottom = 52.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "MOUSE"
+horizontal_alignment = 1
+vertical_alignment = 1

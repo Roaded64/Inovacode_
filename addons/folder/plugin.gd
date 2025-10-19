@@ -7,7 +7,7 @@ func _enter_tree() -> void:
 	# Register folder type
 	var folder_script = preload("./folder.gd")
 	var icon = preload("res://addons/folder/folder_icon.svg")
-	add_custom_type("Folder", "Node", folder_script, icon)
+	add_custom_type("Folder", "Node2D", folder_script, icon)
 	
 	# Register inspector plugin
 	inspector_plugin = preload("./inspector_plugin.gd").new()

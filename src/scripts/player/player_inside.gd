@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var char = $player
+@onready var character = $player
 
 func _position(x: int, y: int) -> void:
-	char.position = Vector2.ZERO
-	position = Vector2(x, y)
+	character.position = Vector2.ZERO 
+	self.position = Vector2(x, y) 

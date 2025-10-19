@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c80baonhxios6"]
+
+[ext_resource type="Shader" uid="uid://bghfe16gmhork" path="res://assets/shader/wind_tree.gdshader" id="1_en5ly"]
+[ext_resource type="Texture2D" path="res://assets/shader/noise_texture.tres" id="2_ck0yv"]
+
+[resource]
+shader = ExtResource("1_en5ly")
+shader_parameter/render_noise = false
+shader_parameter/noise_texture = ExtResource("2_ck0yv")
+shader_parameter/amplitude = 0.0999999977648
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)

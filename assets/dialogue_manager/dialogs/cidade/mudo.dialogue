@@ -1,7 +1,7 @@
-Chefe: Olá! Com licença. Está tendo algum problema?
-Mudo: (Faz sinais de libras falando que não precisa se preocupar, que já conseguiu ajuda.)
-Chefe: Perdão a pergunta, mas poderia me descrever quem te ajudou?
-Mudo: (Faz sinais de libras falando que era alguém com braço queimado, ele pediu uma inovação.)
-Chefe: Ele estava carregando um código consigo? Caso sim, consegue me instruir o número?
-Mudo: (Faz sinais de libras falando que não lembra o número todo, mas que o primeiro número era {{Main.cod[0]}}.)
+Chefe: Olá! Com licença, tudo bem por aqui?
+Mudo: (Faz sinais dizendo que está tudo certo, já recebeu ajuda.)
+Chefe: Entendo. Consegue me dizer quem te ajudou?
+Mudo: (Sinaliza que era alguém com o braço queimado, pedindo uma inovação.)
+Chefe: Ele tinha um código? Lembra de algum número?
+Mudo: (Sinaliza que não lembra tudo, mas o primeiro número era {{Main.cod[0]}}.)
 do Main.dialogue_cod.emit("mudo")

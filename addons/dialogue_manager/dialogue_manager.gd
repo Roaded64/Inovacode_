@@ -68,6 +68,8 @@ var _dotnet_dialogue_manager: RefCounted
 var _expression_parser: DMExpressionParser = DMExpressionParser.new()
 
 var is_playing = false
+var auto_advance = false
+var auto_advance_delay = 0 # segundos por linha
 
 func _ready() -> void:
 	# Cache the known Node2D properties

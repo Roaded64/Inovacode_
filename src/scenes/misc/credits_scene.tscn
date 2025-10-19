@@ -1,42 +1,45 @@
-[gd_scene load_steps=11 format=3 uid="uid://da31vuvdlmef7"]
+[gd_scene load_steps=17 format=3 uid="uid://da31vuvdlmef7"]
 
 [ext_resource type="Texture2D" uid="uid://c08xeus7hbw7q" path="res://assets/images/cutscene/bg.png" id="1_ers0k"]
+[ext_resource type="Script" uid="uid://c5ay5glc3yqax" path="res://src/scripts/misc/credits_scene.gd" id="1_qi8nm"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="1_xy3l0"]
 [ext_resource type="Texture2D" uid="uid://dlomjbv1ajiou" path="res://assets/images/logo.png" id="2_bycy4"]
 [ext_resource type="Script" uid="uid://duk3kh3m2v3iu" path="res://addons/folder/folder.gd" id="4_qi8nm"]
 [ext_resource type="Texture2D" uid="uid://bkcs3j2nq0fmv" path="res://assets/images/cutscene/bg_city.png" id="5_0igi5"]
 [ext_resource type="Texture2D" uid="uid://bkdxxom1orhi5" path="res://assets/images/cutscene/fg_city.png" id="6_sg3oc"]
+[ext_resource type="Texture2D" uid="uid://cf0mdvoutpcvw" path="res://assets/images/player/neutral_player.png" id="7_0igi5"]
 [ext_resource type="Texture2D" uid="uid://c07uyjitqjhqg" path="res://assets/images/cutscene/casa_sprite.png" id="8_vwe1r"]
-
-[sub_resource type="Animation" id="Animation_ajfei"]
-resource_name = "creditos"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("creditos:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 30),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -44), Vector2(0, -708)]
-}
+[ext_resource type="AudioStream" uid="uid://da1s7e3amcctj" path="res://assets/music/cutscene_song.wav" id="9_qi8nm"]
 
 [sub_resource type="Animation" id="Animation_myhqn"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("creditos:position")
+tracks/0/path = NodePath("CanvasLayer/creditos:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, 103)]
+}
+
+[sub_resource type="Animation" id="Animation_ajfei"]
+resource_name = "creditos"
+length = 45.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/creditos:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 96), Vector2(0, -708)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_suow3"]
@@ -45,11 +48,33 @@ _data = {
 &"creditos": SubResource("Animation_ajfei")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sg3oc"]
+atlas = ExtResource("7_0igi5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh1o7"]
+atlas = ExtResource("7_0igi5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwe1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sg3oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh1o7")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.0
+}]
+
 [node name="credits_scene" type="Node2D"]
-position = Vector2(0, 148)
+script = ExtResource("1_qi8nm")
 
 [node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(160, -148.00003)
+position = Vector2(160, -3.0517578e-05)
 scale = Vector2(0.25, 0.2444444)
 texture = ExtResource("1_ers0k")
 
@@ -57,19 +82,93 @@ texture = ExtResource("1_ers0k")
 libraries = {
 &"": SubResource("AnimationLibrary_suow3")
 }
-autoplay = "creditos"
 
-[node name="creditos" type="Control" parent="."]
+[node name="cutscene_sprites" type="Node" parent="."]
+script = ExtResource("4_qi8nm")
+metadata/_custom_type_script = "uid://duk3kh3m2v3iu"
+
+[node name="bg_city" type="Sprite2D" parent="cutscene_sprites"]
+modulate = Color(0.492237, 0.492237, 0.492237, 1)
+position = Vector2(160, 116)
+texture = ExtResource("5_0igi5")
+
+[node name="fg_city" type="Sprite2D" parent="cutscene_sprites"]
+position = Vector2(208, 111.00001)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_sg3oc")
+
+[node name="fg_city" type="Sprite2D" parent="cutscene_sprites/fg_city"]
+position = Vector2(-271.42853, -7.1428757)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_sg3oc")
+
+[node name="casa_sprite2" type="Sprite2D" parent="cutscene_sprites"]
+position = Vector2(-96, 104.00001)
+rotation = -3.1415927
+scale = Vector2(0.8, -0.8)
+texture = ExtResource("8_vwe1r")
+
+[node name="casa_sprite" type="Sprite2D" parent="cutscene_sprites"]
+position = Vector2(159.99998, 104.00004)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_vwe1r")
+
+[node name="casa_sprite3" type="Sprite2D" parent="cutscene_sprites"]
+position = Vector2(415, 104.00001)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_vwe1r")
+
+[node name="char" type="AnimatedSprite2D" parent="cutscene_sprites"]
+position = Vector2(160, 119.200005)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_vwe1r")
+animation = &"neutral"
+autoplay = "neutral"
+frame_progress = 0.114301406
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="final" type="Label" parent="CanvasLayer"]
+z_index = 3
+offset_top = 145.00002
+offset_right = 1600.0
+offset_bottom = 177.00002
+scale = Vector2(0.2, 0.2)
+theme_override_fonts/font = ExtResource("1_xy3l0")
+theme_override_font_sizes/font_size = 32
+text = "FINAL RUIM (DEMONSTRAÇÃO)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 4
+offset_right = 320.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
+[node name="creditos" type="Control" parent="CanvasLayer"]
+visible = false
+z_index = 4
 layout_mode = 3
 anchors_preset = 0
+offset_top = 103.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 143.00034
 
-[node name="texto" type="RichTextLabel" parent="creditos"]
-layout_mode = 0
-offset_top = 104.0
+[node name="logo" type="Sprite2D" parent="CanvasLayer/creditos"]
+texture_filter = 4
+position = Vector2(159.99998, 123)
+scale = Vector2(0.1479227, 0.1479227)
+texture = ExtResource("2_bycy4")
+
+[node name="texto" type="RichTextLabel" parent="CanvasLayer/creditos"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.275
+anchor_bottom = 1.275
+offset_top = 124.79999
 offset_right = 1600.0
-offset_bottom = 2063.9998
+offset_bottom = 2084.7998
 scale = Vector2(0.2, 0.2)
 theme_override_fonts/normal_font = ExtResource("1_xy3l0")
 theme_override_font_sizes/normal_font_size = 32
@@ -134,43 +233,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="logo" type="Sprite2D" parent="creditos"]
-texture_filter = 4
-position = Vector2(159.99998, 72)
-scale = Vector2(0.1479227, 0.1479227)
-texture = ExtResource("2_bycy4")
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 2
+offset_right = 320.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
 
-[node name="cutscene_sprites" type="Node" parent="."]
-script = ExtResource("4_qi8nm")
-metadata/_custom_type_script = "uid://duk3kh3m2v3iu"
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = 2
+offset_top = 140.0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
 
-[node name="bg_city" type="Sprite2D" parent="cutscene_sprites"]
-modulate = Color(0.492237, 0.492237, 0.492237, 1)
-position = Vector2(160, 147)
-texture = ExtResource("5_0igi5")
+[node name="credits" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qi8nm")
 
-[node name="fg_city" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(208.00002, 141.00002)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_sg3oc")
-
-[node name="fg_city" type="Sprite2D" parent="cutscene_sprites/fg_city"]
-position = Vector2(-271.42853, -7.1428757)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_sg3oc")
-
-[node name="casa_sprite2" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(-94.999985, 130.00002)
-rotation = -3.1415927
-scale = Vector2(0.8, -0.8)
-texture = ExtResource("8_vwe1r")
-
-[node name="casa_sprite" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(160, 130.00005)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("8_vwe1r")
-
-[node name="casa_sprite3" type="Sprite2D" parent="cutscene_sprites"]
-position = Vector2(416, 130.00002)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("8_vwe1r")
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
