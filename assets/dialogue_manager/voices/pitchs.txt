@@ -1,3 +1,7 @@
 chefe: 0.03
+cara do jumento: 0.03
+negacionista: 0.02
+
 dona: 0.01
 jornalista: 0.01
+mãe: 0.01

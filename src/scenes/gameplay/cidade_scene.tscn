@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=4 uid="uid://bbiiq0283jj7k"]
+[gd_scene load_steps=180 format=4 uid="uid://bbiiq0283jj7k"]
 
 [ext_resource type="Texture2D" uid="uid://by38f6mkk84em" path="res://assets/images/cidade/calçada_tileset.png" id="1_645yb"]
 [ext_resource type="Script" uid="uid://cgcxu1ducvgsd" path="res://src/scripts/gameplay/cidade_scene.gd" id="1_eroxr"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://b47cinklrawie" path="res://assets/images/cidade/npcs/mae_crianca.png" id="34_xu3rk"]
 [ext_resource type="Texture2D" uid="uid://w65dwqecse4l" path="res://assets/images/cidade/npcs/chato_sprite.png" id="35_7c4ul"]
 [ext_resource type="Texture2D" uid="uid://ut1s1exrh3n2" path="res://assets/images/cidade/lojas_sair.png" id="36_quvpo"]
+[ext_resource type="Texture2D" uid="uid://bhb5lqchsfxgv" path="res://assets/images/cidade/npcs/cc_sprite.png" id="36_xj5cw"]
 [ext_resource type="Texture2D" uid="uid://38n3syf4agpx" path="res://assets/images/cidade/npcs/jornalista_sprite.png" id="37_tk0if"]
 [ext_resource type="Texture2D" uid="uid://dpd7vqdg6f8k8" path="res://assets/images/cidade/doceria/tileset.png" id="39_4itaf"]
 [ext_resource type="Texture2D" uid="uid://cf6lm0gxdqr8p" path="res://assets/images/cidade/npcs/dona.png" id="39_8oji3"]
@@ -63,11 +64,14 @@
 [ext_resource type="Texture2D" uid="uid://sg187eguwnvl" path="res://assets/images/cidade/npcs/quem.png" id="52_7en3g"]
 [ext_resource type="Texture2D" uid="uid://dbs8b1rexs3v3" path="res://assets/images/cidade/minimap/minimap_sprite.png" id="52_qye7e"]
 [ext_resource type="Texture2D" uid="uid://vsfg7oq874dc" path="res://assets/images/cidade/minimap/player_map.png" id="53_2juux"]
+[ext_resource type="Texture2D" uid="uid://by6mlhrqkcwf8" path="res://assets/images/cidade/npcs/brecho.png" id="59_rvulv"]
 [ext_resource type="Texture2D" uid="uid://goej1awovdyx" path="res://assets/images/cidade/minimap/cego_ponto.png" id="59_yrvfu"]
 [ext_resource type="Texture2D" uid="uid://b151k6eqhygpf" path="res://assets/images/cidade/minimap/mae_ponto.png" id="60_gn66w"]
 [ext_resource type="Texture2D" uid="uid://deprjkx4alw31" path="res://assets/images/cidade/minimap/mudo_ponto.png" id="61_tk0if"]
 [ext_resource type="Texture2D" uid="uid://bx8n7s61ofgr1" path="res://assets/images/cidade/minimap/cadeirante_ponto.png" id="62_8oji3"]
 [ext_resource type="Texture2D" uid="uid://yacvycsskddq" path="res://assets/images/cidade/tentativas.png" id="66_8oji3"]
+[ext_resource type="Texture2D" uid="uid://ddl41vfvo11my" path="res://assets/images/cidade/conveniencia/planta.png" id="69_qlusk"]
+[ext_resource type="Texture2D" uid="uid://ck6avwkty6pkl" path="res://assets/images/cidade/conveniencia/lixo.png" id="70_xj5cw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n3o1"]
 texture = ExtResource("4_aydav")
@@ -401,6 +405,31 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gjj3"]
+atlas = ExtResource("36_xj5cw")
+region = Rect2(0, 0, 21, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7ipn"]
+atlas = ExtResource("36_xj5cw")
+region = Rect2(21, 0, 21, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7ipn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gjj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7ipn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wvxy"]
+size = Vector2(44, 40.83333)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2juux"]
 atlas = ExtResource("35_7c4ul")
 region = Rect2(0, 0, 17, 17)
@@ -444,9 +473,6 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wvxy"]
-size = Vector2(44, 40.83333)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh3hu"]
 texture = ExtResource("26_u75d6")
@@ -523,7 +549,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rjdnv"]
-size = Vector2(40, 48)
+size = Vector2(40, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mfyb"]
 size = Vector2(48, 33.3333)
@@ -543,16 +569,16 @@ size = Vector2(64, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dxsa3"]
 size = Vector2(51, 9.935505)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_de8w4"]
-size = Vector2(11, 6.9547997)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlusk"]
-size = Vector2(8.5, 9.0201645)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xj5cw"]
 size = Vector2(41, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvulv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de8w4"]
+size = Vector2(11, 10.929029)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlusk"]
+size = Vector2(8.5, 9.0201645)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp7ov"]
 texture = ExtResource("39_4itaf")
@@ -685,13 +711,35 @@ size = Vector2(32, 11)
 size = Vector2(30, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhyo"]
-size = Vector2(30, 7)
+size = Vector2(30, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oscmo"]
 size = Vector2(10, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6xbe"]
 size = Vector2(10, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idqbm"]
+atlas = ExtResource("59_rvulv")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86rk8"]
+atlas = ExtResource("59_rvulv")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2i2md"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idqbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86rk8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="cidade_scene" type="Node2D"]
 y_sort_enabled = true
@@ -826,7 +874,7 @@ shape = SubResource("RectangleShape2D_vumlt")
 [node name="npcs_tileset2" type="TileMapLayer" parent="cidade_map"]
 y_sort_enabled = true
 position = Vector2(0.63, -10)
-tile_map_data = PackedByteArray("AAADAA0AAQAAAAAAAAAGAA0AAQAAAAIAAAAJAA0AAQAAAAMAAAADAAcAAQAAAAEAAAAGAAcAAQAAAAIAAAAJAAcAAQAAAAAAAAAOAAUAAQAAAAIAAAARAAUAAQAAAAIAAAAUAAUAAQAAAAMAAAAYAAcAAQAAAAAAAAAbAAcAAQAAAAAAAAAeAAcAAQAAAAIAAAAeAA0AAQAAAAIAAAAbAA0AAQAAAAIAAAAYAA0AAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAADAA0AAQAAAAAAAAAGAA0AAQAAAAIAAAAJAA0AAQAAAAMAAAADAAcAAQAAAAEAAAAGAAcAAQAAAAIAAAAJAAcAAQAAAAAAAAAOAAUAAQAAAAIAAAARAAUAAQAAAAIAAAAUAAUAAQAAAAMAAAAYAAcAAQAAAAAAAAAbAAcAAQAAAAAAAAAeAAcAAQAAAAIAAAAeAA0AAQAAAAIAAAAbAA0AAQAAAAIAAAAYAA0AAQAAAAAAAAAVAAsAAQAAAAMAAAAPAAgAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_d28hq")
 metadata/_edit_lock_ = true
 
@@ -1748,7 +1796,7 @@ shape = SubResource("RectangleShape2D_vsmpn")
 
 [node name="npcs_tileset" type="TileMapLayer" parent="cidade_map"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAALABEAAQAAAAAAAAAZABUAAQAAAAEAAAAYABUAAQAAAAIAAAAEAA4AAQAAAAIAAAAJABUAAQAAAAMAAAAhABsAAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAMAAAAFAAkAAQAAAAEAAAAHAAgAAQAAAAIAAAANAAcAAQAAAAMAAAARAAYAAQAAAAMAAAATAAcAAQAAAAIAAAAYAAgAAQAAAAIAAAAeAAgAAQAAAAEAAAAaAAgAAQAAAAIAAAAgAAcAAQAAAAIAAAAYAA4AAQAAAAIAAAAdAA4AAQAAAAIAAAAgAA8AAQAAAAMAAAAVAAkAAQAAAAEAAAAJAA4AAQAAAAEAAAAGABAAAQAAAAIAAAACAA8AAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAALABEAAQAAAAAAAAAZABUAAQAAAAEAAAAYABUAAQAAAAIAAAAEAA4AAQAAAAIAAAAJABUAAQAAAAMAAAAhABsAAQAAAAAAAAABABsAAQAAAAAAAAACABsAAQAAAAMAAAAFAAkAAQAAAAEAAAAHAAgAAQAAAAIAAAANAAcAAQAAAAMAAAARAAYAAQAAAAMAAAATAAcAAQAAAAIAAAAYAAgAAQAAAAIAAAAeAAgAAQAAAAEAAAAaAAgAAQAAAAIAAAAgAAcAAQAAAAIAAAAYAA4AAQAAAAIAAAAdAA4AAQAAAAIAAAAgAA8AAQAAAAMAAAAJAA4AAQAAAAEAAAAGABAAAQAAAAIAAAACAA8AAQAAAAAAAAAPAAoAAQAAAAAAAAATAAkAAQAAAAEAAAAPAAkAAQAAAAAAAAATAAoAAQAAAAMAAAAOAAoAAQAAAAIAAAATAA8AAQAAAAEAAAAUAA0AAQAAAAMAAAA=")
 tile_set = SubResource("TileSet_d28hq")
 
 [node name="MáquinaInovação" type="Sprite2D" parent="cidade_map"]
@@ -1861,6 +1909,29 @@ type = 2
 position = Vector2(0.166687, 2.66667)
 shape = SubResource("RectangleShape2D_vlk8u")
 
+[node name="cc" type="AnimatedSprite2D" parent="cidade_map/npcs"]
+position = Vector2(305, 223)
+sprite_frames = SubResource("SpriteFrames_u7ipn")
+autoplay = "default"
+frame_progress = 0.80665964
+flip_h = true
+script = ExtResource("28_lkvsa")
+dialogo = "cc"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="cidade_map/npcs/cc"]
+position = Vector2(-2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cc/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="cidade_map/npcs/cc" instance=ExtResource("7_5tygx")]
+position = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/cc/InteractionArea"]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_2wvxy")
+
 [node name="cara_jumento" type="AnimatedSprite2D" parent="cidade_map/npcs"]
 position = Vector2(59, 88)
 sprite_frames = SubResource("SpriteFrames_wqd1e")
@@ -1884,7 +1955,7 @@ position = Vector2(0.166687, 2.66667)
 shape = SubResource("RectangleShape2D_vlk8u")
 
 [node name="jornalista" type="AnimatedSprite2D" parent="cidade_map/npcs"]
-position = Vector2(248, 223)
+position = Vector2(252, 223)
 sprite_frames = SubResource("SpriteFrames_de8w4")
 autoplay = "default"
 frame_progress = 0.23963694
@@ -1901,7 +1972,7 @@ shape = SubResource("RectangleShape2D_quvpo")
 [node name="InteractionArea" parent="cidade_map/npcs/jornalista" instance=ExtResource("7_5tygx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cidade_map/npcs/jornalista/InteractionArea"]
-position = Vector2(1, 1)
+position = Vector2(-11, 1)
 shape = SubResource("RectangleShape2D_2wvxy")
 
 [node name="conveniencia_map" type="Node2D" parent="."]
@@ -1964,7 +2035,7 @@ shape = SubResource("RectangleShape2D_quvpo")
 type = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/npcs/dona/InteractionArea"]
-position = Vector2(-1, 9)
+position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_rjdnv")
 
 [node name="saida" type="Sprite2D" parent="conveniencia_map"]
@@ -2020,27 +2091,15 @@ position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_8oji3")
 
 [node name="mesa" type="Sprite2D" parent="conveniencia_map"]
-position = Vector2(29, 101.25)
+position = Vector2(29, 71.25001)
 scale = Vector2(1, 1.0064934)
 texture = ExtResource("43_gn66w")
 
 [node name="Area2D" type="StaticBody2D" parent="conveniencia_map/mesa"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D"]
-position = Vector2(-0.5, -26.080627)
+position = Vector2(-0.5, 2.7322693)
 shape = SubResource("RectangleShape2D_dxsa3")
-
-[node name="Area2D2" type="StaticBody2D" parent="conveniencia_map/mesa"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D2"]
-position = Vector2(-20, -11.67421)
-shape = SubResource("RectangleShape2D_de8w4")
-
-[node name="Area2D3" type="StaticBody2D" parent="conveniencia_map/mesa"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/mesa/Area2D3"]
-position = Vector2(-20, 32.081055)
-shape = SubResource("RectangleShape2D_qlusk")
 
 [node name="mesinha" type="Sprite2D" parent="conveniencia_map"]
 position = Vector2(151.5, 48)
@@ -2061,6 +2120,30 @@ texture = ExtResource("45_8oji3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/maquininha/Area2D"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_rvulv")
+
+[node name="planta" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(10.5, 88)
+texture = ExtResource("69_qlusk")
+
+[node name="Area2D2" type="StaticBody2D" parent="conveniencia_map/planta"]
+position = Vector2(19, 12.25)
+scale = Vector2(1, 1.0064934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/planta/Area2D2"]
+position = Vector2(-20, -12.66774)
+shape = SubResource("RectangleShape2D_de8w4")
+
+[node name="lixo" type="Sprite2D" parent="conveniencia_map"]
+position = Vector2(9.5, 135)
+texture = ExtResource("70_xj5cw")
+
+[node name="Area2D3" type="StaticBody2D" parent="conveniencia_map/lixo"]
+position = Vector2(20, -31.75)
+scale = Vector2(1, 1.0064934)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conveniencia_map/lixo/Area2D3"]
+position = Vector2(-20, 32.081055)
+shape = SubResource("RectangleShape2D_qlusk")
 
 [node name="npcs_tileset" type="TileMapLayer" parent="conveniencia_map"]
 y_sort_enabled = true
@@ -2272,7 +2355,7 @@ texture = ExtResource("50_7c4ul")
 [node name="Area2D" type="StaticBody2D" parent="brecho_map/EstandeRoupas2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas2/Area2D"]
-position = Vector2(0, -1.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_sxhyo")
 
 [node name="EstandeRoupas3" type="Sprite2D" parent="brecho_map"]
@@ -2297,6 +2380,28 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/EstandeRoupas4/Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_q6xbe")
+
+[node name="dona" type="AnimatedSprite2D" parent="brecho_map"]
+position = Vector2(145, 130)
+sprite_frames = SubResource("SpriteFrames_2i2md")
+autoplay = "default"
+frame_progress = 0.82124424
+flip_h = true
+script = ExtResource("28_lkvsa")
+dialogo = "brecho"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="brecho_map/dona"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/dona/StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_quvpo")
+
+[node name="InteractionArea" parent="brecho_map/dona" instance=ExtResource("7_5tygx")]
+type = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="brecho_map/dona/InteractionArea"]
+position = Vector2(-1.83325, 7)
+shape = SubResource("RectangleShape2D_vlk8u")
 
 [node name="npcs_tileset" type="TileMapLayer" parent="brecho_map"]
 y_sort_enabled = true

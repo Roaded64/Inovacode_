@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dabi5ylpybmrg"
+path="res://.godot/imported/brecho.dialogue-7069d1751c28f34aaa5b8637e62657fc.tres"
+
+[deps]
+
+source_file="res://assets/dialogue_manager/dialogs/cidade/brecho.dialogue"
+dest_files=["res://.godot/imported/brecho.dialogue-7069d1751c28f34aaa5b8637e62657fc.tres"]
+
+[params]
+
+defaults=true

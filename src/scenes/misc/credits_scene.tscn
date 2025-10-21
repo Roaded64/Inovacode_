@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://da31vuvdlmef7"]
+[gd_scene load_steps=26 format=3 uid="uid://da31vuvdlmef7"]
 
 [ext_resource type="Texture2D" uid="uid://c08xeus7hbw7q" path="res://assets/images/cutscene/bg.png" id="1_ers0k"]
 [ext_resource type="Script" uid="uid://c5ay5glc3yqax" path="res://src/scripts/misc/credits_scene.gd" id="1_qi8nm"]
@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bkcs3j2nq0fmv" path="res://assets/images/cutscene/bg_city.png" id="5_0igi5"]
 [ext_resource type="Texture2D" uid="uid://bkdxxom1orhi5" path="res://assets/images/cutscene/fg_city.png" id="6_sg3oc"]
 [ext_resource type="Texture2D" uid="uid://cf0mdvoutpcvw" path="res://assets/images/player/neutral_player.png" id="7_0igi5"]
+[ext_resource type="Texture2D" uid="uid://bpbd14068jctr" path="res://assets/images/credits/neutro.png" id="8_fweqq"]
+[ext_resource type="Texture2D" uid="uid://b4gb1c0euqqfd" path="res://assets/images/credits/perfeito.png" id="8_sg3oc"]
 [ext_resource type="Texture2D" uid="uid://c07uyjitqjhqg" path="res://assets/images/cutscene/casa_sprite.png" id="8_vwe1r"]
+[ext_resource type="Texture2D" uid="uid://o68vebmbwj45" path="res://assets/images/credits/ruim.png" id="9_eh1o7"]
 [ext_resource type="AudioStream" uid="uid://da1s7e3amcctj" path="res://assets/music/cutscene_song.wav" id="9_qi8nm"]
 
 [sub_resource type="Animation" id="Animation_myhqn"]
@@ -56,6 +59,30 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("7_0igi5")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfa4l"]
+atlas = ExtResource("8_fweqq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1kvq"]
+atlas = ExtResource("8_fweqq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwe1r"]
+atlas = ExtResource("8_sg3oc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fweqq"]
+atlas = ExtResource("8_sg3oc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ftp"]
+atlas = ExtResource("9_eh1o7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp6xy"]
+atlas = ExtResource("9_eh1o7")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vwe1r"]
 animations = [{
 "frames": [{
@@ -66,7 +93,40 @@ animations = [{
 "texture": SubResource("AtlasTexture_eh1o7")
 }],
 "loop": true,
-"name": &"neutral",
+"name": &"bom",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfa4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1kvq")
+}],
+"loop": true,
+"name": &"neutro",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwe1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fweqq")
+}],
+"loop": true,
+"name": &"perfeito",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ftp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp6xy")
+}],
+"loop": true,
+"name": &"ruim",
 "speed": 2.0
 }]
 
@@ -122,9 +182,8 @@ texture = ExtResource("8_vwe1r")
 position = Vector2(160, 119.200005)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_vwe1r")
-animation = &"neutral"
-autoplay = "neutral"
-frame_progress = 0.114301406
+animation = &"neutro"
+autoplay = "bom"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -137,6 +196,19 @@ scale = Vector2(0.2, 0.2)
 theme_override_fonts/font = ExtResource("1_xy3l0")
 theme_override_font_sizes/font_size = 32
 text = "FINAL RUIM (DEMONSTRAÇÃO)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="o que" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.69803923)
+z_index = 3
+offset_top = 153.00002
+offset_right = 2461.5386
+offset_bottom = 185.00002
+scale = Vector2(0.13, 0.13)
+theme_override_fonts/font = ExtResource("1_xy3l0")
+theme_override_font_sizes/font_size = 32
+text = "\"O QUE\""
 horizontal_alignment = 1
 vertical_alignment = 1
 

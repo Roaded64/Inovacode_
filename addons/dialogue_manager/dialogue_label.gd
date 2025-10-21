@@ -22,7 +22,9 @@ var is_typing: bool = false:
 		is_typing = value
 		if finished:
 			finished_typing.emit()
-			thing.visible = true
+			
+			if !DialogueManager.auto_advance:
+				thing.visible = true
 			audio.stop()
 	get:
 		return is_typing
@@ -118,7 +120,9 @@ func skip_typing() -> void:
 	visible_characters = get_total_character_count()
 	self.is_typing = false
 	skipped_typing.emit()
-	thing.visible = true
+	
+	if !DialogueManager.auto_advance:
+		thing.visible = true
 	audio.stop()
 
 func _type_next(delta: float, seconds_needed: float) -> void:

@@ -8,6 +8,7 @@ var ending = 0
 
 # controles
 var is_mouse = false
+var pular_d = false
 
 var emotion = 5
 

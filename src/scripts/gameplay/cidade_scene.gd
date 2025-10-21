@@ -87,7 +87,7 @@ func _entrance():
 		Main.fade($CanvasLayer/entrance/bg, 0.7, Color.TRANSPARENT)
 		Main.is_cutscene = false
 		
-		PrincipalHud.define_timer(75.0)
+		PrincipalHud.define_timer(10.0)
 		await get_tree().create_timer(1).timeout
 		PrincipalHud._mission("Vá até os pontos marcados no mapa")
 		
@@ -100,6 +100,7 @@ func _entrance():
 
 func _ending():
 	ending_signal = true
+	Main.pular_d = true
 	$player_scene._position(896, 512)
 	Main.is_city = true
 	Main.is_cutscene = true
@@ -125,10 +126,12 @@ func _ending():
 		$CanvasLayer/fg.show()
 		
 		if Main.tent == 1:
+			Main.pular_d = false
 			Transition.scene("res://src/scenes/gameplay/testes_scene.tscn")
 			Main.cur_test = 2
 		elif Main. tent == 2:
 			Main.ending = 2
+			Main.pular_d = false
 			Transition.scene("res://src/scenes/misc/credits_scene.tscn")
 	else:
 		$ending_place/who.frame = 1
@@ -141,8 +144,10 @@ func _ending():
 		
 		if Main.tent == 2:
 			Main.ending = 1
+			Main.pular_d = false
 			Transition.scene("res://src/scenes/misc/credits_scene.tscn")
 		else:
+			Main.pular_d = false
 			Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")
 			
 			Main.descoberto = [" _ ", " _ ", " _ ", " _ "]

@@ -41,7 +41,7 @@ func _entrance():
 		$CanvasLayer/entrance.queue_free()
 		await get_tree().create_timer(0.5).timeout
 		DialogueManager.auto_advance = true
-		DialogueManager.auto_advance_delay = 1.5  # segundos por linha
+		DialogueManager.auto_advance_delay = 2  # segundos por linha
 		DialogueManager.show_dialogue_balloon(load("res://assets/dialogue_manager/dialogs/sala_de_teste/segundo_teste.dialogue"))
 		
 		#if Main.cur_test == 2:

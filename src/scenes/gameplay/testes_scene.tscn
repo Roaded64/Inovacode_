@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://bk2m54rljsws4" path="res://assets/images/sala_testes/tapete.png" id="5_eql8w"]
 [ext_resource type="Texture2D" uid="uid://d2lcu821uta7n" path="res://assets/images/sala_testes/tv_sprite.png" id="5_oi6fd"]
 [ext_resource type="Script" uid="uid://df716q2a6bnbw" path="res://src/scripts/rdm_objects.gd" id="9_gtqko"]
-[ext_resource type="Texture2D" uid="uid://db0i0x7fi06ps" path="res://assets/images/sala_testes/objetos/IA.png" id="9_v3vsb"]
 [ext_resource type="Script" uid="uid://wf2wtygw0ds1" path="res://src/scripts/player/interaction/interactions/testes/obj_int.gd" id="10_qnui6"]
 [ext_resource type="Texture2D" uid="uid://i73w6ytglx8e" path="res://assets/images/sala_testes/dark/tileset_dark.png" id="12_eql8w"]
 [ext_resource type="Texture2D" uid="uid://c2tiam7lr61aq" path="res://assets/images/sala_testes/objetos/balde_sprite.png" id="12_pe4ep"]
 [ext_resource type="Texture2D" uid="uid://ve6l8mr3dc1y" path="res://assets/images/sala_testes/dark/janela_dark.png" id="13_ek24b"]
 [ext_resource type="PackedScene" uid="uid://dsxuylwhbi7ks" path="res://src/scenes/player/interaction/interaction_area.tscn" id="13_gqvba"]
+[ext_resource type="Texture2D" uid="uid://cb8ftdc2gnflr" path="res://assets/images/sala_testes/objetos/arvore_sprite.png" id="13_h8x80"]
 [ext_resource type="Texture2D" uid="uid://cutx5r2gcmxsq" path="res://assets/images/sala_testes/objetos/cadeira.png" id="13_stmv1"]
 [ext_resource type="Texture2D" uid="uid://v8tt12nets1h" path="res://assets/images/sala_testes/objetos/planta_sprite.png" id="14_l66pe"]
 [ext_resource type="FontFile" uid="uid://bnlkw1kclpwnv" path="res://assets/fonts/PixelOperator-Bold.ttf" id="14_qnui6"]
@@ -209,8 +209,8 @@ y_sort_enabled = true
 script = ExtResource("9_gtqko")
 
 [node name="obj_1" type="Sprite2D" parent="objects"]
-position = Vector2(96, 127.33334)
-texture = ExtResource("9_v3vsb")
+position = Vector2(96, 130)
+texture = ExtResource("13_h8x80")
 script = ExtResource("10_qnui6")
 obj_id = 1
 
@@ -223,7 +223,7 @@ shape = SubResource("RectangleShape2D_gtqko")
 [node name="InteractionArea" parent="objects/obj_1" instance=ExtResource("13_gqvba")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="objects/obj_1/InteractionArea"]
-position = Vector2(0.16668701, 2.6666718)
+position = Vector2(0.16668701, -0.33332825)
 shape = SubResource("RectangleShape2D_qnui6")
 
 [node name="obj_2" type="Sprite2D" parent="objects"]

@@ -223,12 +223,13 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 416.0
-offset_top = 631.0
-offset_right = 708.0
-offset_bottom = 783.0
+offset_left = 400.0
+offset_top = 655.0
+offset_right = 690.90906
+offset_bottom = 807.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.1, 1.1)
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer"]
 clip_children = 2

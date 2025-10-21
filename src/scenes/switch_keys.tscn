@@ -299,7 +299,10 @@ theme_override_fonts/font = ExtResource("2_44f3m")
 theme_override_font_sizes/font_size = 16
 text = "MOVIMENTO 
 (Clique onde deseja ir 
-com o BOTÃO ESQUERDO do mouse)"
+com o BOTÃO ESQUERDO do mouse)
+
+(Para pular diálogos com clique 
+com algum botão em cima do diálogo)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -353,3 +356,15 @@ vertical_alignment = 1
 [node name="WaitSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_vqekg")
 autoplay = true
+
+[node name="texto6" type="Label" parent="."]
+offset_left = 257.0
+offset_top = 158.0
+offset_right = 510.0
+offset_bottom = 184.66666
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_44f3m")
+theme_override_font_sizes/font_size = 16
+text = "Aperte ENTER se já compreendeu >"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -18,6 +18,9 @@ var phrases = [
 
 var base_y: float
 
+var esc_hold_time := 0.0
+const HOLD_TIME := 2.0
+
 func _ready() -> void:
 	base_y = $logo.position.y
 	
@@ -34,11 +37,20 @@ func _ready() -> void:
 	Main.cod = null
 	Main.is_test = false
 	Main.tent = 0
+	DialogueManager.auto_advance = false
+	Main.is_cutscene = false
 
 func _process(_delta: float) -> void:
 	var float_offset = sin(Time.get_ticks_msec() / 500.0) * 2  # ajustável
 	
 	$logo.position.y = base_y + float_offset
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		esc_hold_time += _delta
+		if esc_hold_time >= HOLD_TIME:
+			Transition.scene("res://src/scenes/cutscene.tscn")
+	else:
+		esc_hold_time = 0.0
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and !is_playing:

@@ -54,6 +54,23 @@ var mutation_cooldown: Timer = Timer.new()
 ## Portrair
 @onready var portrait: Sprite2D = %portrait
 
+var portraits := {
+	"Cadeirante": preload("res://assets/dialogue_manager/assets_portraits/cadeirante_portrait.png"),
+	"Cara do Jumento": preload("res://assets/dialogue_manager/assets_portraits/cara do jumento_portrait.png"),
+	"Cego": preload("res://assets/dialogue_manager/assets_portraits/cego_portrait.png"),
+	"Chefe": preload("res://assets/dialogue_manager/assets_portraits/chefe_portrait.png"),
+	"CM": preload("res://assets/dialogue_manager/assets_portraits/cm_portrait.png"),
+	"Dona Brechó": preload("res://assets/dialogue_manager/assets_portraits/dona brechó_portrait.png"),
+	"Dona": preload("res://assets/dialogue_manager/assets_portraits/dona_portrait.png"),
+	"Encapuzado": preload("res://assets/dialogue_manager/assets_portraits/encapuzado_portrait.png"),
+	"Jogador": preload("res://assets/dialogue_manager/assets_portraits/jogador_portrait.png"),
+	"Jornalista": preload("res://assets/dialogue_manager/assets_portraits/jornalista_portrait.png"),
+	"Lixeira": preload("res://assets/dialogue_manager/assets_portraits/lixeira_portrait.png"),
+	"Louco": preload("res://assets/dialogue_manager/assets_portraits/louco_portrait.png"),
+	"Mudo": preload("res://assets/dialogue_manager/assets_portraits/mudo_portrait.png"),
+	"Negacionista": preload("res://assets/dialogue_manager/assets_portraits/negacionista_portrait.png")
+}
+
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
@@ -103,11 +120,7 @@ func apply_dialogue_line() -> void:
 	character_label.text = tr(dialogue_line.character, "dialogue")
 
 	# portrait
-	var portrait_path: String = "res://assets/dialogue_manager/assets_portraits/%s_portrait.png" % dialogue_line.character
-	if ResourceLoader.exists(portrait_path):
-		portrait.texture = load(portrait_path)
-	else:
-		portrait.texture = null
+	portrait.texture = portraits.get(dialogue_line.character, null)
 
 	# preparar texto/respostas
 	dialogue_label.hide()

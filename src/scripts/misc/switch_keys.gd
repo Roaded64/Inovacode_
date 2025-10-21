@@ -20,3 +20,7 @@ func _process(_delta: float) -> void:
 		Main.is_mouse = true
 	elif Input.is_action_just_pressed("key_back"):
 		Main.is_mouse = false
+
+	if Input.is_action_just_pressed("key_pass"):
+		PrincipalHud.stop_timer()
+		Transition.scene("res://src/scenes/gameplay/cidade_scene.tscn")

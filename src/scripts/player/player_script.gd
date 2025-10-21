@@ -48,7 +48,7 @@ func _process(_delta: float) -> void:
 			playerSprite.offset.y = -5
 
 	if playerMove:
-		if !DialogueManager.is_playing:
+		if !DialogueManager.is_playing || !Main.is_test:
 			if Input.is_action_pressed("key_sprint"):
 				if progress.value > 40:
 					isRunning = true
@@ -59,7 +59,11 @@ func _process(_delta: float) -> void:
 		isRunning = false
 
 	if isRunning and !is_blocked:
-		progress.value -= 0.4
+		if !Main.is_mouse:
+			progress.value -= 0.4
+		else:
+			progress.value -= 0.43
+	
 		Main.fade(progress, 0.7, Color.WHITE)
 		playerSpeed = 150
 		playerAnim.speed_scale = 1.2
@@ -73,12 +77,13 @@ func _physics_process(_delta: float) -> void:
 	var target_vel = Vector2.ZERO
 
 	if Main.is_mouse:
-		if !Main.is_cutscene || !DialogueManager.is_playing && !Main.is_test:
-			if Input.is_action_just_pressed("left_mouse"):
-				if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
-					click_position = get_global_mouse_position()
-					hasClicked = true
-					stuck_time = 0.0
+		if !Main.is_cutscene:
+			if !DialogueManager.is_playing:
+				if Input.is_action_just_pressed("left_mouse"):
+					if DisplayServer.window_is_focused() and get_viewport().get_visible_rect().has_point(get_viewport().get_mouse_position()):
+						click_position = get_global_mouse_position()
+						hasClicked = true
+						stuck_time = 0.0
 
 			if hasClicked:
 				var distance = global_position.distance_to(click_position)
@@ -86,10 +91,15 @@ func _physics_process(_delta: float) -> void:
 					var dir = (click_position - global_position).normalized()
 					target_vel = dir * playerSpeed
 					moved = true
+					
+					if progress.value > 40:
+						isRunning = true
+					
 					mouse_location.visible = true
 					mouse_location.position = mouse_location.get_parent().to_local(click_position)
 					playerSprite.flip_h = dir.x < 0
 				else:
+					isRunning = false
 					hasClicked = false
 					mouse_location.visible = false
 			else:
@@ -97,7 +107,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		mouse_location.visible = false
 		
-		if !Main.is_cutscene || !DialogueManager.is_playing && !Main.is_test:
+		if !Main.is_cutscene || !DialogueManager.is_playing:
 			var input_dir = Input.get_vector("key_left", "key_right", "key_up", "key_down")
 			
 			if input_dir != Vector2.ZERO:
@@ -117,7 +127,7 @@ func _physics_process(_delta: float) -> void:
 				hasClicked = false
 				mouse_location.visible = false
 
-	if Main.is_cutscene || DialogueManager.is_playing && !Main.is_test:
+	if Main.is_cutscene || DialogueManager.is_playing:
 		velocity = Vector2.ZERO
 	else:
 		velocity = velocity.move_toward(target_vel, playerSpeed * _delta * 6)
@@ -141,7 +151,6 @@ func _physics_process(_delta: float) -> void:
 		playerAnim.play("run" if moved else "idle")
 
 func _on_timer_timeout() -> void:
-	if !isRunning:
 		progress.value += 0.2
 
 func _use_camera():

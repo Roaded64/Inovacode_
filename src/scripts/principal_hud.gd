@@ -38,6 +38,8 @@ func define_timer(value: float) -> void:
 func stop_timer():
 	timer.stop()
 	$timebar.hide()
+	progress.value = 1
+	$missao.hide()
 
 # Quando o timer dá timeout, reduzir 1 segundo
 func _on_timer_timeout() -> void:
@@ -58,5 +60,6 @@ func _appear() -> void:
 	$timebar/AnimationPlayer.play("appear")
 
 func _mission(mission: String) -> void:
+	$missao.show()
 	$timebar/AnimationPlayer.play("appear_mission")
 	$missao.text = "MISSÃO ATUAL:\n" + mission
